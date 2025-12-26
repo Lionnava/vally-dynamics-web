@@ -133,47 +133,62 @@
             </form>
         </div>
     </section>
+<!-- Footer con Imagen de Fondo -->
+    <footer class="relative text-gray-300 py-16 px-6 mt-20 overflow-hidden">
+        
+        <!-- Imagen de Fondo con Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="footer-bg.jpg" alt="Background" class="w-full h-full object-cover grayscale opacity-40">
+            <div class="absolute inset-0 bg-gray-900/90"></div> <!-- Capa de oscurecimiento -->
+        </div>
 
-    <!-- Footer Mejorado -->
-    <footer class="bg-gray-900 text-gray-300 py-16 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-12 text-left">
+        <div class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-4 gap-12 text-left">
+            
+            <!-- Columna 1: Branding -->
             <div class="col-span-1 md:col-span-1">
                 <h4 class="text-white text-xl font-bold mb-4 italic tracking-widest uppercase">VALLY DYNAMICS</h4>
-                <p class="text-sm leading-relaxed mb-4 text-gray-400">
+                <p class="text-sm leading-relaxed mb-4 text-gray-300">
                     <span class="lang-en">Sovereign science and rapid biophysical innovation. A tribute to the life and legacy of <strong>Vally Ramos</strong>.</span>
                     <span class="lang-es lang-hidden">Ciencia soberana e innovación biofísica rápida. Un tributo a la vida y el legado de <strong>Vally Ramos</strong>.</span>
                 </p>
-                <p class="text-xs text-emerald-500 font-mono italic">"Democratizing science through physics."</p>
+                <p class="text-xs text-emerald-400 font-mono italic">"Democratizing science through physics."</p>
             </div>
+
+            <!-- Columna 2: Reconocimiento -->
             <div>
                 <h5 class="text-white font-semibold mb-4 border-b border-emerald-800 pb-2 uppercase text-xs tracking-widest">Global Recognition</h5>
                 <ul class="text-sm space-y-3">
-                    <li><span class="text-emerald-400">●</span> APS Global Physics Summit 2026</li>
-                    <li><span class="text-emerald-400">●</span> ChemRxiv Registered Protocol</li>
-                    <li><span class="text-emerald-400">●</span> Independent Research</li>
+                    <li><span class="text-emerald-500">●</span> APS Global Physics Summit 2026</li>
+                    <li><span class="text-emerald-500">●</span> ChemRxiv Registered Protocol</li>
+                    <li><span class="text-emerald-500">●</span> Independent Research</li>
                 </ul>
             </div>
+
+            <!-- Columna 3: Recursos -->
             <div>
                 <h5 class="text-white font-semibold mb-4 border-b border-emerald-800 pb-2 uppercase text-xs tracking-widest">Resources</h5>
-                <ul class="text-sm space-y-3">
-                    <li><a href="https://github.com/Lionnava/vally-scan" class="hover:text-emerald-400 transition">GitHub v1.5 Repository</a></li>
-                    <li><a href="https://orcid.org/0000-0001-9349-3534" class="hover:text-emerald-400 transition">ORCID Profile</a></li>
+                <ul class="text-sm space-y-3 font-medium">
+                    <li><a href="https://github.com/Lionnava/vally-scan" class="hover:text-white transition underline decoration-emerald-500">GitHub v1.5 Repository</a></li>
+                    <li><a href="https://orcid.org/0000-0001-9349-3534" class="hover:text-white transition underline decoration-emerald-500">ORCID Profile</a></li>
                 </ul>
             </div>
+
+            <!-- Columna 4: Contacto -->
             <div>
                 <h5 class="text-white font-semibold mb-4 border-b border-emerald-800 pb-2 uppercase text-xs tracking-widest">Headquarters</h5>
-                <p class="text-sm text-gray-400">Eng. Lionell Nava Ramos</p>
-                <p class="text-sm text-gray-400 italic mb-4">Maracaibo, Venezuela.</p>
+                <p class="text-sm text-gray-200">Eng. Lionell Nava Ramos</p>
+                <p class="text-sm text-gray-200 italic mb-4">Maracaibo, Venezuela.</p>
             </div>
         </div>
-        <div class="max-w-6xl mx-auto mt-16 pt-8 border-t border-gray-800 text-[10px] text-gray-500 text-center uppercase tracking-widest">
+
+        <!-- Barra Final: Disclaimer -->
+        <div class="relative z-10 max-w-6xl mx-auto mt-16 pt-8 border-t border-gray-700 text-[10px] text-gray-400 text-center uppercase tracking-widest">
             <p>© 2025 Vally Dynamics. Designed in Maracaibo, Zulia.</p>
-            <p class="mt-4 opacity-40 max-w-4xl mx-auto">
+            <p class="mt-4 opacity-50 max-w-4xl mx-auto italic">
                 DISCLAIMER: VALLY-SCAN IS A PREDICTIVE COMPUTATIONAL FRAMEWORK. FINDINGS MUST BE VALIDATED EXPERIMENTALLY PRIOR TO ANY CLINICAL APPLICATION.
             </p>
         </div>
     </footer>
-
     <!-- Script de Cambio de Idioma -->
     <script>
         function setLanguage(lang) {
