@@ -6,7 +6,8 @@
     <title>Vally Dynamics | Rapid Physics for Global Health</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .lang-hidden { display: none; }
+        /* CORRECCIÓN CRUCIAL: Fuerza el ocultamiento de los idiomas */
+        .lang-hidden { display: none !important; }
     </style>
 </head>
 <body class="bg-gray-50 font-sans">
@@ -14,6 +15,7 @@
     <!-- Navbar con Logo del Proyecto -->
     <nav class="p-6 bg-white shadow-sm flex justify-between items-center sticky top-0 z-50">
         <div class="flex items-center space-x-3">
+            <!-- ASEGÚRATE que el nombre sea logo-vally.png en GitHub -->
             <img src="logo-vally.png" alt="Proyecto Vally" class="h-10 w-auto">
             <h1 class="text-2xl font-bold text-emerald-800 tracking-tighter uppercase">VALLY DYNAMICS</h1>
         </div>
@@ -28,7 +30,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section con Diseño Original e Imagen -->
+    <!-- Hero Section con Overlays Originales -->
     <header class="relative text-white py-32 px-6 text-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="hero-bg.jpg" alt="Vibrational Waves" class="w-full h-full object-cover opacity-70">
@@ -45,20 +47,18 @@
                 <span class="lang-es lang-hidden">Una iniciativa estratégica del <strong>Proyecto Vally</strong>. Descubriendo lo "invisible" en las estructuras virales.</span>
             </p>
             <div class="bg-white/10 p-4 rounded-xl inline-block border border-white/20 backdrop-blur-sm">
-                <span class="font-bold lang-en text-emerald-300 uppercase text-sm tracking-widest text-[10px]">Featured at:</span>
-                <span class="font-bold lang-es lang-hidden text-emerald-300 uppercase text-sm tracking-widest text-[10px]">Presentado en:</span>
+                <span class="font-bold lang-en text-emerald-300 uppercase text-[10px] tracking-widest">Featured at:</span>
+                <span class="font-bold lang-es lang-hidden text-emerald-300 uppercase text-[10px] tracking-widest">Presentado en:</span>
                 <span class="ml-2 font-medium text-sm">APS Global Physics Summit 2026</span>
             </div>
         </div>
     </header>
 
-    <!-- RESALTADO DE PRODUCTO ESTRELLA: V.A.L.L.Y-Scan -->
+    <!-- PRODUCTO ESTRELLA: V.A.L.L.Y-Scan -->
     <section class="py-24 px-6 max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         <div>
             <div class="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-[10px] font-black uppercase tracking-widest mb-4">Flagship Technology</div>
-            <h3 class="text-4xl font-bold text-gray-800 mb-6">
-                V.A.L.L.Y-Scan<span class="text-emerald-500">.</span>
-            </h3>
+            <h3 class="text-4xl font-bold text-gray-800 mb-6">V.A.L.L.Y-Scan<span class="text-emerald-500">.</span></h3>
             <p class="text-gray-600 text-lg mb-8 leading-relaxed">
                 <span class="lang-en">Our validated framework for rapid allosteric mapping. High-throughput identification of therapeutic targets in seconds, not weeks.</span>
                 <span class="lang-es lang-hidden">Nuestro marco validado para mapeo alostérico rápido. Identificación de alto rendimiento de objetivos terapéuticos en segundos, no semanas.</span>
@@ -74,21 +74,7 @@
         </div>
     </section>
 
-    <!-- Philosophy Section (Diseño Original bg-emerald-50) -->
-    <section class="bg-emerald-50 py-24 px-6 border-y border-emerald-100">
-        <div class="max-w-4xl mx-auto text-center">
-            <img src="logo-vally.png" alt="Proyecto Vally" class="h-16 mx-auto mb-8 opacity-80">
-            <h3 class="text-3xl font-bold text-emerald-900 mb-8 uppercase tracking-widest text-sm">
-                <span class="lang-en">Our Philosophy</span><span class="lang-es lang-hidden">Nuestra Filosofía</span>
-            </h3>
-            <p class="text-gray-700 text-2xl leading-snug mb-8 font-serif italic text-center">
-                <span class="lang-en">"Founded by <strong>Eng. Lionell Nava</strong>, Vally Dynamics was born as a scientific tribute to the legacy of <strong>Vally Ramos</strong>. Our mission is to democratize biophysical analysis through innovative algorithms."</span>
-                <span class="lang-es lang-hidden">"Fundada por el <strong>Ing. Lionell Nava</strong>, Vally Dynamics nació como un tributo científico al legado de <strong>Vally Ramos</strong>. Nuestra misión es democratizar el análisis biofísico mediante algoritmos innovadores."</span>
-            </p>
-        </div>
-    </section>
-
-    <!-- Frontiers Section (Contenido Enriquecido Bilingüe) -->
+    <!-- Frontiers Section (Contenido Enriquecido) -->
     <section class="py-20 px-6 max-w-6xl mx-auto">
         <h3 class="text-3xl font-bold text-center text-gray-800 mb-12 uppercase tracking-wide">
             <span class="lang-en">The Frontiers of VALLY-Scan</span>
@@ -96,27 +82,21 @@
         </h3>
         <div class="grid md:grid-cols-3 gap-8">
             <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-emerald-600">
-                <h4 class="text-xl font-bold mb-4 text-emerald-800">
-                    <span class="lang-en">Macromolecular Medicine</span><span class="lang-es lang-hidden">Medicina Macromolecular</span>
-                </h4>
+                <h4 class="text-xl font-bold mb-4 text-emerald-800"><span class="lang-en">Macromolecular Medicine</span><span class="lang-es lang-hidden">Medicina Macromolecular</span></h4>
                 <p class="text-gray-600 text-sm leading-relaxed">
                     <span class="lang-en">Detecting mobility shifts in life-saving pathways, from oncology to Alzheimer's stability.</span>
                     <span class="lang-es lang-hidden">Detectando cambios de movilidad en vías críticas, desde oncología hasta estabilidad del Alzheimer.</span>
                 </p>
             </div>
             <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-emerald-600">
-                <h4 class="text-xl font-bold mb-4 text-emerald-800">
-                    <span class="lang-en">Material Science</span><span class="lang-es lang-hidden">Ciencia de Materiales</span>
-                </h4>
+                <h4 class="text-xl font-bold mb-4 text-emerald-800"><span class="lang-en">Material Science</span><span class="lang-es lang-hidden">Ciencia de Materiales</span></h4>
                 <p class="text-gray-600 text-sm leading-relaxed">
                     <span class="lang-en">Treating matter as oscillators to predict the stability of Graphene and CO2-capturing MOFs.</span>
-                    <span class="lang-es lang-hidden">Tratando la materia como osciladores para predecir la estabilidad del Grafeno y MOFs de captura de CO2.</span>
+                    <span class="lang-es lang-hidden">Tratando la materia como osciladores para predecir la estabilidad del Grafeno y MOFs.</span>
                 </p>
             </div>
             <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-emerald-600">
-                <h4 class="text-xl font-bold mb-4 text-emerald-800">
-                    <span class="lang-en">AI Integration</span><span class="lang-es lang-hidden">Integración de IA</span>
-                </h4>
+                <h4 class="text-xl font-bold mb-4 text-emerald-800"><span class="lang-en">AI Integration</span><span class="lang-es lang-hidden">Integración de IA</span></h4>
                 <p class="text-gray-600 text-sm leading-relaxed">
                     <span class="lang-en">VALLY-Deep: Training neural networks for massive pharmaceutical screenings.</span>
                     <span class="lang-es lang-hidden">VALLY-Deep: Entrenamiento de redes neuronales para cribados farmacéuticos masivos.</span>
@@ -125,75 +105,97 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Philosophy -->
+    <section class="bg-emerald-50 py-24 px-6 border-y border-emerald-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <img src="logo-vally.png" alt="Proyecto Vally" class="h-16 mx-auto mb-8 opacity-80">
+            <h3 class="text-3xl font-bold text-emerald-900 mb-8 uppercase tracking-widest text-sm">
+                <span class="lang-en">Our Philosophy</span><span class="lang-es lang-hidden">Nuestra Filosofía</span>
+            </h3>
+            <p class="text-gray-700 text-2xl leading-snug mb-8 font-serif italic text-center">
+                <span class="lang-en">"Founded by <strong>Eng. Lionell Nava</strong>, Vally Dynamics was born as a scientific tribute to the legacy of <strong>Vally Ramos</strong>."</span>
+                <span class="lang-es lang-hidden">"Fundada por el <strong>Ing. Lionell Nava</strong>, Vally Dynamics nació como un tributo científico al legado de <strong>Vally Ramos</strong>."</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- FORMULARIO CORREGIDO -->
     <section id="contact" class="py-24 px-6 bg-white text-center">
         <div class="max-w-3xl mx-auto">
             <h3 class="text-3xl font-bold text-gray-800 mb-12">
-                <span class="lang-en">Start a Collaboration</span><span class="lang-es lang-hidden">Inicia una Colaboración</span>
+                <span class="lang-en">Start a Collaboration</span>
+                <span class="lang-es lang-hidden">Inicia una Colaboración</span>
             </h3>
             <form action="https://formspree.io/f/xregznag" method="POST" class="text-left grid grid-cols-1 md:grid-cols-2 gap-8 bg-gray-50 p-12 rounded-3xl shadow-xl">
+                <div>
+                    <label class="block text-xs font-bold text-emerald-800 mb-2 uppercase tracking-widest"><span class="lang-en">Full Name</span><span class="lang-es lang-hidden">Nombre Completo</span></label>
+                    <input type="text" name="name" required class="w-full p-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-emerald-500 outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-emerald-800 mb-2 uppercase tracking-widest"><span class="lang-en">Email Address</span><span class="lang-es lang-hidden">Correo Electrónico</span></label>
+                    <input type="email" name="_replyto" required class="w-full p-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-emerald-500 outline-none">
+                </div>
                 <div class="md:col-span-2">
-                    <label class="block text-xs font-bold text-emerald-800 mb-2 uppercase tracking-widest lang-en">Full Name</label>
-                    <label class="block text-xs font-bold text-emerald-800 mb-2 uppercase tracking-widest lang-es lang-hidden">Nombre Completo</label>
-                    <input type="text" name="name" required class="w-full p-4 rounded-xl border border-gray-200 outline-none focus:ring-2 focus:ring-emerald-500 transition">
+                    <label class="block text-xs font-bold text-emerald-800 mb-2 uppercase tracking-widest"><span class="lang-en">Message</span><span class="lang-es lang-hidden">Mensaje</span></label>
+                    <textarea name="message" rows="4" required class="w-full p-4 rounded-xl border border-gray-200 focus:ring-2 focus:ring-emerald-500 outline-none"></textarea>
                 </div>
                 <div class="md:col-span-2 text-center">
                     <button type="submit" class="bg-emerald-700 text-white font-bold py-4 px-12 rounded-xl hover:bg-emerald-800 transition shadow-lg text-lg uppercase tracking-widest">
-                        <span class="lang-en">Send Message</span><span class="lang-es lang-hidden">Enviar Mensaje</span>
+                        <span class="lang-en">Send Message</span>
+                        <span class="lang-es lang-hidden">Enviar Mensaje</span>
                     </button>
                 </div>
             </form>
         </div>
     </section>
 
-    <!-- Footer Original: 4 Columnas, Imagen de Fondo y Overlay Profundo -->
+    <!-- Footer Original de 4 Columnas con Mascarilla y Overlays -->
     <footer class="relative py-24 px-6 overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="footer-bg.jpg" alt="Mask on ground" class="w-full h-full object-cover opacity-50">
+            <img src="footer-bg.jpg" alt="Mask" class="w-full h-full object-cover opacity-50">
             <div class="absolute inset-0 bg-slate-950/90"></div> 
         </div>
 
         <div class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-4 gap-12 text-left">
             <div class="col-span-1">
                 <img src="logo-vally.png" alt="Footer Logo" class="h-12 mb-4 brightness-0 invert">
-                <p class="text-sm leading-relaxed mb-4 text-white font-medium">
+                <p class="text-sm leading-relaxed text-white font-medium opacity-80">
                     <span class="lang-en">Sovereign science and rapid biophysical innovation.</span>
                     <span class="lang-es lang-hidden">Ciencia soberana e innovación biofísica rápida.</span>
                 </p>
-                <p class="text-[10px] text-emerald-400 font-mono italic">Proyecto Vally: Ciencia y Soberanía.</p>
             </div>
             
             <div>
                 <h5 class="text-white font-bold mb-6 border-b border-emerald-500 pb-2 uppercase text-[10px] tracking-widest">Global Recognition</h5>
                 <ul class="text-[13px] space-y-4 text-white font-semibold">
-                    <li class="flex items-start"><span class="text-emerald-500 mr-2">●</span> APS Global Summit 2026</li>
-                    <li class="flex items-start"><span class="text-emerald-500 mr-2">●</span> ChemRxiv Pre-print</li>
+                    <li>● APS Global Summit 2026</li>
+                    <li>● ChemRxiv Preprint</li>
                 </ul>
             </div>
 
             <div>
                 <h5 class="text-white font-bold mb-6 border-b border-emerald-500 pb-2 uppercase text-[12px] tracking-widest">Technical Links</h5>
                 <ul class="text-[13px] space-y-4 text-white font-bold">
-                    <li><a href="https://github.com/Lionnava/vally-scan" class="hover:text-emerald-400 transition underline decoration-white">GitHub Repository</a></li>
-                    <li><a href="https://orcid.org/0000-0001-9349-3534" class="hover:text-emerald-400 transition underline decoration-white">ORCID Official Profile</a></li>
+                    <li><a href="https://github.com/Lionnava/vally-scan" class="hover:text-emerald-400 underline transition">GitHub Repository</a></li>
+                    <li><a href="https://orcid.org/0000-0001-9349-3534" class="hover:text-emerald-400 underline transition">ORCID Profile</a></li>
                 </ul>
             </div>
 
             <div>
-                <h5 class="text-white font-bold mb-6 border-b border-emerald-500 pb-2 uppercase text-[12px] tracking-widest">Headquarters</h5>
-                <p class="text-[13px] text-white font-black uppercase leading-tight">Eng. Lionell Nava Ramos</p>
-                <p class="text-[13px] text-gray-100 italic font-medium">Maracaibo, Venezuela.</p>
+                <h5 class="text-white font-bold mb-6 border-b border-emerald-500 pb-2 uppercase text-[12px] tracking-widest">Contact</h5>
+                <p class="text-[13px] text-white font-black">Eng. Lionell Nava Ramos</p>
+                <p class="text-[13px] text-gray-100 italic">Maracaibo, Venezuela.</p>
                 <p class="mt-4 text-[11px] text-emerald-400 font-bold underline">lionnava@gmail.com</p>
             </div>
         </div>
 
-        <div class="relative z-10 max-w-6xl mx-auto mt-24 pt-8 border-t border-gray-700 text-center uppercase tracking-widest">
-            <p class="text-[10px] text-white font-bold">© 2025 Vally Dynamics. Maracaibo, Venezuela.</p>
-            <p class="mt-4 text-[8px] text-gray-200 opacity-60 max-w-4xl mx-auto italic leading-tight font-medium uppercase">
-                <span class="lang-en">Disclaimer: VALLY-Scan is a predictive framework. Findings require experimental validation.</span>
-                <span class="lang-es lang-hidden">Aviso: VALLY-Scan es un marco predictivo. Los hallazgos requieren validación experimental.</span>
+        <div class="relative z-10 max-w-6xl mx-auto mt-24 pt-8 border-t border-gray-700 text-center uppercase tracking-widest text-[10px] text-white">
+            © 2025 Vally Dynamics. Maracaibo, Venezuela.
+            <p class="mt-4 text-[8px] text-gray-200 opacity-60 italic uppercase">
+                <span class="lang-en">Disclaimer: VALLY-SCAN requires experimental validation.</span>
+                <span class="lang-es lang-hidden">Aviso: VALLY-SCAN requiere validación experimental.</span>
             </p>
-            <!-- Créditos Invisibles Originales -->
+            <!-- Créditos Invisibles -->
             <p class="mt-10 opacity-5 text-[8px] hover:opacity-100 transition-opacity duration-1000 text-white">
                 Images by Roksana Helscher and Gerd Altmann from Pixabay.
             </p>
