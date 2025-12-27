@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p53 Rescue Mission | Vally Dynamics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>.lang-hidden { display: none !important; }</style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+    <!-- Navbar simple para sub-páginas -->
+    <nav class="p-6 bg-white shadow-sm flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-3">
+            <img src="logo-vally.png" class="h-8 w-auto">
+            <span class="font-black text-emerald-900 uppercase text-xs tracking-widest">Back to Platform</span>
+        </a>
+        <div class="flex space-x-2">
+            <button onclick="setLanguage('en')" class="text-[10px] font-bold px-2">EN</button>
+            <button onclick="setLanguage('es')" class="text-[10px] font-bold px-2">ES</button>
+        </div>
+    </nav>
+
+    <header class="bg-emerald-950 text-white py-20 px-6 text-center">
+        <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">
+            <span class="lang-en">The p53 Rescue Mission</span><span class="lang-es lang-hidden">Misión de Rescate p53</span>
+        </h2>
+        <p class="text-emerald-400 font-bold uppercase tracking-widest text-xs">Deep Tech Case Study 01</p>
+    </header>
+
+    <section class="py-16 px-6 max-w-5xl mx-auto">
+        <div class="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-gray-100">
+            <p class="text-lg text-gray-600 mb-12 leading-relaxed">
+                <span class="lang-en">To evaluate the success probability of VALLY-Scan™ in rescuing the p53 protein, we divide the process into three technical phases:</span>
+                <span class="lang-es lang-hidden">Para evaluar la probabilidad de éxito de VALLY-Scan™ en el rescate de la proteína p53, dividimos el proceso en tres fases técnicas:</span>
+            </p>
+
+            <div class="space-y-12">
+                <!-- Fase 1 -->
+                <div class="border-l-4 border-emerald-500 pl-6">
+                    <h4 class="font-black text-xl mb-2 text-emerald-900">Phase 1: Identification (85% - 90%)</h4>
+                    <p class="text-gray-600 text-sm">
+                        <span class="lang-en">VALLY-Scan correctly identifies the alosteric "rescue point" in 9 out of 10 cases due to our r=0.67 validation.</span>
+                        <span class="lang-es lang-hidden">VALLY-Scan identifica correctamente el "punto de rescate" alostérico en 9 de cada 10 casos gracias a nuestra validación r=0,67.</span>
+                    </p>
+                </div>
+                <!-- Fase 2 -->
+                <div class="border-l-4 border-emerald-500 pl-6">
+                    <h4 class="font-black text-xl mb-2 text-emerald-900">Phase 2: Simulation (65% - 70%)</h4>
+                    <p class="text-gray-600 text-sm">
+                        <span class="lang-en">Probability of generating a theoretical engineering plan that restores vibrational symmetry.</span>
+                        <span class="lang-es lang-hidden">Probabilidad de generar un plan de ingeniería teórico que restaure la simetría vibracional.</span>
+                    </p>
+                </div>
+                <!-- Fase 3 -->
+                <div class="border-l-4 border-emerald-500 pl-6">
+                    <h4 class="font-black text-xl mb-2 text-emerald-900">Phase 3: Clinical Fit (10% - 15%)</h4>
+                    <p class="text-gray-600 text-sm">
+                        <span class="lang-en">Final therapeutic success. 10x higher than the current industry standard (1-2%).</span>
+                        <span class="lang-es lang-hidden">Éxito terapéutico final. 10 veces mayor que el estándar de la industria (1-2%).</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tabla de Valor -->
+            <div class="mt-16 overflow-hidden rounded-2xl border border-gray-200">
+                <table class="w-full text-left bg-white text-xs md:text-sm">
+                    <thead class="bg-emerald-900 text-white">
+                        <tr><th class="p-4">Metric</th><th class="p-4">Traditional MD</th><th class="p-4 bg-emerald-800">VALLY-Scan™</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b"><td class="p-4 font-bold">Analysis Time</td><td class="p-4">6-12 Months</td><td class="p-4 font-black text-emerald-600">< 0.5 Sec</td></tr>
+                        <tr class="border-b"><td class="p-4 font-bold">Analysis Cost</td><td class="p-4">$100k+</td><td class="p-4 font-black text-emerald-600">$0.50 (PC)</td></tr>
+                        <tr><td class="p-4 font-bold">Precision (r)</td><td class="p-4">~0.50</td><td class="p-4 font-black text-emerald-600">0.67</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-100 py-10 text-center text-[10px] uppercase font-bold text-gray-400">
+        Vally Dynamics Case Study | Strategic Biophysics
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            const enElements = document.querySelectorAll('.lang-en');
+            const esElements = document.querySelectorAll('.lang-es');
+            if (lang === 'es') {
+                enElements.forEach(el => el.classList.add('lang-hidden'));
+                esElements.forEach(el => el.classList.remove('lang-hidden'));
+            } else {
+                esElements.forEach(el => el.classList.add('lang-hidden'));
+                enElements.forEach(el => el.classList.remove('lang-hidden'));
+            }
+        }
+    </script>
+</body>
+</html>
