@@ -104,4 +104,33 @@
         </div>
     </section>
 
-    <footer class="bg-slate-950 py-12 text-center text-white opacity-40 text-[10px] uppercase tracking-wid
+    <footer class="bg-slate-950 py-12 text-center text-white opacity-40 text-[10px] uppercase tracking-widest">
+        Vally Dynamics | Phonon Dynamics Vertical.
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            const enElements = document.querySelectorAll('.lang-en');
+            const esElements = document.querySelectorAll('.lang-es');
+            const btnEn = document.getElementById('btn-en');
+            const btnEs = document.getElementById('btn-es');
+
+            if (lang === 'es') {
+                enElements.forEach(el => el.classList.add('lang-hidden'));
+                esElements.forEach(el => el.classList.remove('lang-hidden'));
+                btnEs.classList.add('text-emerald-700', 'border-b-2', 'border-emerald-700');
+                btnEs.classList.remove('text-gray-400');
+                btnEn.classList.remove('text-emerald-700', 'border-b-2', 'border-emerald-700');
+                btnEn.classList.add('text-gray-400');
+            } else {
+                esElements.forEach(el => el.classList.add('lang-hidden'));
+                enElements.forEach(el => el.classList.remove('lang-hidden'));
+                btnEn.classList.add('text-emerald-700', 'border-b-2', 'border-emerald-700');
+                btnEn.classList.remove('text-gray-400');
+                btnEs.classList.remove('text-emerald-700', 'border-b-2', 'border-emerald-700');
+                btnEs.classList.add('text-gray-400');
+            }
+        }
+    </script>
+</body>
+</html>
