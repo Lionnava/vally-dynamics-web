@@ -116,8 +116,9 @@
         Vally Dynamics | Strategic Allosteric Intelligence
     </footer>
 
-    <!-- SCRIPTS DE IDIOMA Y VISOR 3D VERSIÓN ULTRA-ESTABLE -->
-    <script src="https://unpkg.com/ngl"></script>
+  <!-- LIBRERÍA NGL VERSIÓN ESTABLE FIJA -->
+    <script src="https://cdn.jsdelivr.net/npm/ngl@2.0.0-dev.37/dist/ngl.js"></script>
+    
     <script>
         // Lógica de Idioma
         function setLanguage(lang) {
@@ -146,45 +147,40 @@
         document.addEventListener("DOMContentLoaded", function () {
             // 1. Mostrar mensaje de carga
             const viewport = document.getElementById("viewport");
-            viewport.innerHTML = '<div id="loading-text" class="flex items-center justify-center h-full text-emerald-500 font-mono text-xs animate-pulse uppercase tracking-widest">Connecting to PDB Server...</div>';
+            viewport.innerHTML = '<div id="loading-text" class="flex items-center justify-center h-full text-emerald-500 font-mono text-xs animate-pulse uppercase tracking-widest">CONNECTING TO VALLY CLOUD...</div>';
 
-            // 2. Inicializar el escenario
-            var stage = new NGL.Stage("viewport", { backgroundColor: "#0f172a" });
+            // Pequeña espera para asegurar que la librería NGL esté lista en el navegador
+            setTimeout(function() {
+                try {
+                    // 2. Inicializar el escenario (NGL.Stage es el constructor estándar de la v2)
+                    var stage = new NGL.Stage("viewport", { backgroundColor: "#0f172a" });
 
-            // 3. Función para dibujar la proteína (Evita repetición de código)
-            function renderProtein(structure) {
-                // Limpiar mensaje de carga
-                const loader = document.getElementById("loading-text");
-                if(loader) loader.remove();
+                    // 3. Cargar la proteína 6LU7 desde el servidor oficial
+                    stage.loadFile("rcsb://6LU7").then(function (o) {
+                        // Limpiar mensaje de carga
+                        const loader = document.getElementById("loading-text");
+                        if(loader) loader.remove();
 
-                structure.addRepresentation("cartoon", { color: "#475569", opacity: 0.3 });
-                structure.addRepresentation("spacefill", { sele: "277-279", color: "#10b981", scale: 2.5 });
-                structure.addRepresentation("surface", { sele: "277-279", color: "#10b981", opacity: 0.2, wireframe: true });
-                structure.autoView("277-279");
-                stage.setSpin(true);
-            }
+                        // Representaciones
+                        o.addRepresentation("cartoon", { color: "#475569", opacity: 0.3 });
+                        o.addRepresentation("spacefill", { sele: "277-279", color: "#10b981", scale: 2.5 });
+                        o.addRepresentation("surface", { sele: "277-279", color: "#10b981", opacity: 0.2, wireframe: true });
+                        
+                        o.autoView("277-279");
+                        stage.setSpin(true);
+                    }).catch(function(err) {
+                        console.error("Error al cargar la molécula:", err);
+                        viewport.innerHTML = '<div class="text-white p-10 text-center text-xs uppercase opacity-50">Local structural data offline. <br> APS link check required.</div>';
+                    });
 
-            // 4. INTENTO DE CARGA MULTI-VÍA
-            // Primero intentamos la vía oficial de NGL (más compatible con HTTPS)
-            stage.loadFile("rcsb://6LU7").then(renderProtein)
-            .catch(function() {
-                console.warn("RCSB internal failed, trying direct HTTPS...");
-                // Segundo intento: Vía URL directa
-                return stage.loadFile("https://files.rcsb.org/download/6LU7.pdb").then(renderProtein);
-            })
-            .catch(function() {
-                console.warn("Direct HTTPS failed, trying local file...");
-                // Tercer intento: Tu archivo local (Asegúrate que esté en GitHub)
-                return stage.loadFile("6LU7.pdb", { ext: "pdb" }).then(renderProtein);
-            })
-            .catch(function(err) {
-                console.error("Critical: All loading paths failed", err);
-                viewport.innerHTML = '<div class="flex flex-col items-center justify-center h-full text-white/40 text-[10px] p-6 text-center uppercase tracking-widest">Data Stream Interrupted. <br> Please refresh page.</div>';
-            });
+                    window.addEventListener("resize", function() { stage.handleResize(); }, false);
 
-            window.addEventListener("resize", function() { stage.handleResize(); }, false);
+                } catch (e) {
+                    console.error("Error inicializando NGL:", e);
+                    viewport.innerHTML = '<div class="text-white p-10 text-center text-xs uppercase opacity-50">3D Graphics Driver Error. <br> Please use a modern browser.</div>';
+                }
+            }, 500); // 500ms de retraso para asegurar carga de librería
         });
     </script>
-
 </body>
 </html>
