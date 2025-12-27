@@ -114,10 +114,10 @@
         Vally Dynamics | Strategic Allosteric Intelligence
     </footer>
 
-    <!-- LIBRERÍA NGL -->
+<!-- LIBRERÍA NGL -->
     <script src="https://unpkg.com/ngl@0.10.4-1/dist/ngl.js"></script>
     <script>
-        // Lógica de Idioma Blindada
+        // Lógica de Idioma (Blindada)
         function setLanguage(lang) {
             const enElements = document.querySelectorAll('.lang-en');
             const esElements = document.querySelectorAll('.lang-es');
@@ -141,19 +141,36 @@
             }
         }
 
-        // Lógica del Visor 3D
+        // Lógica del Visor 3D CORREGIDO PARA p53
         document.addEventListener("DOMContentLoaded", function () {
             var stage = new NGL.Stage("viewport", { backgroundColor: "#0f172a" });
-            function loadStructure(path) {
-                return stage.loadFile(path).then(function (o) {
-                    o.addRepresentation("cartoon", { color: "#475569", opacity: 0.3 });
-                    o.addRepresentation("spacefill", { sele: "277-279", color: "#10b981", scale: 2.5 });
-                    o.addRepresentation("surface", { sele: "277-279", color: "#10b981", opacity: 0.2, wireframe: true });
-                    o.autoView("277-279");
-                    stage.setSpin(true);
+            
+            function renderP53(structure) {
+                structure.addRepresentation("cartoon", { color: "#475569", opacity: 0.3 });
+                // Resaltamos un cluster de rescate real en p53 (Sitio Y220C)
+                structure.addRepresentation("spacefill", { 
+                    sele: "220-225", 
+                    color: "#10b981", 
+                    scale: 2.5 
                 });
+                structure.addRepresentation("surface", { 
+                    sele: "220-225", 
+                    color: "#10b981", 
+                    opacity: 0.2, 
+                    wireframe: true 
+                });
+                structure.autoView("220-225");
+                stage.setSpin(true);
             }
-            loadStructure("6LU7.pdb").catch(() => loadStructure("6lu7.pdb")).catch(() => loadStructure("https://files.rcsb.org/download/6LU7.pdb"));
+
+            // CARGA DE PROTEÍNA p53 (1TUP)
+            stage.loadFile("1TUP.pdb").then(renderP53)
+            .catch(() => stage.loadFile("https://files.rcsb.org/download/1TUP.pdb").then(renderP53))
+            .catch(err => {
+                console.error("p53 Load Error:", err);
+                document.getElementById("viewport").innerHTML = '<p class="text-white text-xs p-10">Structural data for p53 is being updated...</p>';
+            });
+
             window.addEventListener("resize", function() { stage.handleResize(); }, false);
         });
     </script>
