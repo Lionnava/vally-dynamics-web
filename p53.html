@@ -116,10 +116,10 @@
         Vally Dynamics | Strategic Allosteric Intelligence
     </footer>
 
-    <!-- SCRIPTS DE IDIOMA Y VISOR 3D -->
+    <!-- SCRIPTS DE IDIOMA Y VISOR 3D CORREGIDO -->
     <script src="https://unpkg.com/ngl"></script>
     <script>
-        // Lógica de Idioma
+        // Lógica de Idioma (Mantenida)
         function setLanguage(lang) {
             const enElements = document.querySelectorAll('.lang-en');
             const esElements = document.querySelectorAll('.lang-es');
@@ -142,36 +142,54 @@
             }
         }
 
-        // Lógica del Visor 3D NGL
-        document.addEventListener("DOMContentLoaded", function () {
-            var stage = new NGL.Stage("viewport", { backgroundColor: "transparent" });
-            
-            // Cargamos la proteasa del COVID (que es donde tenemos el r=0.67)
-            stage.loadFile("rcsb://6LU7").then(function (o) {
-                // Representación Cartoon (Cintas)
-                o.addRepresentation("cartoon", { color: "#475569", opacity: 0.3 });
+        // Lógica del Visor 3D NGL con Autocarga Mejorada
+        window.onload = function () {
+            // Creamos el stage
+            var stage = new NGL.Stage("viewport", { backgroundColor: "#0f172a" });
+
+            // Intentamos cargar la proteína 6LU7 (SARS-CoV-2 Mpro)
+            // Usamos la URL directa para mayor estabilidad
+            stage.loadFile("https://files.rcsb.org/download/6LU7.pdb").then(function (o) {
                 
-                // Resaltamos el cluster alostérico (residuo 277 al 279)
+                // 1. Representación principal (Cintas grises)
+                o.addRepresentation("cartoon", { 
+                    color: "#475569", 
+                    opacity: 0.3,
+                    quality: "high" 
+                });
+                
+                // 2. Resaltar el CLUSTER DE RESCATE (277, 278, 279)
+                // Usamos esferas de color esmeralda brillante
                 o.addRepresentation("spacefill", {
-                    sele: "277-279",
+                    sele: "277, 278, 279",
                     color: "#10b981",
-                    scale: 2.5
+                    scale: 2.0
                 });
 
-                // Añadimos una superficie sutil alrededor del hallazgo
+                // 3. Añadir una superficie translúcida sobre el cluster
                 o.addRepresentation("surface", {
-                    sele: "277-279",
+                    sele: "277, 278, 279",
                     color: "#10b981",
-                    opacity: 0.2,
-                    wireframe: true
+                    opacity: 0.4,
+                    probeRadius: 1.4
                 });
 
-                o.autoView("277-279");
-                stage.setSpin(true); // Rotación automática cinematográfica
+                // Centrar la cámara en el hallazgo
+                o.autoView("277, 278, 279");
+                
+                // Animación de rotación lenta tipo "startup"
+                stage.setSpin(true);
+
+            }).catch(function(err) {
+                console.error("Error cargando la proteína:", err);
+                document.getElementById("viewport").innerHTML = "<p class='text-white p-10 text-center'>Error loading 3D Model. Please check your connection.</p>";
             });
 
-            window.addEventListener("resize", function() { stage.handleResize(); }, false);
-        });
+            // Ajuste automático si se cambia el tamaño de la ventana
+            window.addEventListener("resize", function() {
+                stage.handleResize();
+            }, false);
+        };
     </script>
 </body>
 </html>
