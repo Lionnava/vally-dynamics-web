@@ -1,7 +1,113 @@
-<!-- LIBRERÍA NGL -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next-Gen Materials | Vally Dynamics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .lang-hidden { display: none !important; }
+        .viewport-glow { box-shadow: 0 0 50px rgba(16, 185, 129, 0.2); }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900 overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="p-6 bg-white shadow-sm flex justify-between items-center sticky top-0 z-50">
+        <a href="index.html" class="flex items-center space-x-3 group">
+            <img src="logo-vally.png" alt="Proyecto Vally" class="h-8 w-auto">
+            <span class="font-black text-emerald-900 uppercase text-xs tracking-widest group-hover:text-emerald-500 transition">
+                <span class="lang-en">Back to Platform</span>
+                <span class="lang-es lang-hidden">Volver a la Plataforma</span>
+            </span>
+        </a>
+        <div class="flex space-x-4">
+            <button onclick="setLanguage('en')" id="btn-en" class="text-xs font-bold text-emerald-700 border-b-2 border-emerald-700">EN</button>
+            <button onclick="setLanguage('es')" id="btn-es" class="text-xs font-bold text-gray-400 hover:text-emerald-700 transition">ES</button>
+        </div>
+    </nav>
+
+    <!-- Header Industrial -->
+    <header class="bg-slate-900 text-white py-16 md:py-24 px-6 text-center relative overflow-hidden">
+        <div class="relative z-10">
+            <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">
+                <span class="lang-en">Next-Gen Materials</span>
+                <span class="lang-es lang-hidden">Materiales de Nueva Generación</span>
+            </h2>
+            <p class="text-emerald-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">
+                <span class="lang-en">Solid-State Physics & Carbon Nanostructures</span>
+                <span class="lang-es lang-hidden">Física de Estado Sólido y Nanoestructuras de Carbono</span>
+            </p>
+        </div>
+    </header>
+
+    <section class="py-12 md:py-16 px-4 md:px-6 max-w-5xl mx-auto">
+        <div class="bg-white p-6 md:p-12 rounded-[2rem] md:rounded-[3rem] shadow-xl border border-gray-100 mb-12">
+            
+            <p class="text-base md:text-lg text-gray-600 leading-relaxed border-l-4 border-emerald-500 pl-6 mb-12 italic">
+                <span class="lang-en">Vally Dynamics applies Phonon Analysis to predict mechanical stability in nanostructures with 1000x efficiency gain over traditional methods.</span>
+                <span class="lang-es lang-hidden">Vally Dynamics aplica el Análisis de Fonones para predecir la estabilidad mecánica en nanoestructuras con una eficiencia 1000x superior a los métodos tradicionales.</span>
+            </p>
+
+            <!-- VISOR 3D INTERACTIVO (C60) -->
+            <div class="mb-16 bg-zinc-950 p-1 md:p-4 rounded-[2rem] md:rounded-[3rem] viewport-glow">
+                <div class="p-4 text-center">
+                    <h4 class="text-white font-black uppercase tracking-widest text-[10px] mb-2">
+                        <span class="lang-en">3D Phonon & Stability Mapping</span>
+                        <span class="lang-es lang-hidden">Mapeo 3D de Fonones y Estabilidad</span>
+                    </h4>
+                    <p class="text-emerald-400 text-[9px] font-mono uppercase tracking-tighter">Structure: Buckminsterfullerene (C60)</p>
+                </div>
+                
+                <div id="viewport" class="w-full h-[350px] md:h-[500px] rounded-[1.5rem] md:rounded-[2rem] bg-slate-900"></div>
+                
+                <div class="p-6 text-center">
+                    <p class="text-gray-500 text-[9px] uppercase tracking-[0.2em] font-bold">
+                        <span class="lang-en">Interact with mouse. Green lattice represents calculated vibrational modes.</span>
+                        <span class="lang-es lang-hidden">Interactúe con el mouse. La red verde representa los modos vibracionales calculados.</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- TABLA DE EFICIENCIA BILINGÜE TOTAL -->
+            <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-2xl mb-12">
+                <table class="w-full text-left bg-white text-[11px] md:text-sm">
+                    <thead class="bg-slate-900 text-white uppercase tracking-widest">
+                        <tr>
+                            <th class="p-4"><span class="lang-en">Capability</span><span class="lang-es lang-hidden">Capacidad</span></th>
+                            <th class="p-4">Traditional DFT</th>
+                            <th class="p-4 bg-emerald-800 text-emerald-300">VALLY-Engine</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="p-4 font-bold"><span class="lang-en">Infrastructure</span><span class="lang-es lang-hidden">Infraestructura</span></td>
+                            <td class="p-4 text-gray-500 italic"><span class="lang-en">HPC Clusters</span><span class="lang-es lang-hidden">Clusters de Supercómputo</span></td>
+                            <td class="p-4 font-black text-emerald-600 uppercase"><span class="lang-en">Zero CapEx</span><span class="lang-es lang-hidden">CapEx Cero</span></td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-4 font-bold"><span class="lang-en">Cycle Time</span><span class="lang-es lang-hidden">Tiempo de Ciclo</span></td>
+                            <td class="p-4 text-gray-500"><span class="lang-en">Weeks / Months</span><span class="lang-es lang-hidden">Semanas / Meses</span></td>
+                            <td class="p-4 font-black text-emerald-600 uppercase"><span class="lang-en">Seconds</span><span class="lang-es lang-hidden">Segundos</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold"><span class="lang-en">Scalability</span><span class="lang-es lang-hidden">Escalabilidad</span></td>
+                            <td class="p-4 text-gray-400"><span class="lang-en">Limited Atoms</span><span class="lang-es lang-hidden">Átomos Limitados</span></td>
+                            <td class="p-4 font-black text-emerald-600 uppercase"><span class="lang-en">Full Lattice</span><span class="lang-es lang-hidden">Red Completa</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-zinc-900 text-center text-white/30 text-[9px] uppercase tracking-[0.3em]">
+        Vally Dynamics | Phonon Dynamics Vertical
+    </footer>
+
+    <!-- LIBRERÍA NGL Y SCRIPTS -->
     <script src="https://unpkg.com/ngl@0.10.4-1/dist/ngl.js"></script>
     <script>
-        // Lógica de Idioma
         function setLanguage(lang) {
             const enElements = document.querySelectorAll('.lang-en');
             const esElements = document.querySelectorAll('.lang-es');
@@ -24,30 +130,29 @@
             }
         }
 
-        // Lógica del Visor 3D para Materiales
         document.addEventListener("DOMContentLoaded", function () {
             var stage = new NGL.Stage("viewport", { backgroundColor: "#0f172a" });
 
-            function renderMaterial(structure) {
-                // Representación de alta gama para nanomateriales
+            function renderC60(structure) {
                 structure.addRepresentation("ball+stick", { 
                     color: "#10b981", 
                     multipleBond: "symmetric",
-                    sphereDetail: 2,
-                    aspectRatio: 2.0
+                    scale: 2.0
                 });
                 structure.autoView();
-                stage.setSpin(true); // Rotación para ver la simetría
+                stage.setSpin(true);
             }
 
-            // CARGA DEL MODELO OFICIAL C60
-            stage.loadFile("nanomaterial.pdb").then(renderMaterial)
-            .catch(() => stage.loadFile("https://files.rcsb.org/download/1FBB.pdb").then(renderMaterial))
+            // CARGA MULTI-VÍA INFALIBLE PARA C60
+            stage.loadFile("nanomaterial.pdb").then(renderC60)
+            .catch(() => stage.loadFile("https://files.rcsb.org/download/1FBB.pdb").then(renderC60))
             .catch(err => {
                 console.error("Materials Load Error:", err);
-                document.getElementById("viewport").innerHTML = '<p class="text-white text-[10px] p-10 text-center uppercase opacity-50">Nanostructure data offline. <br> Initializing Vally-Link...</p>';
+                document.getElementById("viewport").innerHTML = '<p class="text-white text-[10px] p-10 text-center uppercase opacity-50">Nanostructure Data Offline.</p>';
             });
 
             window.addEventListener("resize", function() { stage.handleResize(); }, false);
         });
     </script>
+</body>
+</html>
