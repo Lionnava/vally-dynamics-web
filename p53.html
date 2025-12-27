@@ -11,7 +11,7 @@
     <nav class="p-6 bg-white shadow-sm flex justify-between items-center sticky top-0 z-50">
         <a href="index.html" class="flex items-center space-x-3">
             <img src="logo-vally.png" class="h-8 w-auto">
-            <span class="font-black text-emerald-900 uppercase text-xs tracking-widest">
+            <span class="font-black text-emerald-900 uppercase text-xs tracking-widest hover:text-emerald-500 transition">
                 <span class="lang-en">Back to Platform</span><span class="lang-es lang-hidden">Volver a la Plataforma</span>
             </span>
         </a>
@@ -29,33 +29,39 @@
 
     <section class="py-12 px-6 max-w-5xl mx-auto">
         <div class="bg-white p-10 rounded-[3rem] shadow-xl border border-gray-100">
-            <!-- Visor 3D Interactivo -->
             <div class="mb-12 bg-zinc-950 p-2 rounded-[2rem] shadow-2xl">
                 <div id="viewport" class="w-full h-[450px] rounded-[1.5rem] bg-slate-900"></div>
                 <p class="text-center text-[9px] text-gray-500 py-4 uppercase font-bold tracking-widest">Target: Tumor Suppressor p53 (PDB: 1TUP)</p>
             </div>
 
-            <!-- Tabla de Rigor Científico -->
-            <div class="overflow-hidden rounded-2xl border border-gray-200 mb-12">
+            <div class="grid md:grid-cols-3 gap-6 mb-16">
+                <div class="bg-emerald-50 p-6 rounded-3xl border-t-4 border-emerald-500">
+                    <h5 class="text-xl font-black mb-2 text-emerald-900">85% - 90%</h5>
+                    <p class="text-[10px] text-gray-600 font-bold uppercase"><span class="lang-en">Rescue Site ID</span><span class="lang-es lang-hidden">ID de Sitio</span></p>
+                </div>
+                <div class="bg-emerald-50 p-6 rounded-3xl border-t-4 border-emerald-500">
+                    <h5 class="text-xl font-black mb-2 text-emerald-900">65% - 70%</h5>
+                    <p class="text-[10px] text-gray-600 font-bold uppercase"><span class="lang-en">Rescue Sim</span><span class="lang-es lang-hidden">Simulación</span></p>
+                </div>
+                <div class="bg-emerald-50 p-6 rounded-3xl border-t-4 border-emerald-500">
+                    <h5 class="text-xl font-black mb-2 text-emerald-900">10% - 15%</h5>
+                    <p class="text-[10px] text-gray-600 font-bold uppercase"><span class="lang-en">Clinical Fit</span><span class="lang-es lang-hidden">Ajuste Clínico</span></p>
+                </div>
+            </div>
+
+            <div class="overflow-hidden rounded-2xl border border-gray-200">
                 <table class="w-full text-left text-sm">
                     <thead class="bg-emerald-900 text-white uppercase text-[10px] tracking-widest">
-                        <tr>
-                            <th class="p-4"><span class="lang-en">Metric</span><span class="lang-es lang-hidden">Métrica</span></th>
-                            <th class="p-4">Traditional MD</th>
-                            <th class="p-4 bg-emerald-800"><span class="lang-en">VALLY-Scan</span><span class="lang-es lang-hidden">Motor VALLY</span></th>
-                        </tr>
+                        <tr><th class="p-4"><span class="lang-en">Metric</span><span class="lang-es lang-hidden">Métrica</span></th><th class="p-4">Traditional MD</th><th class="p-4 bg-emerald-800">VALLY-Scan™</th></tr>
                     </thead>
                     <tbody>
-                        <tr class="border-b"><td class="p-4 font-bold"><span class="lang-en">Cycle Time</span><span class="lang-es lang-hidden">Tiempo Ciclo</span></td><td class="p-4 text-gray-400">6-12 Months</td><td class="p-4 font-black text-emerald-600">< 0.5 Sec</td></tr>
-                        <tr class="border-b"><td class="p-4 font-bold"><span class="lang-en">Investment</span><span class="lang-es lang-hidden">Inversión</span></td><td class="p-4 text-gray-400">$100k+ (HPC)</td><td class="p-4 font-black text-emerald-600 uppercase">Zero CapEx</td></tr>
-                        <tr><td class="p-4 font-bold"><span class="lang-en">Engine Accuracy*</span><span class="lang-es lang-hidden">Precisión Motor*</span></td><td class="p-4 text-gray-400">r ≈ 0.50</td><td class="p-4 font-black text-emerald-600">r = 0.67</td></tr>
+                        <tr class="border-b"><td class="p-4 font-bold"><span class="lang-en">Cycle Time</span><span class="lang-es lang-hidden">Tiempo Ciclo</span></td><td class="p-4 text-gray-400 italic">6-12 Months</td><td class="p-4 font-black text-emerald-600 uppercase">Seconds</td></tr>
+                        <tr class="border-b"><td class="p-4 font-bold"><span class="lang-en">Investment</span><span class="lang-es lang-hidden">Inversión</span></td><td class="p-4 text-gray-400 italic">HPC Clusters</td><td class="p-4 font-black text-emerald-600 uppercase">Zero CapEx</td></tr>
+                        <tr><td class="p-4 font-bold"><span class="lang-en">Engine Accuracy*</span><span class="lang-es lang-hidden">Precisión Motor*</span></td><td class="p-4 text-gray-400 italic">r ≈ 0.50</td><td class="p-4 font-black text-emerald-600 uppercase">r = 0.67</td></tr>
                     </tbody>
                 </table>
             </div>
-            <p class="text-[10px] text-gray-400 italic mb-10 leading-tight">
-                <span class="lang-en">*Benchmark validated on SARS-CoV-2 dataset. p53 validation in functional stages.</span>
-                <span class="lang-es lang-hidden">*Punto de referencia validado en dataset de COVID. Validación funcional para p53.</span>
-            </p>
+            <p class="text-[9px] text-gray-400 italic mt-4">*Validated on SARS-CoV-2 Mpro dataset.</p>
         </div>
     </section>
 
@@ -67,8 +73,7 @@
             function render(o) {
                 o.addRepresentation("cartoon", { color: "#475569", opacity: 0.3 });
                 o.addRepresentation("spacefill", { sele: "220-225", color: "#10b981", scale: 2.5 });
-                o.autoView("220-225");
-                stage.setSpin(true);
+                o.autoView("220-225"); stage.setSpin(true);
             }
             stage.loadFile("1TUP.pdb").then(render).catch(() => stage.loadFile("https://files.rcsb.org/download/1TUP.pdb").then(render));
             window.addEventListener("resize", () => stage.handleResize(), false);
