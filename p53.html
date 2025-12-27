@@ -116,8 +116,8 @@
         Vally Dynamics | Strategic Allosteric Intelligence
     </footer>
 
-  <!-- LIBRERÍA NGL VERSIÓN ESTABLE FIJA -->
-    <script src="https://cdn.jsdelivr.net/npm/ngl@2.0.0-dev.37/dist/ngl.js"></script>
+<!-- LIBRERÍA NGL - VERSIÓN ESTABLE -->
+    <script src="https://unpkg.com/ngl@0.10.4-1/dist/ngl.js"></script>
     
     <script>
         // Lógica de Idioma
@@ -143,43 +143,37 @@
             }
         }
 
-        // Lógica del Visor 3D NGL
+        // Lógica del Visor 3D NGL v5 (Bunker Edition)
         document.addEventListener("DOMContentLoaded", function () {
-            // 1. Mostrar mensaje de carga
             const viewport = document.getElementById("viewport");
-            viewport.innerHTML = '<div id="loading-text" class="flex items-center justify-center h-full text-emerald-500 font-mono text-xs animate-pulse uppercase tracking-widest">CONNECTING TO VALLY CLOUD...</div>';
+            viewport.innerHTML = '<div id="loading-msg" class="flex items-center justify-center h-full text-emerald-500 font-mono text-[10px] animate-pulse">LOADING VALLY-SCAN ENGINE...</div>';
 
-            // Pequeña espera para asegurar que la librería NGL esté lista en el navegador
-            setTimeout(function() {
-                try {
-                    // 2. Inicializar el escenario (NGL.Stage es el constructor estándar de la v2)
-                    var stage = new NGL.Stage("viewport", { backgroundColor: "#0f172a" });
+            // Inicializar Stage
+            var stage = new NGL.Stage("viewport", { backgroundColor: "#0f172a" });
 
-                    // 3. Cargar la proteína 6LU7 desde el servidor oficial
-                    stage.loadFile("rcsb://6LU7").then(function (o) {
-                        // Limpiar mensaje de carga
-                        const loader = document.getElementById("loading-text");
-                        if(loader) loader.remove();
+            // Función para cargar con re-intentos de nombre
+            function tryLoad(filename) {
+                return stage.loadFile(filename).then(function (o) {
+                    document.getElementById("loading-msg").remove();
+                    o.addRepresentation("cartoon", { color: "#475569", opacity: 0.3 });
+                    o.addRepresentation("spacefill", { sele: "277-279", color: "#10b981", scale: 2.5 });
+                    o.addRepresentation("surface", { sele: "277-279", color: "#10b981", opacity: 0.2, wireframe: true });
+                    o.autoView("277-279");
+                    stage.setSpin(true);
+                    console.log("Success: " + filename);
+                });
+            }
 
-                        // Representaciones
-                        o.addRepresentation("cartoon", { color: "#475569", opacity: 0.3 });
-                        o.addRepresentation("spacefill", { sele: "277-279", color: "#10b981", scale: 2.5 });
-                        o.addRepresentation("surface", { sele: "277-279", color: "#10b981", opacity: 0.2, wireframe: true });
-                        
-                        o.autoView("277-279");
-                        stage.setSpin(true);
-                    }).catch(function(err) {
-                        console.error("Error al cargar la molécula:", err);
-                        viewport.innerHTML = '<div class="text-white p-10 text-center text-xs uppercase opacity-50">Local structural data offline. <br> APS link check required.</div>';
-                    });
+            // EJECUCIÓN SECUENCIAL: Probamos todos los nombres posibles del archivo local
+            tryLoad("6LU7.pdb") // Intento 1: Mayúsculas (Como lo tienes en Windows)
+            .catch(() => tryLoad("6lu7.pdb")) // Intento 2: Minúsculas (Estándar Web)
+            .catch(() => tryLoad("https://files.rcsb.org/download/6LU7.pdb")) // Intento 3: Servidor externo
+            .catch((err) => {
+                console.error("Critical Failure:", err);
+                viewport.innerHTML = '<div class="text-white/40 p-10 text-center text-[10px] uppercase">Connection timed out. <br> Please check local PDB file on GitHub.</div>';
+            });
 
-                    window.addEventListener("resize", function() { stage.handleResize(); }, false);
-
-                } catch (e) {
-                    console.error("Error inicializando NGL:", e);
-                    viewport.innerHTML = '<div class="text-white p-10 text-center text-xs uppercase opacity-50">3D Graphics Driver Error. <br> Please use a modern browser.</div>';
-                }
-            }, 500); // 500ms de retraso para asegurar carga de librería
+            window.addEventListener("resize", function() { stage.handleResize(); }, false);
         });
     </script>
 </body>
