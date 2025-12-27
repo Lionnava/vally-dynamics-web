@@ -115,11 +115,10 @@
     <footer class="py-12 bg-zinc-900 text-center text-white/30 text-[10px] uppercase tracking-[0.3em]">
         Vally Dynamics | Strategic Allosteric Intelligence
     </footer>
-
-   <!-- SCRIPTS DE IDIOMA Y VISOR 3D INFALIBLE -->
+<!-- SCRIPTS DE IDIOMA Y VISOR 3D INFALIBLE v3 -->
     <script src="https://unpkg.com/ngl"></script>
     <script>
-        // Lógica de Idioma (Mantenida)
+        // Lógica de Idioma
         function setLanguage(lang) {
             const enElements = document.querySelectorAll('.lang-en');
             const esElements = document.querySelectorAll('.lang-es');
@@ -142,50 +141,39 @@
             }
         }
 
-        // Lógica del Visor 3D NGL - CARGA LOCAL
+        // Lógica del Visor 3D NGL
         document.addEventListener("DOMContentLoaded", function () {
+            // Inicializar el escenario con color de fondo oscuro
             var stage = new NGL.Stage("viewport", { backgroundColor: "#0f172a" });
 
-            // CAMBIO CLAVE: Carga el archivo desde tu propia web (asegúrate de haberlo subido a GitHub)
-            stage.loadFile("6lu7.pdb").then(function (o) {
-                console.log("Proteína cargada exitosamente desde servidor local");
-                
-                // Representación principal
-                o.addRepresentation("cartoon", { 
-                    color: "#475569", 
-                    opacity: 0.3 
+            // FUNCIÓN DE CARGA SEGURA
+            function loadStructure(path) {
+                return stage.loadFile(path, { ext: "pdb" }).then(function (o) {
+                    o.addRepresentation("cartoon", { color: "#475569", opacity: 0.3 });
+                    o.addRepresentation("spacefill", { sele: "277-279", color: "#10b981", scale: 2.5 });
+                    o.addRepresentation("surface", { sele: "277-279", color: "#10b981", opacity: 0.2, wireframe: true });
+                    o.autoView("277-279");
+                    stage.setSpin(true);
                 });
-                
-                // Resaltar el CLUSTER DE RESCATE (277-279)
-                o.addRepresentation("spacefill", {
-                    sele: "277-279",
-                    color: "#10b981",
-                    scale: 2.5
-                });
+            }
 
-                // Superficie translúcida
-                o.addRepresentation("surface", {
-                    sele: "277-279",
-                    color: "#10b981",
-                    opacity: 0.2,
-                    wireframe: true
-                });
-
-                o.autoView("277-279");
-                stage.setSpin(true);
-
+            // INTENTO 1: Cargar desde tu servidor local (Asegúrate que en GitHub se llame 6LU7.pdb)
+            loadStructure("6LU7.pdb").catch(function() {
+                console.warn("Local 6LU7.pdb not found, trying lowercase...");
+                // INTENTO 2: Probar en minúsculas por si acaso
+                return loadStructure("6lu7.pdb");
+            }).catch(function() {
+                console.warn("Local files failed, loading from RCSB Global Server...");
+                // INTENTO 3: Cargar desde el servidor mundial del PDB (Infalible)
+                return loadStructure("https://files.rcsb.org/download/6LU7.pdb");
             }).catch(function(err) {
-                console.error("Error cargando la proteína local:", err);
-                document.getElementById("viewport").innerHTML = `
-                    <div class="flex flex-col items-center justify-center h-full text-white p-6 text-center">
-                        <p class="text-emerald-400 mb-2 font-bold">3D ENGINE READY</p>
-                        <p class="text-xs opacity-50">Initializing structure from Vally Cloud...</p>
-                    </div>
-                `;
+                console.error("All loading methods failed:", err);
+                document.getElementById("viewport").innerHTML = '<p class="text-white p-10 text-center text-xs">Structural data unavailable. Check internet connection.</p>';
             });
 
             window.addEventListener("resize", function() { stage.handleResize(); }, false);
         });
     </script>
+
 </body>
 </html>
