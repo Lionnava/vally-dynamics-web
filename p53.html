@@ -116,7 +116,7 @@
         Vally Dynamics | Strategic Allosteric Intelligence
     </footer>
 
-   <!-- SCRIPTS DE IDIOMA Y VISOR 3D CORREGIDO -->
+   <!-- SCRIPTS DE IDIOMA Y VISOR 3D INFALIBLE -->
     <script src="https://unpkg.com/ngl"></script>
     <script>
         // Lógica de Idioma (Mantenida)
@@ -142,54 +142,50 @@
             }
         }
 
-        // Lógica del Visor 3D NGL con Autocarga Mejorada
-        window.onload = function () {
-            // Creamos el stage
+        // Lógica del Visor 3D NGL - CARGA LOCAL
+        document.addEventListener("DOMContentLoaded", function () {
             var stage = new NGL.Stage("viewport", { backgroundColor: "#0f172a" });
 
-            // Intentamos cargar la proteína 6LU7 (SARS-CoV-2 Mpro)
-            // Usamos la URL directa para mayor estabilidad
-            stage.loadFile("https://files.rcsb.org/download/6LU7.pdb").then(function (o) {
+            // CAMBIO CLAVE: Carga el archivo desde tu propia web (asegúrate de haberlo subido a GitHub)
+            stage.loadFile("6lu7.pdb").then(function (o) {
+                console.log("Proteína cargada exitosamente desde servidor local");
                 
-                // 1. Representación principal (Cintas grises)
+                // Representación principal
                 o.addRepresentation("cartoon", { 
                     color: "#475569", 
-                    opacity: 0.3,
-                    quality: "high" 
+                    opacity: 0.3 
                 });
                 
-                // 2. Resaltar el CLUSTER DE RESCATE (277, 278, 279)
-                // Usamos esferas de color esmeralda brillante
+                // Resaltar el CLUSTER DE RESCATE (277-279)
                 o.addRepresentation("spacefill", {
-                    sele: "277, 278, 279",
+                    sele: "277-279",
                     color: "#10b981",
-                    scale: 2.0
+                    scale: 2.5
                 });
 
-                // 3. Añadir una superficie translúcida sobre el cluster
+                // Superficie translúcida
                 o.addRepresentation("surface", {
-                    sele: "277, 278, 279",
+                    sele: "277-279",
                     color: "#10b981",
-                    opacity: 0.4,
-                    probeRadius: 1.4
+                    opacity: 0.2,
+                    wireframe: true
                 });
 
-                // Centrar la cámara en el hallazgo
-                o.autoView("277, 278, 279");
-                
-                // Animación de rotación lenta tipo "startup"
+                o.autoView("277-279");
                 stage.setSpin(true);
 
             }).catch(function(err) {
-                console.error("Error cargando la proteína:", err);
-                document.getElementById("viewport").innerHTML = "<p class='text-white p-10 text-center'>Error loading 3D Model. Please check your connection.</p>";
+                console.error("Error cargando la proteína local:", err);
+                document.getElementById("viewport").innerHTML = `
+                    <div class="flex flex-col items-center justify-center h-full text-white p-6 text-center">
+                        <p class="text-emerald-400 mb-2 font-bold">3D ENGINE READY</p>
+                        <p class="text-xs opacity-50">Initializing structure from Vally Cloud...</p>
+                    </div>
+                `;
             });
 
-            // Ajuste automático si se cambia el tamaño de la ventana
-            window.addEventListener("resize", function() {
-                stage.handleResize();
-            }, false);
-        };
+            window.addEventListener("resize", function() { stage.handleResize(); }, false);
+        });
     </script>
 </body>
 </html>
