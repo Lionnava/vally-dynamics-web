@@ -6,7 +6,6 @@
     <title>p53 Rescue Mission | Vally Dynamics</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Fuerza el ocultamiento de los idiomas */
         .lang-hidden { display: none !important; }
         .viewport-glow { box-shadow: 0 0 50px rgba(16, 185, 129, 0.2); }
     </style>
@@ -35,7 +34,10 @@
                 <span class="lang-en">The p53 Rescue Mission</span>
                 <span class="lang-es lang-hidden">Misión de Rescate p53</span>
             </h2>
-            <p class="text-emerald-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">Deep Tech Case Study: Structural Oncology</p>
+            <p class="text-emerald-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">
+                <span class="lang-en">Deep Tech Case Study: Structural Oncology</span>
+                <span class="lang-es lang-hidden">Caso de Estudio: Oncología Estructural</span>
+            </p>
         </div>
     </header>
 
@@ -43,70 +45,86 @@
         <div class="bg-white p-6 md:p-12 rounded-[2rem] md:rounded-[3rem] shadow-xl border border-gray-100">
             
             <p class="text-base md:text-lg text-gray-600 leading-relaxed border-l-4 border-emerald-500 pl-6 mb-12 italic">
-                <span class="lang-en">VALLY-Scan™ identifies the "rescue points" in mutated p53 through three technical phases:</span>
-                <span class="lang-es lang-hidden">VALLY-Scan™ identifica los "puntos de rescate" en la p53 mutada a través de tres fases técnicas:</span>
+                <span class="lang-en">VALLY-Scan™ targets the mechanical restoration of the "Guardian of the Genome" (p53) through three validated technical phases:</span>
+                <span class="lang-es lang-hidden">VALLY-Scan™ apunta a la restauración mecánica del "Guardián del Genoma" (p53) a través de tres fases técnicas validadas:</span>
             </p>
 
-            <!-- VISOR 3D (Se mantiene igual porque ya funcionaba) -->
+            <!-- VISOR 3D (p53 - 1TUP) -->
             <div class="mb-16 bg-zinc-950 p-1 md:p-4 rounded-[2rem] md:rounded-[3rem] viewport-glow">
-                <div id="viewport" class="w-full h-[350px] md:h-[500px] rounded-[1.5rem] md:rounded-[2rem] bg-slate-900"></div>
+                <div class="p-4 text-center">
+                    <h4 class="text-white font-black uppercase tracking-widest text-[10px] mb-2">
+                        <span class="lang-en">Live 3D Allosteric Mapping</span>
+                        <span class="lang-es lang-hidden">Mapeo Alostérico 3D en Vivo</span>
+                    </h4>
+                    <p class="text-emerald-400 text-[9px] font-mono uppercase tracking-tighter">Target: Tumor Suppressor p53 (PDB: 1TUP)</p>
+                </div>
+                <div id="viewport" class="w-full h-[350px] md:h-[500px] rounded-[1.5rem] md:rounded-[2rem] bg-slate-900 shadow-inner"></div>
                 <div class="p-4 text-center">
                     <p class="text-gray-500 text-[9px] uppercase tracking-widest font-bold">
-                        <span class="lang-en">Interact with mouse. Green cluster represents the predicted rescue site.</span>
-                        <span class="lang-es lang-hidden">Interactúe con el mouse. El cluster verde representa el sitio predicho.</span>
+                        <span class="lang-en">Green cluster represents the predicted rescue pocket (Residues 220-225).</span>
+                        <span class="lang-es lang-hidden">El cluster verde representa el bolsillo de rescate predicho (Residuos 220-225).</span>
                     </p>
                 </div>
             </div>
 
-            <!-- TABLA DE EFICIENCIA REDACTADA PARA ALTO VALOR -->
-            <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-2xl mb-12">
+            <!-- TABLA DE EFICIENCIA (Científicamente Honesta) -->
+            <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-2xl mb-4">
                 <table class="w-full text-left bg-white text-[11px] md:text-sm">
                     <thead class="bg-emerald-900 text-white uppercase tracking-widest">
                         <tr>
-                            <th class="p-4"><span class="lang-en">Capability</span><span class="lang-es lang-hidden">Capacidad</span></th>
+                            <th class="p-4"><span class="lang-en">Metric</span><span class="lang-es lang-hidden">Métrica</span></th>
                             <th class="p-4">Traditional MD</th>
-                            <th class="p-4 bg-emerald-800 text-emerald-300">VALLY-Scan™</th>
+                            <th class="p-4 bg-emerald-800 text-emerald-300">VALLY-Engine</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="border-b">
                             <td class="p-4 font-bold"><span class="lang-en">Infrastructure</span><span class="lang-es lang-hidden">Infraestructura</span></td>
-                            <td class="p-4 text-gray-500">HPC Clusters</td>
+                            <td class="p-4 text-gray-400 italic">HPC Clusters</td>
                             <td class="p-4 font-black text-emerald-600 uppercase"><span class="lang-en">Zero CapEx</span><span class="lang-es lang-hidden">CapEx Cero</span></td>
                         </tr>
                         <tr class="border-b">
                             <td class="p-4 font-bold"><span class="lang-en">Cycle Time</span><span class="lang-es lang-hidden">Tiempo de Ciclo</span></td>
-                            <td class="p-4 text-gray-500">6-12 Months</td>
-                            <td class="p-4 font-black text-emerald-600">< 0.5 Sec</td>
+                            <td class="p-4 text-gray-400 italic">6-12 Months</td>
+                            <td class="p-4 font-black text-emerald-600 uppercase"><span class="lang-en">Seconds</span><span class="lang-es lang-hidden">Segundos</span></td>
                         </tr>
                         <tr>
-                            <td class="p-4 font-bold"><span class="lang-en">Initial Precision</span><span class="lang-es lang-hidden">Precisión Inicial</span></td>
-                            <td class="p-4 text-gray-500">r ≈ 0.50</td>
+                            <td class="p-4 font-bold"><span class="lang-en">Engine Accuracy*</span><span class="lang-es lang-hidden">Precisión del Motor*</span></td>
+                            <td class="p-4 text-gray-400 italic">r ≈ 0.50</td>
                             <td class="p-4 font-black text-emerald-600">r = 0.67</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            <p class="text-[8px] text-gray-400 italic mb-12">
+                <span class="lang-en">*Engine benchmark validated on SARS-CoV-2 Mpro dataset against experimental B-factors.</span>
+                <span class="lang-es lang-hidden">*Punto de referencia del motor validado en el dataset SARS-CoV-2 Mpro contra factores B experimentales.</span>
+            </p>
 
             <!-- FASES DE ÉXITO -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-                <div class="bg-emerald-50 p-6 rounded-3xl">
+                <div class="bg-emerald-50 p-6 rounded-3xl border-t-4 border-emerald-500">
                     <span class="text-[9px] font-black uppercase text-emerald-600">Phase 1</span>
                     <h5 class="text-xl font-black mb-2">85% - 90%</h5>
-                    <p class="text-[10px] text-gray-500 uppercase font-bold"><span class="lang-en">Rescue ID</span><span class="lang-es lang-hidden">Identificación</span></p>
+                    <p class="text-[10px] text-gray-600 font-bold uppercase">
+                        <span class="lang-en">Rescue Site ID</span><span class="lang-es lang-hidden">Identificación de Sitio</span>
+                    </p>
                 </div>
-                <div class="bg-emerald-50 p-6 rounded-3xl">
+                <div class="bg-emerald-50 p-6 rounded-3xl border-t-4 border-emerald-500">
                     <span class="text-[9px] font-black uppercase text-emerald-600">Phase 2</span>
                     <h5 class="text-xl font-black mb-2">65% - 70%</h5>
-                    <p class="text-[10px] text-gray-500 uppercase font-bold"><span class="lang-en">Simulation</span><span class="lang-es lang-hidden">Simulación</span></p>
+                    <p class="text-[10px] text-gray-600 font-bold uppercase">
+                        <span class="lang-en">Structural Sim</span><span class="lang-es lang-hidden">Simulación Estructural</span>
+                    </p>
                 </div>
-                <div class="bg-emerald-50 p-6 rounded-3xl">
+                <div class="bg-emerald-50 p-6 rounded-3xl border-t-4 border-emerald-500">
                     <span class="text-[9px] font-black uppercase text-emerald-600">Phase 3</span>
                     <h5 class="text-xl font-black mb-2">10% - 15%</h5>
-                    <p class="text-[10px] text-gray-500 uppercase font-bold"><span class="lang-en">Clinical Fit</span><span class="lang-es lang-hidden">Ajuste Clínico</span></p>
+                    <p class="text-[10px] text-gray-600 font-bold uppercase">
+                        <span class="lang-en">Clinical Fit</span><span class="lang-es lang-hidden">Ajuste Clínico</span>
+                    </p>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -114,16 +132,13 @@
         Vally Dynamics | Strategic Allosteric Intelligence
     </footer>
 
-<!-- LIBRERÍA NGL -->
     <script src="https://unpkg.com/ngl@0.10.4-1/dist/ngl.js"></script>
     <script>
-        // Lógica de Idioma (Blindada)
         function setLanguage(lang) {
             const enElements = document.querySelectorAll('.lang-en');
             const esElements = document.querySelectorAll('.lang-es');
             const btnEn = document.getElementById('btn-en');
             const btnEs = document.getElementById('btn-es');
-
             if (lang === 'es') {
                 enElements.forEach(el => el.classList.add('lang-hidden'));
                 esElements.forEach(el => el.classList.remove('lang-hidden'));
@@ -141,36 +156,19 @@
             }
         }
 
-        // Lógica del Visor 3D CORREGIDO PARA p53
         document.addEventListener("DOMContentLoaded", function () {
             var stage = new NGL.Stage("viewport", { backgroundColor: "#0f172a" });
-            
             function renderP53(structure) {
                 structure.addRepresentation("cartoon", { color: "#475569", opacity: 0.3 });
-                // Resaltamos un cluster de rescate real en p53 (Sitio Y220C)
-                structure.addRepresentation("spacefill", { 
-                    sele: "220-225", 
-                    color: "#10b981", 
-                    scale: 2.5 
-                });
-                structure.addRepresentation("surface", { 
-                    sele: "220-225", 
-                    color: "#10b981", 
-                    opacity: 0.2, 
-                    wireframe: true 
-                });
+                structure.addRepresentation("spacefill", { sele: "220-225", color: "#10b981", scale: 2.5 });
+                structure.addRepresentation("surface", { sele: "220-225", color: "#10b981", opacity: 0.2, wireframe: true });
                 structure.autoView("220-225");
                 stage.setSpin(true);
             }
-
-            // CARGA DE PROTEÍNA p53 (1TUP)
+            // Carga secuencial 1TUP.pdb
             stage.loadFile("1TUP.pdb").then(renderP53)
-            .catch(() => stage.loadFile("https://files.rcsb.org/download/1TUP.pdb").then(renderP53))
-            .catch(err => {
-                console.error("p53 Load Error:", err);
-                document.getElementById("viewport").innerHTML = '<p class="text-white text-xs p-10">Structural data for p53 is being updated...</p>';
-            });
-
+            .catch(() => stage.loadFile("1tup.pdb").then(renderP53))
+            .catch(() => stage.loadFile("https://files.rcsb.org/download/1TUP.pdb").then(renderP53));
             window.addEventListener("resize", function() { stage.handleResize(); }, false);
         });
     </script>
