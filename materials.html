@@ -3,32 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Materials | Vally Dynamics</title>
+    <title>Next-Gen Materials | Vally Dynamics</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>.lang-hidden { display: none !important; }</style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
-    <nav class="p-6 bg-emerald-950 text-white flex justify-between items-center sticky top-0 z-50">
-        <div class="flex items-center space-x-2">
-            <img src="logo-vally.png" class="h-8 brightness-0 invert" alt="Vally Logo">
-            <span class="font-black tracking-tighter uppercase text-sm">Material Science</span>
+<body class="bg-gray-50 font-sans text-gray-900">
+    <!-- Navbar -->
+    <nav class="p-6 bg-white shadow-sm flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-3">
+            <img src="logo-vally.png" class="h-8 w-auto">
+            <span class="font-black text-emerald-900 uppercase text-xs tracking-widest">Back to Platform</span>
+        </a>
+        <div class="flex space-x-2">
+            <button onclick="setLanguage('en')" class="text-[10px] font-bold px-2">EN</button>
+            <button onclick="setLanguage('es')" class="text-[10px] font-bold px-2">ES</button>
         </div>
-        <a href="index.html" class="text-xs font-black uppercase tracking-widest border border-white/20 px-6 py-2 rounded-full hover:bg-white hover:text-emerald-900 transition shadow-lg">← Back to Home</a>
     </nav>
 
-    <main class="max-w-5xl mx-auto px-6 py-24">
-        <h1 class="text-6xl md:text-8xl font-black text-emerald-950 uppercase tracking-tighter leading-none mb-12">The Future of Smart Matter</h1>
-        <p class="text-2xl text-emerald-700 font-light mb-20 leading-snug">"Predicting mechanical stability in Graphene and Nanostructures at the atomic level through Coupled Oscillators."</p>
+    <header class="bg-slate-900 text-white py-20 px-6 text-center">
+        <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">
+            <span class="lang-en">Next-Gen Materials</span><span class="lang-es lang-hidden">Materiales de Nueva Generación</span>
+        </h2>
+        <p class="text-emerald-400 font-bold uppercase tracking-widest text-xs">Solid-State Physics & Carbon Nanostructures</p>
+    </header>
 
-        <div class="grid md:grid-cols-2 gap-12">
-            <section class="bg-white p-12 rounded-[3rem] shadow-xl border border-gray-100">
-                <h2 class="text-xl font-black uppercase mb-6 text-emerald-800 tracking-widest">Carbon Nanostructures</h2>
-                <p class="text-gray-500 leading-relaxed">Phonon analysis and mechanical stability of Graphene and Nanotubes under extreme deformation. We treat atoms as physical points connected by harmonic potentials.</p>
-            </section>
-            <section class="bg-white p-12 rounded-[3rem] shadow-xl border border-gray-100">
-                <h2 class="text-xl font-black uppercase mb-6 text-emerald-800 tracking-widest">CO2 Capture (MOFs)</h2>
-                <p class="text-gray-500 leading-relaxed">Predicting the "breathing" capacity of Metal-Organic Frameworks to optimize carbon sequestration. Efficiency at the solid-state physics level.</p>
-            </section>
+    <section class="py-16 px-6 max-w-5xl mx-auto">
+        <div class="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-gray-100">
+            <p class="text-lg text-gray-600 mb-12 leading-relaxed italic">
+                <span class="lang-en">Vally Dynamics applies Phonon Analysis to predict the mechanical and thermal stability of nanostructures with 1000x more efficiency than traditional DFT methods.</span>
+                <span class="lang-es lang-hidden">Vally Dynamics aplica el Análisis de Fonones para predecir la estabilidad mecánica y térmica de nanoestructuras con una eficiencia 1000 veces mayor que los métodos DFT tradicionales.</span>
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-10 mb-16">
+                <div class="bg-gray-50 p-8 rounded-3xl">
+                    <h4 class="font-black text-xl mb-4 text-emerald-900">Graphene & Nanotubes</h4>
+                    <p class="text-gray-500 text-sm">
+                        <span class="lang-en">We map the vibrational modes (phonons) to optimize heat dissipation in next-gen semiconductors and structural integrity in carbon composites.</span>
+                        <span class="lang-es lang-hidden">Mapeamos los modos vibracionales (fonones) para optimizar la disipación de calor en semiconductores y la integridad estructural en compuestos de carbono.</span>
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-3xl">
+                    <h4 class="font-black text-xl mb-4 text-emerald-900">CO2-Capturing MOFs</h4>
+                    <p class="text-gray-500 text-sm">
+                        <span class="lang-en">Identifying the "breathing" threshold of Metal-Organic Frameworks to ensure they don't collapse during gas adsorption cycles.</span>
+                        <span class="lang-es lang-hidden">Identificando el umbral de "respiración" de los MOF para asegurar que no colapsen durante los ciclos de adsorción de gases.</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tabla Comparativa de Industria -->
+            <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-xl">
+                <table class="w-full text-left bg-white text-sm">
+                    <thead class="bg-slate-900 text-white">
+                        <tr><th class="p-4">Process</th><th class="p-4">Traditional DFT</th><th class="p-4 bg-emerald-800">VALLY-Engine</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b"><td class="p-4 font-bold">Computation</td><td class="p-4">Weeks / Months</td><td class="p-4 font-black text-emerald-600">Seconds</td></tr>
+                        <tr class="border-b"><td class="p-4 font-bold">Infrastructure</td><td class="p-4">Supercomputer Cluster</td><td class="p-4 font-black text-emerald-600">Workstation / Cloud</td></tr>
+                        <tr><td class="p-4 font-bold">Scalability</td><td class="p-4">Limited Atoms</td><td class="p-4 font-black text-emerald-600">Full System</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </main>
+    </section>
+
+    <footer class="bg-slate-950 py-12 text-center text-white opacity-40 text-[10px]">
+        Vally Dynamics | Phonon Dynamics Vertical.
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            const enElements = document.querySelectorAll('.lang-en');
+            const esElements = document.querySelectorAll('.lang-es');
+            if (lang === 'es') {
+                enElements.forEach(el => el.classList.add('lang-hidden'));
+                esElements.forEach(el => el.classList.remove('lang-hidden'));
+            } else {
+                esElements.forEach(el => el.classList.add('lang-hidden'));
+                enElements.forEach(el => el.classList.remove('lang-hidden'));
+            }
+        }
+    </script>
 </body>
 </html>
