@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Next-Gen Materials | Vally Dynamics</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>.lang-hidden { display: none !important; }</style>
+    <style>
+        .lang-hidden { display: none !important; }
+        .viewport-glow { box-shadow: 0 0 50px rgba(16, 185, 129, 0.2); }
+    </style>
 </head>
-<body class="bg-gray-50 font-sans text-gray-900">
+<body class="bg-gray-50 font-sans text-gray-900 overflow-x-hidden">
+
     <!-- Navbar -->
     <nav class="p-6 bg-white shadow-sm flex justify-between items-center sticky top-0 z-50">
-        <a href="index.html" class="flex items-center space-x-3">
+        <a href="index.html" class="flex items-center space-x-3 group">
             <img src="logo-vally.png" class="h-8 w-auto">
-            <span class="font-black text-emerald-900 uppercase text-xs tracking-widest">
+            <span class="font-black text-emerald-900 uppercase text-xs tracking-widest group-hover:text-emerald-500 transition">
                 <span class="lang-en">Back to Platform</span>
                 <span class="lang-es lang-hidden">Volver a la Plataforma</span>
             </span>
@@ -23,80 +27,70 @@
         </div>
     </nav>
 
-    <!-- Hero Section con Subtítulo Bilingüe -->
-    <header class="bg-slate-900 text-white py-20 px-6 text-center">
-        <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">
-            <span class="lang-en">Next-Gen Materials</span>
-            <span class="lang-es lang-hidden">Materiales de Nueva Generación</span>
-        </h2>
-        <p class="text-emerald-400 font-bold uppercase tracking-widest text-xs">
-            <span class="lang-en">Solid-State Physics & Carbon Nanostructures</span>
-            <span class="lang-es lang-hidden">Física de Estado Sólido y Nanoestructuras de Carbono</span>
-        </p>
+    <!-- Header Industrial -->
+    <header class="bg-slate-900 text-white py-20 px-6 text-center relative overflow-hidden">
+        <div class="relative z-10">
+            <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">
+                <span class="lang-en">Next-Gen Materials</span>
+                <span class="lang-es lang-hidden">Materiales de Nueva Generación</span>
+            </h2>
+            <p class="text-emerald-400 font-bold uppercase tracking-widest text-xs">Solid-State Physics & Carbon Nanostructures</p>
+        </div>
     </header>
 
-    <section class="py-16 px-6 max-w-5xl mx-auto">
-        <div class="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-gray-100">
-            <p class="text-lg text-gray-600 mb-12 leading-relaxed italic">
-                <span class="lang-en">Vally Dynamics applies Phonon Analysis to predict the mechanical and thermal stability of nanostructures with 1000x more efficiency than traditional DFT methods.</span>
-                <span class="lang-es lang-hidden">Vally Dynamics aplica el Análisis de Fonones para predecir la estabilidad mecánica y térmica de nanoestructuras con una eficiencia 1000 veces mayor que los métodos DFT tradicionales.</span>
+    <section class="py-12 md:py-16 px-4 md:px-6 max-w-5xl mx-auto">
+        <div class="bg-white p-6 md:p-12 rounded-[3rem] shadow-xl border border-gray-100">
+            
+            <p class="text-base md:text-lg text-gray-600 leading-relaxed border-l-4 border-emerald-500 pl-6 mb-12 italic">
+                <span class="lang-en">Vally Dynamics applies Phonon Analysis to predict mechanical and thermal stability in nanostructures with 1000x efficiency gain.</span>
+                <span class="lang-es lang-hidden">Vally Dynamics aplica el Análisis de Fonones para predecir la estabilidad mecánica y térmica en nanoestructuras con una eficiencia 1000x superior.</span>
             </p>
 
-            <!-- Cards Informativas -->
-            <div class="grid md:grid-cols-2 gap-10 mb-16 text-left">
-                <div class="bg-gray-50 p-8 rounded-3xl border-t-4 border-emerald-500">
-                    <h4 class="font-black text-xl mb-4 text-emerald-900">
-                        <span class="lang-en">Graphene & Nanotubes</span>
-                        <span class="lang-es lang-hidden">Grafeno y Nanotubos</span>
+            <!-- VISOR 3D INTERACTIVO (Nanotubo) -->
+            <div class="mb-16 bg-zinc-950 p-2 md:p-6 rounded-[2rem] md:rounded-[3rem] viewport-glow">
+                <div class="p-4 text-center">
+                    <h4 class="text-white font-black uppercase tracking-widest text-[10px] mb-2">
+                        <span class="lang-en">3D Phonon & Stability Mapping</span>
+                        <span class="lang-es lang-hidden">Mapeo 3D de Fonones y Estabilidad</span>
                     </h4>
-                    <p class="text-gray-500 text-sm">
-                        <span class="lang-en">We map vibrational modes (phonons) to optimize heat dissipation in next-gen semiconductors and structural integrity in carbon composites.</span>
-                        <span class="lang-es lang-hidden">Mapeamos modos vibracionales (fonones) para optimizar la disipación de calor en semiconductores e integridad estructural en compuestos de carbono.</span>
-                    </p>
+                    <p class="text-emerald-400 text-[9px] font-mono uppercase tracking-tighter">Structure: Carbon Nanotube (SWCNT)</p>
                 </div>
-                <div class="bg-gray-50 p-8 rounded-3xl border-t-4 border-emerald-500">
-                    <h4 class="font-black text-xl mb-4 text-emerald-900">
-                        <span class="lang-en">CO2-Capturing MOFs</span>
-                        <span class="lang-es lang-hidden">MOFs de Captura de CO2</span>
-                    </h4>
-                    <p class="text-gray-500 text-sm">
-                        <span class="lang-en">Identifying the "breathing" threshold of Metal-Organic Frameworks to ensure they don't collapse during gas adsorption cycles.</span>
-                        <span class="lang-es lang-hidden">Identificamos el umbral de "respiración" de los MOF para asegurar que no colapsen durante los ciclos de adsorción de gases.</span>
+                
+                <div id="viewport" class="w-full h-[350px] md:h-[500px] rounded-[1.5rem] md:rounded-[2rem] bg-slate-900"></div>
+                
+                <div class="p-6 text-center">
+                    <p class="text-gray-500 text-[9px] uppercase tracking-[0.2em] font-bold">
+                        <span class="lang-en">Vibrational modes calculation in solid-state lattices.</span>
+                        <span class="lang-es lang-hidden">Cálculo de modos vibracionales en redes de estado sólido.</span>
                     </p>
                 </div>
             </div>
 
-            <!-- TABLA COMPARATIVA TOTALMENTE BILINGÜE -->
-            <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-xl">
-                <table class="w-full text-left bg-white text-sm">
-                    <thead class="bg-slate-900 text-white">
+            <!-- TABLA DE EFICIENCIA INDUSTRIAL -->
+            <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-2xl mb-12">
+                <table class="w-full text-left bg-white text-[11px] md:text-sm">
+                    <thead class="bg-slate-900 text-white uppercase tracking-widest">
                         <tr>
-                            <th class="p-4 uppercase tracking-widest text-[10px]">
-                                <span class="lang-en">Process</span><span class="lang-es lang-hidden">Proceso</span>
-                            </th>
-                            <th class="p-4 uppercase tracking-widest text-[10px]">
-                                <span class="lang-en">Traditional DFT</span><span class="lang-es lang-hidden">DFT Tradicional</span>
-                            </th>
-                            <th class="p-4 bg-emerald-800 uppercase tracking-widest text-[10px]">
-                                <span class="lang-en">VALLY-Engine</span><span class="lang-es lang-hidden">Motor VALLY</span>
-                            </th>
+                            <th class="p-4"><span class="lang-en">Metric</span><span class="lang-es lang-hidden">Métrica</span></th>
+                            <th class="p-4">Traditional DFT</th>
+                            <th class="p-4 bg-emerald-800 text-emerald-300">VALLY-Engine</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="border-b">
-                            <td class="p-4 font-bold"><span class="lang-en">Computation</span><span class="lang-es lang-hidden">Cálculo</span></td>
-                            <td class="p-4 text-gray-500"><span class="lang-en">Weeks / Months</span><span class="lang-es lang-hidden">Semanas / Meses</span></td>
-                            <td class="p-4 font-black text-emerald-600"><span class="lang-en">Seconds</span><span class="lang-es lang-hidden">Segundos</span></td>
+                            <td class="p-4 font-bold"><span class="lang-en">Computation Time</span><span class="lang-es lang-hidden">Tiempo de Cálculo</span></td>
+                            <td class="p-4 text-gray-500">Weeks / Months</td>
+                            <td class="p-4 font-black text-emerald-600 uppercase">Seconds</td>
                         </tr>
                         <tr class="border-b">
-                            <td class="p-4 font-bold"><span class="lang-en">Infrastructure</span><span class="lang-es lang-hidden">Infraestructura</span></td>
-                            <td class="p-4 text-gray-500"><span class="lang-en">Supercomputer Cluster</span><span class="lang-es lang-hidden">Cluster de Supercómputo</span></td>
-                            <td class="p-4 font-black text-emerald-600"><span class="lang-en">Workstation / Cloud</span><span class="lang-es lang-hidden">Estación / Nube</span></td>
+                            <td class="p-4 font-bold"><span class="lang-en">Scalability</span><span class="lang-es lang-hidden">Escalabilidad</span></td>
+                            <td class="p-4 text-gray-500">Atomic clusters</td>
+                            <td class="p-4 font-black text-emerald-600 uppercase">Full Lattice</td>
                         </tr>
                         <tr>
-                            <td class="p-4 font-bold"><span class="lang-en">Scalability</span><span class="lang-es lang-hidden">Escalabilidad</span></td>
-                            <td class="p-4 text-gray-500"><span class="lang-en">Limited Atoms</span><span class="lang-es lang-hidden">Átomos Limitados</span></td>
-                            <td class="p-4 font-black text-emerald-600"><span class="lang-en">Full System</span><span class="lang-es lang-hidden">Sistema Completo</span></td>
+                            <td class="p-4 font-bold"><span class="lang-en">Infrastructure</span><span class="lang-es lang-hidden">Infraestructura</span></td>
+                            <td class="p-4 text-gray-500">Supercomputer</td>
+                            <td class="p-4 font-black text-emerald-600 uppercase">Zero CapEx</td>
                         </tr>
                     </tbody>
                 </table>
@@ -104,17 +98,18 @@
         </div>
     </section>
 
-    <footer class="bg-slate-950 py-12 text-center text-white opacity-40 text-[10px] uppercase tracking-widest">
-        Vally Dynamics | Phonon Dynamics Vertical.
+    <footer class="py-12 bg-zinc-900 text-center text-white/30 text-[9px] uppercase tracking-[0.3em]">
+        Vally Dynamics | Phonon Dynamics Vertical
     </footer>
 
+    <!-- LIBRERÍA NGL Y SCRIPTS -->
+    <script src="https://unpkg.com/ngl@0.10.4-1/dist/ngl.js"></script>
     <script>
         function setLanguage(lang) {
             const enElements = document.querySelectorAll('.lang-en');
             const esElements = document.querySelectorAll('.lang-es');
             const btnEn = document.getElementById('btn-en');
             const btnEs = document.getElementById('btn-es');
-
             if (lang === 'es') {
                 enElements.forEach(el => el.classList.add('lang-hidden'));
                 esElements.forEach(el => el.classList.remove('lang-hidden'));
@@ -131,6 +126,32 @@
                 btnEs.classList.add('text-gray-400');
             }
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var stage = new NGL.Stage("viewport", { backgroundColor: "#0f172a" });
+            
+            function renderMaterial(structure) {
+                // Representación de Nanotubo (Bolas y Varillas)
+                structure.addRepresentation("ball+stick", { 
+                    color: "#10b981", 
+                    multipleBond: "symmetric",
+                    aspectRatio: 1.5
+                });
+                structure.autoView();
+                stage.setSpin(true);
+            }
+
+            // Intento de carga: 1. Local, 2. URL de ejemplo de Nanotubo
+            stage.loadFile("nanotube.pdb")
+            .then(renderMaterial)
+            .catch(() => {
+                // Si no subiste el archivo aún, cargará un ejemplo de la web para que no se vea vacío
+                console.log("Loading cloud fallback for materials...");
+                return stage.loadFile("https://files.rcsb.org/download/1AL1.pdb").then(renderMaterial);
+            });
+
+            window.addEventListener("resize", function() { stage.handleResize(); }, false);
+        });
     </script>
 </body>
 </html>
