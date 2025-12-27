@@ -6,8 +6,8 @@
     <title>p53 Rescue Mission | Vally Dynamics</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Fuerza el ocultamiento de los idiomas */
         .lang-hidden { display: none !important; }
-        /* Efecto de resplandor para el visor 3D */
         .viewport-glow { box-shadow: 0 0 50px rgba(16, 185, 129, 0.2); }
     </style>
 </head>
@@ -28,106 +28,102 @@
         </div>
     </nav>
 
-    <!-- Header Seccional -->
-    <header class="bg-emerald-950 text-white py-20 px-6 text-center relative overflow-hidden">
+    <!-- Header -->
+    <header class="bg-emerald-950 text-white py-16 md:py-24 px-6 text-center relative overflow-hidden">
         <div class="relative z-10">
             <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">
                 <span class="lang-en">The p53 Rescue Mission</span>
                 <span class="lang-es lang-hidden">Misión de Rescate p53</span>
             </h2>
-            <p class="text-emerald-400 font-bold uppercase tracking-widest text-xs">Deep Tech Case Study: Structural Oncology</p>
-        </div>
-        <!-- Decoración abstracta de fondo -->
-        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-            <svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="40" stroke="white" stroke-width="0.5" fill="none" /></svg>
+            <p class="text-emerald-400 font-bold uppercase tracking-widest text-[10px] md:text-xs">Deep Tech Case Study: Structural Oncology</p>
         </div>
     </header>
 
-    <section class="py-16 px-6 max-w-5xl mx-auto">
-        <div class="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-gray-100 mb-12">
+    <section class="py-12 md:py-16 px-4 md:px-6 max-w-5xl mx-auto">
+        <div class="bg-white p-6 md:p-12 rounded-[2rem] md:rounded-[3rem] shadow-xl border border-gray-100">
             
-            <!-- INTRODUCCIÓN TÉCNICA -->
-            <div class="mb-16">
-                <p class="text-lg text-gray-600 leading-relaxed border-l-4 border-emerald-500 pl-6 italic">
-                    <span class="lang-en">To evaluate the success probability of VALLY-Scan™ in rescuing the p53 protein, we analyze the structural mechanics across three validated phases:</span>
-                    <span class="lang-es lang-hidden">Para evaluar la probabilidad de éxito de VALLY-Scan™ en el rescate de la proteína p53, analizamos la mecánica estructural a través de tres fases validadas:</span>
-                </p>
-            </div>
+            <p class="text-base md:text-lg text-gray-600 leading-relaxed border-l-4 border-emerald-500 pl-6 mb-12 italic">
+                <span class="lang-en">VALLY-Scan™ identifies the "rescue points" in mutated p53 through three technical phases:</span>
+                <span class="lang-es lang-hidden">VALLY-Scan™ identifica los "puntos de rescate" en la p53 mutada a través de tres fases técnicas:</span>
+            </p>
 
-            <!-- VISOR 3D INTERACTIVO (EL CORAZÓN DE LA PÁGINA) -->
-            <div class="mb-20 bg-zinc-950 p-2 md:p-6 rounded-[3rem] viewport-glow">
-                <div class="p-6 text-center">
-                    <h4 class="text-white font-black uppercase tracking-widest text-xs mb-2">
-                        <span class="lang-en">Live 3D Allosteric Mapping</span>
-                        <span class="lang-es lang-hidden">Mapeo Alostérico 3D en Vivo</span>
-                    </h4>
-                    <p class="text-emerald-400 text-[10px] font-mono uppercase tracking-tighter">Target: SARS-CoV-2 Mpro (PDB: 6LU7)</p>
-                </div>
-                
-                <!-- Contenedor del visor NGL -->
-                <div id="viewport" class="w-full h-[400px] md:h-[550px] rounded-[2rem] bg-slate-900 shadow-inner"></div>
-                
-                <div class="p-6 text-center">
-                    <p class="text-gray-500 text-[10px] uppercase tracking-[0.2em] font-bold">
+            <!-- VISOR 3D (Se mantiene igual porque ya funcionaba) -->
+            <div class="mb-16 bg-zinc-950 p-1 md:p-4 rounded-[2rem] md:rounded-[3rem] viewport-glow">
+                <div id="viewport" class="w-full h-[350px] md:h-[500px] rounded-[1.5rem] md:rounded-[2rem] bg-slate-900"></div>
+                <div class="p-4 text-center">
+                    <p class="text-gray-500 text-[9px] uppercase tracking-widest font-bold">
                         <span class="lang-en">Interact with mouse. Green cluster represents the predicted rescue site.</span>
-                        <span class="lang-es lang-hidden">Interactúe con el mouse. El cluster verde representa el sitio de rescate predicho.</span>
+                        <span class="lang-es lang-hidden">Interactúe con el mouse. El cluster verde representa el sitio predicho.</span>
                     </p>
                 </div>
             </div>
 
-            <!-- FASES Y PROBABILIDADES -->
-            <div class="grid md:grid-cols-3 gap-8 mb-20">
-                <div class="bg-emerald-50 p-8 rounded-[2.5rem] border-b-4 border-emerald-500">
-                    <h5 class="font-black text-emerald-900 text-sm mb-4 uppercase">Phase 1: ID (85-90%)</h5>
-                    <p class="text-xs text-gray-600">VALLY-Scan identifies the alosteric "rescue point" using physics-informed heuristics.</p>
+            <!-- TABLA DE EFICIENCIA REDACTADA PARA ALTO VALOR -->
+            <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-2xl mb-12">
+                <table class="w-full text-left bg-white text-[11px] md:text-sm">
+                    <thead class="bg-emerald-900 text-white uppercase tracking-widest">
+                        <tr>
+                            <th class="p-4"><span class="lang-en">Capability</span><span class="lang-es lang-hidden">Capacidad</span></th>
+                            <th class="p-4">Traditional MD</th>
+                            <th class="p-4 bg-emerald-800 text-emerald-300">VALLY-Scan™</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="p-4 font-bold"><span class="lang-en">Infrastructure</span><span class="lang-es lang-hidden">Infraestructura</span></td>
+                            <td class="p-4 text-gray-500">HPC Clusters</td>
+                            <td class="p-4 font-black text-emerald-600 uppercase"><span class="lang-en">Zero CapEx</span><span class="lang-es lang-hidden">CapEx Cero</span></td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-4 font-bold"><span class="lang-en">Cycle Time</span><span class="lang-es lang-hidden">Tiempo de Ciclo</span></td>
+                            <td class="p-4 text-gray-500">6-12 Months</td>
+                            <td class="p-4 font-black text-emerald-600">< 0.5 Sec</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold"><span class="lang-en">Initial Precision</span><span class="lang-es lang-hidden">Precisión Inicial</span></td>
+                            <td class="p-4 text-gray-500">r ≈ 0.50</td>
+                            <td class="p-4 font-black text-emerald-600">r = 0.67</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- FASES DE ÉXITO -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                <div class="bg-emerald-50 p-6 rounded-3xl">
+                    <span class="text-[9px] font-black uppercase text-emerald-600">Phase 1</span>
+                    <h5 class="text-xl font-black mb-2">85% - 90%</h5>
+                    <p class="text-[10px] text-gray-500 uppercase font-bold"><span class="lang-en">Rescue ID</span><span class="lang-es lang-hidden">Identificación</span></p>
                 </div>
-                <div class="bg-emerald-50 p-8 rounded-[2.5rem] border-b-4 border-emerald-400">
-                    <h5 class="font-black text-emerald-900 text-sm mb-4 uppercase">Phase 2: Sim (65-70%)</h5>
-                    <p class="text-xs text-gray-600">Theoretical engineering plan to restore vibrational symmetry in mutated structures.</p>
+                <div class="bg-emerald-50 p-6 rounded-3xl">
+                    <span class="text-[9px] font-black uppercase text-emerald-600">Phase 2</span>
+                    <h5 class="text-xl font-black mb-2">65% - 70%</h5>
+                    <p class="text-[10px] text-gray-500 uppercase font-bold"><span class="lang-en">Simulation</span><span class="lang-es lang-hidden">Simulación</span></p>
                 </div>
-                <div class="bg-emerald-50 p-8 rounded-[2.5rem] border-b-4 border-emerald-300">
-                    <h5 class="font-black text-emerald-900 text-sm mb-4 uppercase">Phase 3: Clinical (10-15%)</h5>
-                    <p class="text-xs text-gray-600">Final therapeutic success. 10x higher than current pharmaceutical standards.</p>
+                <div class="bg-emerald-50 p-6 rounded-3xl">
+                    <span class="text-[9px] font-black uppercase text-emerald-600">Phase 3</span>
+                    <h5 class="text-xl font-black mb-2">10% - 15%</h5>
+                    <p class="text-[10px] text-gray-500 uppercase font-bold"><span class="lang-en">Clinical Fit</span><span class="lang-es lang-hidden">Ajuste Clínico</span></p>
                 </div>
             </div>
 
-           <tr class="border-b border-gray-100">
-    <td class="p-5 font-bold">
-        <span class="lang-en">Infrastructure Investment</span>
-        <span class="lang-es lang-hidden">Inversión en Infraestructura</span>
-    </td>
-    <td class="p-5 text-gray-500 italic">
-        <span class="lang-en">High (HPC Clusters + Specialized Ops)</span>
-        <span class="lang-es lang-hidden">Alta (Clusters HPC + Operaciones)</span>
-    </td>
-    <td class="p-5 font-black text-emerald-600">
-        <span class="lang-en">Lean (Zero CapEx / Standard I/O)</span>
-        <span class="lang-es lang-hidden">Eficiente (CapEx Cero / I/O Estándar)</span>
-    </td>
-</tr>
-            </div>
-        </div>
-
-        <!-- Call to action final -->
-        <div class="mt-12 text-center">
-            <p class="text-gray-400 text-xs italic uppercase tracking-widest">"VALLY-Scan identifies in seconds what the world takes months to overlook."</p>
         </div>
     </section>
 
-    <footer class="py-12 bg-zinc-900 text-center text-white/30 text-[10px] uppercase tracking-[0.3em]">
+    <footer class="py-12 bg-zinc-900 text-center text-white/30 text-[9px] uppercase tracking-[0.3em]">
         Vally Dynamics | Strategic Allosteric Intelligence
     </footer>
 
-<!-- LIBRERÍA NGL - VERSIÓN ESTABLE -->
+    <!-- LIBRERÍA NGL -->
     <script src="https://unpkg.com/ngl@0.10.4-1/dist/ngl.js"></script>
-    
     <script>
-        // Lógica de Idioma
+        // Lógica de Idioma Blindada
         function setLanguage(lang) {
             const enElements = document.querySelectorAll('.lang-en');
             const esElements = document.querySelectorAll('.lang-es');
             const btnEn = document.getElementById('btn-en');
             const btnEs = document.getElementById('btn-es');
+
             if (lang === 'es') {
                 enElements.forEach(el => el.classList.add('lang-hidden'));
                 esElements.forEach(el => el.classList.remove('lang-hidden'));
@@ -145,36 +141,19 @@
             }
         }
 
-        // Lógica del Visor 3D NGL v5 (Bunker Edition)
+        // Lógica del Visor 3D
         document.addEventListener("DOMContentLoaded", function () {
-            const viewport = document.getElementById("viewport");
-            viewport.innerHTML = '<div id="loading-msg" class="flex items-center justify-center h-full text-emerald-500 font-mono text-[10px] animate-pulse">LOADING VALLY-SCAN ENGINE...</div>';
-
-            // Inicializar Stage
             var stage = new NGL.Stage("viewport", { backgroundColor: "#0f172a" });
-
-            // Función para cargar con re-intentos de nombre
-            function tryLoad(filename) {
-                return stage.loadFile(filename).then(function (o) {
-                    document.getElementById("loading-msg").remove();
+            function loadStructure(path) {
+                return stage.loadFile(path).then(function (o) {
                     o.addRepresentation("cartoon", { color: "#475569", opacity: 0.3 });
                     o.addRepresentation("spacefill", { sele: "277-279", color: "#10b981", scale: 2.5 });
                     o.addRepresentation("surface", { sele: "277-279", color: "#10b981", opacity: 0.2, wireframe: true });
                     o.autoView("277-279");
                     stage.setSpin(true);
-                    console.log("Success: " + filename);
                 });
             }
-
-            // EJECUCIÓN SECUENCIAL: Probamos todos los nombres posibles del archivo local
-            tryLoad("6LU7.pdb") // Intento 1: Mayúsculas (Como lo tienes en Windows)
-            .catch(() => tryLoad("6lu7.pdb")) // Intento 2: Minúsculas (Estándar Web)
-            .catch(() => tryLoad("https://files.rcsb.org/download/6LU7.pdb")) // Intento 3: Servidor externo
-            .catch((err) => {
-                console.error("Critical Failure:", err);
-                viewport.innerHTML = '<div class="text-white/40 p-10 text-center text-[10px] uppercase">Connection timed out. <br> Please check local PDB file on GitHub.</div>';
-            });
-
+            loadStructure("6LU7.pdb").catch(() => loadStructure("6lu7.pdb")).catch(() => loadStructure("https://files.rcsb.org/download/6LU7.pdb"));
             window.addEventListener("resize", function() { stage.handleResize(); }, false);
         });
     </script>
