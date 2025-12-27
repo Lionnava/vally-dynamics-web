@@ -115,7 +115,8 @@
     <footer class="py-12 bg-zinc-900 text-center text-white/30 text-[10px] uppercase tracking-[0.3em]">
         Vally Dynamics | Strategic Allosteric Intelligence
     </footer>
-<!-- SCRIPTS DE IDIOMA Y VISOR 3D INFALIBLE v3 -->
+
+    <!-- SCRIPTS DE IDIOMA Y VISOR 3D VERSIÓN ULTRA-ESTABLE -->
     <script src="https://unpkg.com/ngl"></script>
     <script>
         // Lógica de Idioma
@@ -143,32 +144,42 @@
 
         // Lógica del Visor 3D NGL
         document.addEventListener("DOMContentLoaded", function () {
-            // Inicializar el escenario con color de fondo oscuro
+            // 1. Mostrar mensaje de carga
+            const viewport = document.getElementById("viewport");
+            viewport.innerHTML = '<div id="loading-text" class="flex items-center justify-center h-full text-emerald-500 font-mono text-xs animate-pulse uppercase tracking-widest">Connecting to PDB Server...</div>';
+
+            // 2. Inicializar el escenario
             var stage = new NGL.Stage("viewport", { backgroundColor: "#0f172a" });
 
-            // FUNCIÓN DE CARGA SEGURA
-            function loadStructure(path) {
-                return stage.loadFile(path, { ext: "pdb" }).then(function (o) {
-                    o.addRepresentation("cartoon", { color: "#475569", opacity: 0.3 });
-                    o.addRepresentation("spacefill", { sele: "277-279", color: "#10b981", scale: 2.5 });
-                    o.addRepresentation("surface", { sele: "277-279", color: "#10b981", opacity: 0.2, wireframe: true });
-                    o.autoView("277-279");
-                    stage.setSpin(true);
-                });
+            // 3. Función para dibujar la proteína (Evita repetición de código)
+            function renderProtein(structure) {
+                // Limpiar mensaje de carga
+                const loader = document.getElementById("loading-text");
+                if(loader) loader.remove();
+
+                structure.addRepresentation("cartoon", { color: "#475569", opacity: 0.3 });
+                structure.addRepresentation("spacefill", { sele: "277-279", color: "#10b981", scale: 2.5 });
+                structure.addRepresentation("surface", { sele: "277-279", color: "#10b981", opacity: 0.2, wireframe: true });
+                structure.autoView("277-279");
+                stage.setSpin(true);
             }
 
-            // INTENTO 1: Cargar desde tu servidor local (Asegúrate que en GitHub se llame 6LU7.pdb)
-            loadStructure("6LU7.pdb").catch(function() {
-                console.warn("Local 6LU7.pdb not found, trying lowercase...");
-                // INTENTO 2: Probar en minúsculas por si acaso
-                return loadStructure("6lu7.pdb");
-            }).catch(function() {
-                console.warn("Local files failed, loading from RCSB Global Server...");
-                // INTENTO 3: Cargar desde el servidor mundial del PDB (Infalible)
-                return loadStructure("https://files.rcsb.org/download/6LU7.pdb");
-            }).catch(function(err) {
-                console.error("All loading methods failed:", err);
-                document.getElementById("viewport").innerHTML = '<p class="text-white p-10 text-center text-xs">Structural data unavailable. Check internet connection.</p>';
+            // 4. INTENTO DE CARGA MULTI-VÍA
+            // Primero intentamos la vía oficial de NGL (más compatible con HTTPS)
+            stage.loadFile("rcsb://6LU7").then(renderProtein)
+            .catch(function() {
+                console.warn("RCSB internal failed, trying direct HTTPS...");
+                // Segundo intento: Vía URL directa
+                return stage.loadFile("https://files.rcsb.org/download/6LU7.pdb").then(renderProtein);
+            })
+            .catch(function() {
+                console.warn("Direct HTTPS failed, trying local file...");
+                // Tercer intento: Tu archivo local (Asegúrate que esté en GitHub)
+                return stage.loadFile("6LU7.pdb", { ext: "pdb" }).then(renderProtein);
+            })
+            .catch(function(err) {
+                console.error("Critical: All loading paths failed", err);
+                viewport.innerHTML = '<div class="flex flex-col items-center justify-center h-full text-white/40 text-[10px] p-6 text-center uppercase tracking-widest">Data Stream Interrupted. <br> Please refresh page.</div>';
             });
 
             window.addEventListener("resize", function() { stage.handleResize(); }, false);
