@@ -5,61 +5,232 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vally Dynamics | Accelerating the Future of Matter</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>.lang-hidden { display: none !important; }</style>
+    <style>
+        .lang-hidden { display: none !important; }
+    </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-900 overflow-x-hidden">
 
     <!-- Navbar -->
     <nav class="p-6 bg-white shadow-sm flex justify-between items-center sticky top-0 z-50">
         <div class="flex items-center space-x-3">
-            <img src="logo-vally.png" alt="Vally" class="h-10 w-auto">
+            <img src="logo-vally.png" alt="Proyecto Vally" class="h-10 w-auto">
             <h1 class="text-2xl font-black text-emerald-900 tracking-tighter uppercase leading-none">VALLY DYNAMICS</h1>
         </div>
         <div class="flex items-center space-x-4">
-            <button onclick="setLanguage('en')" id="btn-en" class="text-xs font-bold text-emerald-700 border-b-2 border-emerald-700">EN</button>
-            <button onclick="setLanguage('es')" id="btn-es" class="text-xs font-bold text-gray-400">ES</button>
-            <a href="#contact" class="bg-emerald-700 text-white px-5 py-2 rounded-full text-xs font-bold uppercase shadow-lg">
-                <span class="lang-en">Early Access</span><span class="lang-es lang-hidden">Acceso Anticipado</span>
+            <button onclick="setLanguage('en')" id="btn-en" class="text-xs font-black text-emerald-700 border-b-2 border-emerald-700">EN</button>
+            <button onclick="setLanguage('es')" id="btn-es" class="text-xs font-black text-gray-400 hover:text-emerald-700 transition">ES</button>
+            <a href="#contact" class="bg-emerald-700 text-white px-5 py-2 rounded-full hover:bg-emerald-800 transition text-xs font-bold uppercase tracking-widest shadow-lg">
+                <span class="lang-en">Early Access</span>
+                <span class="lang-es lang-hidden">Acceso Anticipado</span>
             </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section: Diseño Startup Original -->
     <header class="relative text-white py-32 md:py-48 px-6 text-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="hero-bg.jpg" class="w-full h-full object-cover opacity-70">
+            <img src="hero-bg.jpg" alt="Dynamic Physics" class="w-full h-full object-cover opacity-70">
             <div class="absolute inset-0 bg-emerald-950/85"></div> 
         </div>
+        
         <div class="relative z-10 max-w-5xl mx-auto">
-            <h2 class="text-4xl md:text-7xl font-black mb-8 uppercase tracking-tighter leading-tight">
+            <h2 class="text-5xl md:text-7xl font-black mb-8 uppercase tracking-tighter leading-none">
                 <span class="lang-en">Accelerating the future of matter</span>
                 <span class="lang-es lang-hidden">Acelerando el futuro de la materia</span>
             </h2>
-            <p class="text-lg md:text-2xl mb-12 opacity-90 leading-relaxed max-w-3xl mx-auto font-light">
-                <span class="lang-en">Redefining R&D through high-fidelity computational dynamics. We transform months of research into seconds of physical certainty.</span>
-                <span class="lang-es lang-hidden">Redefiniendo el R&D mediante dinámica computacional de alta fidelidad. Transformamos meses de investigación en segundos de certeza física.</span>
+            <p class="text-xl md:text-2xl mb-12 opacity-90 leading-relaxed max-w-3xl mx-auto font-light">
+                <span class="lang-en">We reduce R&D cycles from months to seconds. Vally Dynamics utilizes high-fidelity elastic models and AI to optimize the structural world with unprecedented speed.</span>
+                <span class="lang-es lang-hidden">Reducimos los ciclos de R&D de meses a segundos. Vally Dynamics utiliza modelos elásticos de alta fidelidad e IA para optimizar el mundo estructural con una velocidad sin precedentes.</span>
             </p>
+            
             <div class="flex flex-col items-center space-y-8">
-                <div class="bg-white/10 backdrop-blur-md px-6 py-3 rounded-xl border border-white/20 text-[10px] font-black uppercase tracking-widest">
-                    <span class="lang-en">Validation: APS Global Physics Summit 2026</span>
-                    <span class="lang-es lang-hidden">Validación: APS Global Physics Summit 2026</span>
+                <!-- Validación (Prioridad Visual) -->
+                <div class="bg-white/10 backdrop-blur-md px-6 py-3 rounded-xl border border-white/20 flex items-center shadow-2xl">
+                    <span class="text-[10px] md:text-xs font-black uppercase tracking-widest text-emerald-300 mr-3">Validation:</span>
+                    <span class="text-xs md:text-sm font-bold uppercase font-mono">APS Global Physics Summit 2026</span>
                 </div>
-                <a href="#contact" class="bg-emerald-500 text-emerald-950 px-12 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-white transition shadow-2xl text-base md:text-lg">
-                    <span class="lang-en">Get Started / Request Demo</span><span class="lang-es lang-hidden">Comenzar / Solicitar Demo</span>
+
+                <!-- Botón de Acción -->
+                <a href="#contact" class="bg-emerald-500 text-emerald-950 px-10 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-white transition shadow-2xl text-lg scale-110 transform">
+                    <span class="lang-en">Get Started / Request Demo</span>
+                    <span class="lang-es lang-hidden">Comenzar / Solicitar Demo</span>
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Why Vally Dynamics: KPIs -->
+    <!-- Ventaja Competitiva -->
     <section class="py-24 bg-white px-6">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+            <div class="group">
+                <div class="text-4xl mb-4 group-hover:scale-125 transition duration-500">🚀</div>
+                <h4 class="font-black uppercase text-sm mb-2 text-emerald-900"><span class="lang-en">Exponential Speed</span><span class="lang-es lang-hidden">Velocidad Exponencial</span></h4>
+                <p class="text-gray-500 text-sm"><span class="lang-en">Eliminating the bottleneck of traditional simulations.</span><span class="lang-es lang-hidden">Eliminando el cuello de botella de las simulaciones tradicionales.</span></p>
+            </div>
+            <div class="group">
+                <div class="text-4xl mb-4 group-hover:scale-125 transition duration-500">🧬</div>
+                <h4 class="font-black uppercase text-sm mb-2 text-emerald-900"><span class="lang-en">Agnostic Physics</span><span class="lang-es lang-hidden">Física Agnóstica</span></h4>
+                <p class="text-gray-500 text-sm"><span class="lang-en">One logic for Biotech, Energy, and Materials.</span><span class="lang-es lang-hidden">Una lógica para Biotecnología, Energía y Materiales.</span></p>
+            </div>
+            <div class="group">
+                <div class="text-4xl mb-4 group-hover:scale-125 transition duration-500">📉</div>
+                <h4 class="font-black uppercase text-sm mb-2 text-emerald-900"><span class="lang-en">Cost-Efficient</span><span class="lang-es lang-hidden">Eficiencia de Costos</span></h4>
+                <p class="text-gray-500 text-sm"><span class="lang-en">Drastic reduction in supercomputing expenditure.</span><span class="lang-es lang-hidden">Reducción drástica en gastos de infraestructura.</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT SUITE: VALLY-Scan™ -->
+    <section class="py-24 bg-gray-50 px-6 border-y border-gray-200">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
             <div>
-                <div class="text-5xl mb-6 transform hover:scale-110 transition">🚀</div>
-                <h4 class="font-black uppercase text-sm mb-3 text-emerald-900"><span class="lang-en">Exponential Speed</span><span class="lang-es lang-hidden">Velocidad Exponencial</span></h4>
-                <p class="text-gray-500 text-sm leading-relaxed"><span class="lang-en">We deliver results 1000x faster than traditional Molecular Dynamics.</span><span class="lang-es lang-hidden">Entregamos resultados 1000 veces más rápido que la dinámica tradicional.</span></p>
+                <span class="text-emerald-600 font-black tracking-widest uppercase text-xs mb-2 block">The Core Engine</span>
+                <h4 class="text-4xl md:text-5xl font-black mb-6 tracking-tighter">VALLY-Scan™</h4>
+                <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                    <span class="lang-en">Our proprietary platform for rapid allosteric mapping. The gold standard in speed for the modern biotechnological pipeline. <strong>Validated with Pearson r=0.67.</strong></span>
+                    <span class="lang-es lang-hidden">Nuestra plataforma patentada para el mapeo alostérico rápido. El estándar de oro en velocidad para el flujo biotecnológico moderno. <strong>Validado con r=0,67.</strong></span>
+                </p>
+            </div>
+            <div class="bg-white p-6 shadow-2xl rounded-3xl border-4 border-emerald-500/10 transform hover:rotate-1 transition duration-500">
+                <img src="https://raw.githubusercontent.com/Lionnava/vally-scan/main/Figure_2_Validation_6LU7.png" alt="Proprietary Engine" class="rounded-xl w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- STARTUP VERTICALS (LAS 3 TARJETAS COMPLETAS) -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <h3 class="text-3xl font-black text-center mb-16 uppercase tracking-widest text-emerald-900">
+            <span class="lang-en">Startup Verticals</span><span class="lang-es lang-hidden">Verticales de la Startup</span>
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Card 1: Oncology -->
+            <a href="p53.html" class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-gray-100 hover:border-emerald-500 hover:shadow-2xl transition-all duration-500 group">
+                <div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:bg-emerald-500 group-hover:text-white transition">🏥</div>
+                <h4 class="text-2xl font-black mb-4 text-emerald-900"><span class="lang-en">Structural Oncology</span><span class="lang-es lang-hidden">Oncología Estructural</span></h4>
+                <p class="text-gray-600 text-sm mb-6"><span class="lang-en">Deep mapping of p53 pathways and kinases to identify dynamic mutations driving cancer.</span><span class="lang-es lang-hidden">Mapeo profundo de vías p53 y quinasas para identificar mutaciones dinámicas.</span></p>
+                <span class="text-[10px] font-black text-emerald-600 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full group-hover:bg-emerald-600 group-hover:text-white transition">View Case Study →</span>
+            </a>
+            <!-- Card 2: Materials -->
+            <a href="materials.html" class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-gray-100 hover:border-emerald-500 hover:shadow-2xl transition-all duration-500 group">
+                <div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:bg-emerald-500 group-hover:text-white transition">⚛️</div>
+                <h4 class="text-2xl font-black mb-4 text-emerald-900"><span class="lang-en">Next-Gen Materials</span><span class="lang-es lang-hidden">Materiales de Nueva Gen</span></h4>
+                <p class="text-gray-600 text-sm mb-6"><span class="lang-en">Phonon analysis applied to Graphene, Nanotubes, and next-gen MOFs for energy.</span><span class="lang-es lang-hidden">Análisis de fonones para grafeno, nanotubos y MOFs de energía.</span></p>
+                <span class="text-[10px] font-black text-emerald-600 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full group-hover:bg-emerald-600 group-hover:text-white transition">Explore Vertical →</span>
+            </a>
+            <!-- Card 3: API -->
+            <a href="api.html" class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-gray-100 hover:border-emerald-500 hover:shadow-2xl transition-all duration-500 group">
+                <div class="w-16 h-16 bg-emerald-50 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:bg-emerald-500 group-hover:text-white transition">🛰️</div>
+                <h4 class="text-2xl font-black mb-4 text-emerald-900">VALLY-API</h4>
+                <p class="text-gray-600 text-sm mb-6"><span class="lang-en">Integrate our core dynamics engine directly into your enterprise R&D pipeline.</span><span class="lang-es lang-hidden">Integra nuestro motor central directamente en tu flujo de R&D.</span></p>
+                <span class="text-[10px] font-black text-emerald-600 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full group-hover:bg-emerald-600 group-hover:text-white transition">Enterprise Integration →</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Roadmap & Tribute Quote -->
+    <section class="bg-emerald-900 py-24 px-6 text-white text-center">
+        <div class="max-w-4xl mx-auto">
+            <img src="logo-vally.png" alt="Vally Logo" class="h-16 mx-auto mb-8 brightness-0 invert opacity-80">
+            <p class="text-2xl md:text-3xl leading-snug mb-12 font-serif italic">
+                <span class="lang-en">"Democratizing high-level science through innovative algorithms. A scientific tribute to <strong>Vally Ramos</strong>."</span>
+                <span class="lang-es lang-hidden">"Democratizando la ciencia de alto nivel mediante algoritmos innovadores. Un tributo científico a <strong>Vally Ramos</strong>."</span>
+            </p>
+            <div class="grid grid-cols-2 gap-8 text-left border-t border-white/10 pt-10 max-w-md mx-auto uppercase tracking-widest text-[10px]">
+                <div><p class="text-emerald-400 font-black mb-2">Q3 2025 Milestone</p><p class="font-bold">Cloud Dashboard Launch</p></div>
+                <div><p class="text-emerald-400 font-black mb-2">Q4 2025 Goal</p><p class="font-bold">GNN Prediction Engine</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Form: Startup Style -->
+    <section id="contact" class="py-24 px-4 bg-white">
+        <div class="max-w-3xl mx-auto bg-emerald-950 text-white p-8 md:p-16 rounded-[3rem] shadow-2xl relative overflow-hidden">
+            <div class="relative z-10 text-center">
+                <h3 class="text-3xl md:text-4xl font-black mb-10 uppercase tracking-tighter"><span class="lang-en">Scale your innovation</span><span class="lang-es lang-hidden">Escala tu innovación</span></h3>
+                <form action="https://formspree.io/f/xregznag" method="POST" class="text-left space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-[10px] font-black uppercase tracking-widest mb-2 text-emerald-400"><span class="lang-en">Full Name</span><span class="lang-es lang-hidden">Nombre Completo</span></label>
+                            <input type="text" name="name" required class="w-full bg-white/10 border border-white/20 p-4 rounded-xl text-sm outline-none focus:bg-white/20 transition">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-black uppercase tracking-widest mb-2 text-emerald-400"><span class="lang-en">Email</span><span class="lang-es lang-hidden">Correo Electrónico</span></label>
+                            <input type="email" name="_replyto" required class="w-full bg-white/10 border border-white/20 p-4 rounded-xl text-sm outline-none focus:bg-white/20 transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-black uppercase tracking-widest mb-2 text-emerald-400"><span class="lang-en">Message / Intent</span><span class="lang-es lang-hidden">Mensaje / Intención</span></label>
+                        <textarea name="message" rows="3" required class="w-full bg-white/10 border border-white/20 p-4 rounded-xl text-sm outline-none focus:bg-white/20 transition"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-emerald-500 text-emerald-950 font-black py-5 rounded-2xl hover:bg-white transition uppercase tracking-widest shadow-xl text-sm">
+                        <span class="lang-en">Request Startup Demo</span><span class="lang-es lang-hidden">Solicitar Demo de Startup</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Original Blindado -->
+    <footer class="relative py-24 px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="footer-bg.jpg" alt="Vision" class="w-full h-full object-cover opacity-50">
+            <div class="absolute inset-0 bg-slate-950/90"></div> 
+        </div>
+
+        <div class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-4 gap-12 text-left text-white">
+            <div class="col-span-1">
+                <img src="logo-vally.png" alt="Footer Logo" class="h-12 mb-4 brightness-0 invert">
+                <p class="text-xs text-white opacity-70 italic font-mono">Disrupting the physics of the future.</p>
             </div>
             <div>
-                <div class="text-5xl mb-6 transform hover:scale-110 transition">🧬</div>
-                <h4 class="font-black uppercase text-sm mb-3 text-emerald-900"><span class="lang-en">Agnostic Methodology</span><span class="lang-es lang-hidden">Metodología Agnóstica</span></h4>
-                <p class="text-gray-500 text-sm leading-relaxed"><span class="lang-en">One core engine for viral proteases, Graphene, and semiconductors.</span><span class="lang-es lang-hidden">Un motor central para proteasas virales, grafeno y semiconductore
+                <h5 class="font-black mb-6 border-b border-emerald-500 pb-2 uppercase text-[10px] tracking-widest">Startup Verticals</h5>
+                <ul class="text-[11px] space-y-2 opacity-80 uppercase font-bold text-emerald-400">
+                    <li>● VALLY-Scan™</li><li>● VALLY-Materials</li><li>● VALLY-API</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-black mb-6 border-b border-emerald-500 pb-2 uppercase text-[10px] tracking-widest text-emerald-400">Scientific Validation</h5>
+                <ul class="text-[11px] space-y-2 opacity-80 uppercase font-bold text-emerald-400">
+                    <li>● APS Denver 2026</li><li>● ChemRxiv Registered</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-black mb-6 border-b border-emerald-500 pb-2 uppercase text-[10px] tracking-widest">Contact</h5>
+                <p class="text-[12px] font-black uppercase">Lionell Nava Ramos</p>
+                <p class="mt-4 text-[10px] text-emerald-400 underline font-bold">lionnava@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-6xl mx-auto mt-24 pt-8 border-t border-gray-700 text-center text-white opacity-50 text-[10px] uppercase tracking-widest">
+            © 2025 Vally Dynamics. Maracaibo, Venezuela.
+            <p class="mt-10 opacity-5 text-[8px] hover:opacity-100 transition-opacity duration-1000 normal-case">Images by Roksana Helscher and Gerd Altmann from Pixabay.</p>
+        </div>
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            const enElements = document.querySelectorAll('.lang-en');
+            const esElements = document.querySelectorAll('.lang-es');
+            const btnEn = document.getElementById('btn-en');
+            const btnEs = document.getElementById('btn-es');
+
+            if (lang === 'es') {
+                enElements.forEach(el => el.classList.add('lang-hidden'));
+                esElements.forEach(el => el.classList.remove('lang-hidden'));
+                btnEs.classList.add('text-emerald-700', 'border-b-2', 'border-emerald-700');
+                btnEs.classList.remove('text-gray-400');
+                btnEn.classList.remove('text-emerald-700', 'border-b-2', 'border-emerald-700');
+                btnEn.classList.add('text-gray-400');
+            } else {
+                esElements.forEach(el => el.classList.add('lang-hidden'));
+                enElements.forEach(el => el.classList.remove('lang-hidden'));
+                btnEn.classList.add('text-emerald-700', 'border-b-2', 'border-emerald-700');
+                btnEn.classList.remove('text-gray-400');
+                btnEs.classList.remove('text-emerald-700', 'border-b-2', 'border-emerald-700');
+                btnEs.classList.add('text-gray-400');
+            }
+        }
+    </script>
+</body>
+</html>
