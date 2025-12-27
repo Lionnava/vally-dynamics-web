@@ -3,32 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VALLY-API | Vally Dynamics</title>
+    <title>VALLY-API | Enterprise Integration</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>.lang-hidden { display: none !important; }</style>
 </head>
-<body class="bg-emerald-950 text-white font-sans">
-    <nav class="p-6 border-b border-white/10 flex justify-between items-center">
-        <img src="logo-vally.png" class="h-8 brightness-0 invert" alt="Vally Logo">
-        <a href="index.html" class="text-xs font-black uppercase tracking-widest border border-white/20 px-6 py-2 rounded-full hover:bg-white hover:text-emerald-900 transition">← Back to Home</a>
+<body class="bg-gray-50 font-sans text-gray-900">
+    <!-- Navbar -->
+    <nav class="p-6 bg-white shadow-sm flex justify-between items-center sticky top-0 z-50">
+        <a href="index.html" class="flex items-center space-x-3">
+            <img src="logo-vally.png" class="h-8 w-auto">
+            <span class="font-black text-emerald-900 uppercase text-xs tracking-widest">
+                <span class="lang-en">Back to Platform</span>
+                <span class="lang-es lang-hidden">Volver a la Plataforma</span>
+            </span>
+        </a>
+        <div class="flex space-x-4">
+            <button onclick="setLanguage('en')" id="btn-en" class="text-xs font-bold text-emerald-700 border-b-2 border-emerald-700">EN</button>
+            <button onclick="setLanguage('es')" id="btn-es" class="text-xs font-bold text-gray-400">ES</button>
+        </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-6 py-32 text-center">
-        <span class="text-emerald-400 font-black uppercase tracking-[0.4em] text-xs">VALLY-Cloud Infrastructure</span>
-        <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mt-8 mb-12 leading-none">Scalable Biophysics</h1>
-        
-        <div class="bg-white/5 border border-white/10 p-12 rounded-[4rem] text-left backdrop-blur-xl">
-            <h2 class="text-2xl font-black text-emerald-400 uppercase tracking-widest mb-12">Technological Roadmap</h2>
-            <div class="space-y-12">
-                <div class="flex space-x-8">
-                    <span class="font-black text-emerald-500">Q3 2025</span>
-                    <div><p class="font-bold text-lg uppercase">Cloud Dashboard Beta</p><p class="opacity-60 text-sm">High-throughput visualization for enterprise R&D.</p></div>
+    <header class="bg-zinc-900 text-white py-20 px-6 text-center border-b-4 border-emerald-500">
+        <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4 italic">VALLY-API</h2>
+        <p class="text-emerald-400 font-bold uppercase tracking-widest text-xs">
+            <span class="lang-en">The Nervous System of Automated Discovery</span>
+            <span class="lang-es lang-hidden">El Sistema Nervioso del Descubrimiento Automatizado</span>
+        </p>
+    </header>
+
+    <section class="py-16 px-6 max-w-5xl mx-auto">
+        <div class="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-gray-100">
+            <div class="text-center mb-12">
+                <span class="bg-emerald-100 text-emerald-700 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">In Development - Q4 2025</span>
+                <p class="text-lg text-gray-600 mt-6 leading-relaxed">
+                    <span class="lang-en">VALLY-API allows seamless integration of our core dynamics engine into your enterprise R&D cloud, enabling massive, automated screenings.</span>
+                    <span class="lang-es lang-hidden">VALLY-API permite la integración fluida de nuestro motor dinámico en la nube de R&D de su empresa, habilitando cribados masivos y automatizados.</span>
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 mb-16 text-left">
+                <div class="bg-zinc-50 p-8 rounded-3xl border border-zinc-200">
+                    <h4 class="font-black text-xl mb-4 text-emerald-900">
+                        <span class="lang-en">High-Throughput Analysis</span>
+                        <span class="lang-es lang-hidden">Análisis de Alto Rendimiento</span>
+                    </h4>
+                    <p class="text-gray-500 text-sm">
+                        <span class="lang-en">Scan libraries of thousands of proteins or materials in real-time via RESTful calls. No manual setup required.</span>
+                        <span class="lang-es lang-hidden">Analice bibliotecas de miles de proteínas o materiales en tiempo real mediante llamadas RESTful. Sin configuración manual.</span>
+                    </p>
                 </div>
-                <div class="flex space-x-8">
-                    <span class="font-black text-emerald-500">Q4 2025</span>
-                    <div><p class="font-bold text-lg uppercase">GNN Integration</p><p class="opacity-60 text-sm">Graph Neural Networks for 100% higher prediction accuracy.</p></div>
+                <div class="bg-zinc-50 p-8 rounded-3xl border border-zinc-200">
+                    <h4 class="font-black text-xl mb-4 text-emerald-900">
+                        <span class="lang-en">Enterprise Cloud Ready</span>
+                        <span class="lang-es lang-hidden">Listo para la Nube Corporativa</span>
+                    </h4>
+                    <p class="text-gray-500 text-sm">
+                        <span class="lang-en">Secure, encrypted, and scalable. Compatible with AWS, Google Cloud, and existing bioinformatics pipelines.</span>
+                        <span class="lang-es lang-hidden">Seguro, encriptado y escalable. Compatible con AWS, Google Cloud y flujos de bioinformática existentes.</span>
+                    </p>
                 </div>
             </div>
+
+            <!-- Tabla de Eficiencia Operativa -->
+            <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-xl">
+                <table class="w-full text-left bg-white text-sm">
+                    <thead class="bg-zinc-800 text-white">
+                        <tr>
+                            <th class="p-4 uppercase tracking-widest text-[10px]">
+                                <span class="lang-en">Capability</span><span class="lang-es lang-hidden">Capacidad</span>
+                            </th>
+                            <th class="p-4 uppercase tracking-widest text-[10px]">
+                                <span class="lang-en">Manual Workflow</span><span class="lang-es lang-hidden">Flujo Manual</span>
+                            </th>
+                            <th class="p-4 bg-emerald-800 uppercase tracking-widest text-[10px]">
+                                <span class="lang-en">VALLY-API</span><span class="lang-es lang-hidden">VALLY-API</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b">
+                            <td class="p-4 font-bold"><span class="lang-en">Throughput</span><span class="lang-es lang-hidden">Volumen</span></td>
+                            <td class="p-4 text-gray-500"><span class="lang-en">1-5 structures/day</span><span class="lang-es lang-hidden">1-5 estructuras/día</span></td>
+                            <td class="p-4 font-black text-emerald-600"><span class="lang-en">Unlimited (Parallel)</span><span class="lang-es lang-hidden">Ilimitado (Paralelo)</span></td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-4 font-bold"><span class="lang-en">Integration</span><span class="lang-es lang-hidden">Integración</span></td>
+                            <td class="p-4 text-gray-500"><span class="lang-en">Standalone App</span><span class="lang-es lang-hidden">App Independiente</span></td>
+                            <td class="p-4 font-black text-emerald-600"><span class="lang-en">Direct Code Injection</span><span class="lang-es lang-hidden">Inyección Directa de Código</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold"><span class="lang-en">Latency</span><span class="lang-es lang-hidden">Latencia</span></td>
+                            <td class="p-4 text-gray-500"><span class="lang-en">Human-dependent</span><span class="lang-es lang-hidden">Dependiente de humano</span></td>
+                            <td class="p-4 font-black text-emerald-600"><span class="lang-en">Milisec Response</span><span class="lang-es lang-hidden">Respuesta en milisegundos</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </main>
+    </section>
+
+    <footer class="bg-zinc-950 py-12 text-center text-white opacity-40 text-[10px] uppercase tracking-widest">
+        Vally Dynamics | Infrastructure & API Vertical.
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            const enElements = document.querySelectorAll('.lang-en');
+            const esElements = document.querySelectorAll('.lang-es');
+            const btnEn = document.getElementById('btn-en');
+            const btnEs = document.getElementById('btn-es');
+
+            if (lang === 'es') {
+                enElements.forEach(el => el.classList.add('lang-hidden'));
+                esElements.forEach(el => el.classList.remove('lang-hidden'));
+                btnEs.classList.add('text-emerald-700', 'border-b-2', 'border-emerald-700');
+                btnEs.classList.remove('text-gray-400');
+                btnEn.classList.remove('text-emerald-700', 'border-b-2', 'border-emerald-700');
+                btnEn.classList.add('text-gray-400');
+            } else {
+                esElements.forEach(el => el.classList.add('lang-hidden'));
+                enElements.forEach(el => el.classList.remove('lang-hidden'));
+                btnEn.classList.add('text-emerald-700', 'border-b-2', 'border-emerald-700');
+                btnEn.classList.remove('text-gray-400');
+                btnEs.classList.remove('text-emerald-700', 'border-b-2', 'border-emerald-700');
+                btnEs.classList.add('text-gray-400');
+            }
+        }
+    </script>
 </body>
 </html>
