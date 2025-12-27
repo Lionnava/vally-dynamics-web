@@ -20,8 +20,3 @@ function setLanguage(lang) {
         if(btnEs) btnEs.classList.add('text-gray-400');
     }
 }
-// Detectar idioma del navegador al cargar
-document.addEventListener("DOMContentLoaded", () => {
-    const userLang = navigator.language || navigator.userLanguage; 
-    if (userLang.startsWith('es')) setLanguage('es');
-});
