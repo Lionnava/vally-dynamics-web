@@ -21,22 +21,41 @@ function setLanguage(lang) {
     }
 }
 
-// Keep the hosted counter image intact: the counter provider updates its digits
-// in the image response, so replacing it with a client-side fetch hides the count.
-document.addEventListener('DOMContentLoaded', () => {
-    const counterImage = document.querySelector('img[src*="hitwebcounter.com"]');
-    if (!counterImage) return;
+// Request a real shared page-view count instead of relying on the old image
+// counter, whose unregistered page identifier displayed 0000.
+document.addEventListener('DOMContentLoaded', async () => {
+    const oldCounterImage = document.querySelector('img[src*="hitwebcounter.com"]');
+    if (!oldCounterImage) return;
 
-    const counterContainer = counterImage.parentElement;
+    const counterContainer = oldCounterImage.parentElement;
     const label = counterContainer.querySelector('span');
+    const count = document.createElement('span');
+    count.id = 'visitor-count';
+    count.className = 'font-black text-emerald-300';
+    count.setAttribute('aria-live', 'polite');
+    count.textContent = '…';
 
+    oldCounterImage.remove();
     counterContainer.classList.remove('opacity-40');
     counterContainer.classList.add('opacity-100');
-    counterImage.classList.add('h-5', 'w-auto');
-    counterImage.alt = 'Global visitor count';
-    counterImage.title = 'Global visitor counter';
-
     if (label) {
         label.innerHTML = '<span class="lang-en">Global visitors:</span><span class="lang-es lang-hidden">Visitas globales:</span>';
+    }
+    counterContainer.appendChild(count);
+
+    try {
+        const response = await fetch('https://api.counterapi.dev/v1/vally-dynamics-web/visits/up', {
+            cache: 'no-store'
+        });
+        if (!response.ok) throw new Error(`Counter service returned ${response.status}`);
+
+        const data = await response.json();
+        const total = Number(data.count);
+        if (!Number.isSafeInteger(total) || total < 0) throw new Error('Invalid counter response');
+        count.textContent = total.toLocaleString();
+    } catch (error) {
+        console.error('Visitor counter could not be loaded:', error);
+        count.textContent = 'N/D';
+        count.title = 'El servicio externo del contador no está disponible.';
     }
 });
