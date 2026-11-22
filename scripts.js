@@ -1,61 +1,146 @@
+// scripts.js — Vally Dynamics / Vally Structural Intelligence
+
+function safeGetStorage(key, fallback) {
+    try {
+        return localStorage.getItem(key) || fallback;
+    } catch (e) {
+        return fallback;
+    }
+}
+
+function safeSetStorage(key, value) {
+    try {
+        localStorage.setItem(key, value);
+    } catch (e) {
+        // Ignorar si el navegador bloquea almacenamiento local
+    }
+}
+
 function setLanguage(lang) {
+    const normalizedLang = lang === 'es' ? 'es' : 'en';
     const enElements = document.querySelectorAll('.lang-en');
     const esElements = document.querySelectorAll('.lang-es');
     const btnEn = document.getElementById('btn-en');
     const btnEs = document.getElementById('btn-es');
 
-    if (lang === 'es') {
+    document.documentElement.lang = normalizedLang;
+    safeSetStorage('vally_lang', normalizedLang);
+
+    if (normalizedLang === 'es') {
         enElements.forEach(el => el.classList.add('lang-hidden'));
         esElements.forEach(el => el.classList.remove('lang-hidden'));
-        if (btnEs) btnEs.classList.add('text-emerald-700', 'border-b-2', 'border-emerald-700');
-        if (btnEs) btnEs.classList.remove('text-gray-400');
-        if (btnEn) btnEn.classList.remove('text-emerald-700', 'border-b-2', 'border-emerald-700');
-        if (btnEn) btnEn.classList.add('text-gray-400');
+        if (btnEs) {
+            btnEs.classList.add('text-emerald-700', 'border-b-2', 'border-emerald-700');
+            btnEs.classList.remove('text-gray-400');
+        }
+        if (btnEn) {
+            btnEn.classList.remove('text-emerald-700', 'border-b-2', 'border-emerald-700');
+            btnEn.classList.add('text-gray-400');
+        }
     } else {
         esElements.forEach(el => el.classList.add('lang-hidden'));
         enElements.forEach(el => el.classList.remove('lang-hidden'));
-        if (btnEn) btnEn.classList.add('text-emerald-700', 'border-b-2', 'border-emerald-700');
-        if (btnEn) btnEn.classList.remove('text-gray-400');
-        if (btnEs) btnEs.classList.remove('text-emerald-700', 'border-b-2', 'border-emerald-700');
-        if (btnEs) btnEs.classList.add('text-gray-400');
+        if (btnEn) {
+            btnEn.classList.add('text-emerald-700', 'border-b-2', 'border-emerald-700');
+            btnEn.classList.remove('text-gray-400');
+        }
+        if (btnEs) {
+            btnEs.classList.remove('text-emerald-700', 'border-b-2', 'border-emerald-700');
+            btnEs.classList.add('text-gray-400');
+        }
+    }
+
+    // Actualizar <title> si tiene data-en / data-es
+    const titleEl = document.querySelector('title[data-en][data-es]');
+    if (titleEl) {
+        document.title = titleEl.getAttribute(`data-${normalizedLang}`);
+    }
+
+    // Traducir <option> y placeholders
+    document.querySelectorAll('option[data-en][data-es]').forEach(opt => {
+        const text = opt.getAttribute(`data-${normalizedLang}`);
+        if (text) opt.textContent = text;
+    });
+
+    document.querySelectorAll('[data-placeholder-en][data-placeholder-es]').forEach(el => {
+        const ph = el.getAttribute(`data-placeholder-${normalizedLang}`);
+        if (ph) el.placeholder = ph;
+    });
+
+    // Sincronizar idioma sugerido del reporte si el usuario aún no lo ha cambiado manualmente
+    const reportLang = document.getElementById('report-lang');
+    if (reportLang && !reportLang.dataset.userModified) {
+        reportLang.value = normalizedLang.toUpperCase();
     }
 }
 
-// Request a real shared page-view count instead of relying on the old image
-// counter, whose unregistered page identifier displayed 0000.
-document.addEventListener('DOMContentLoaded', async () => {
-    const oldCounterImage = document.querySelector('img[src*="hitwebcounter.com"]');
-    if (!oldCounterImage) return;
+function toggleStructureFields() {
+    const typeSelect = document.getElementById('structure-type');
+    const publicFields = document.getElementById('public-pdb-fields');
+    const ndaNotice = document.getElementById('nda-notice');
+    const pdbInput = document.getElementById('pdb-id');
+    const chainSelect = document.getElementById('chain-mode');
 
-    const counterContainer = oldCounterImage.parentElement;
-    const label = counterContainer.querySelector('span');
-    const count = document.createElement('span');
-    count.id = 'visitor-count';
-    count.className = 'font-black text-emerald-300';
-    count.setAttribute('aria-live', 'polite');
-    count.textContent = '…';
+    if (!typeSelect || !publicFields || !ndaNotice) return;
 
-    oldCounterImage.remove();
-    counterContainer.classList.remove('opacity-40');
-    counterContainer.classList.add('opacity-100');
-    if (label) {
-        label.innerHTML = '<span class="lang-en">Global visitors:</span><span class="lang-es lang-hidden">Visitas globales:</span>';
+    const isPublic = typeSelect.value === 'public_pdb';
+    publicFields.classList.toggle('hidden', !isPublic);
+    ndaNotice.classList.toggle('hidden', isPublic);
+
+    if (pdbInput) {
+        pdbInput.required = isPublic;
+        pdbInput.disabled = !isPublic;
+        if (!isPublic) pdbInput.value = '';
     }
-    counterContainer.appendChild(count);
+    if (chainSelect) {
+        chainSelect.disabled = !isPublic;
+    }
+}
 
-    try {
-        const response = await fetch('https://api.counterapi.dev/v1/vally-dynamics-web/visits/up', {
-            cache: 'no-store'
+function toggleMutationField() {
+    const modeSelect = document.getElementById('scan-mode');
+    const mutField = document.getElementById('mutation-field');
+    const mutInput = document.getElementById('mutation-target');
+
+    if (!modeSelect || !mutField) return;
+
+    const isMutation = modeSelect.value === 'mutation_impact';
+    mutField.classList.toggle('hidden', !isMutation);
+
+    if (mutInput) {
+        mutInput.required = isMutation;
+        mutInput.disabled = !isMutation;
+        if (!isMutation) mutInput.value = '';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = safeGetStorage('vally_lang', 'en');
+    setLanguage(savedLang);
+    toggleStructureFields();
+    toggleMutationField();
+
+    const reportLang = document.getElementById('report-lang');
+    if (reportLang) {
+        reportLang.addEventListener('change', () => {
+            reportLang.dataset.userModified = 'true';
         });
-        if (!response.ok) throw new Error(`Counter service returned ${response.status}`);
+    }
 
-        const data = await response.json();
-        const total = Number(data.count);
-        if (!Number.isSafeInteger(total) || total < 0) throw new Error('Invalid counter response');
-        count.textContent = total.toLocaleString();
-    } catch (error) {
-        console.error('Visitor counter could not be loaded:', error);
-        count.textContent = 'N/D';
-        count.title = 'El servicio externo del contador no está disponible.';
+    const pdbInput = document.getElementById('pdb-id');
+    if (pdbInput) {
+        pdbInput.addEventListener('input', () => {
+            pdbInput.value = pdbInput.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+        });
+    }
+
+    // Evitar doble envío accidental en el formulario
+    const intakeForm = document.getElementById('intake-form');
+    const submitBtn = document.getElementById('submit-btn');
+    if (intakeForm && submitBtn) {
+        intakeForm.addEventListener('submit', () => {
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-60', 'cursor-not-allowed');
+        });
     }
 });

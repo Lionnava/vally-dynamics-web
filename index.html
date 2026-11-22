@@ -3,51 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vally Dynamics | Accelerating the Future of Matter</title>
+    <title data-en="Vally Dynamics | Accelerating the Future of Matter" data-es="Vally Dynamics | Acelerando el Futuro de la Materia">Vally Dynamics | Accelerating the Future of Matter</title>
+    <meta name="description" content="High-fidelity computational dynamics and rapid allosteric mapping (VALLY-Scan™). Transforming months of molecular R&D into seconds of physical certainty.">
+    <meta property="og:title" content="Vally Dynamics | Vally Structural Intelligence">
+    <meta property="og:description" content="Rapid allosteric mapping and physics-informed molecular intelligence. Request a confidential VALLY-Scan™ evaluation.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="logo-vally.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>.lang-hidden { display: none !important; }</style>
 </head>
-<body class="bg-gray-50 font-sans text-gray-900 overflow-x-hidden">
+<body class="bg-gray-50 font-sans text-gray-900 [overflow-x:clip]">
 
     <!-- Navbar -->
-    <nav class="p-6 bg-white shadow-sm flex justify-between items-center sticky top-0 z-50">
-        <div class="flex items-center space-x-3">
-            <img src="logo-vally.png" alt="Proyecto Vally" class="h-10 w-auto">
-            <h1 class="text-2xl font-black text-emerald-900 tracking-tighter uppercase leading-none">VALLY DYNAMICS</h1>
-        </div>
-        <div class="flex items-center space-x-4">
-            <button onclick="setLanguage('en')" id="btn-en" class="text-xs font-bold text-emerald-700 border-b-2 border-emerald-700">EN</button>
-            <button onclick="setLanguage('es')" id="btn-es" class="text-xs font-bold text-gray-400">ES</button>
-            <a href="#contact" class="bg-emerald-700 text-white px-5 py-2 rounded-full hover:bg-emerald-800 transition text-xs font-bold uppercase shadow-lg">
-                <span class="lang-en">Early Access</span>
-                <span class="lang-es lang-hidden">Acceso Anticipado</span>
+    <nav class="px-6 py-4 bg-white/95 backdrop-blur-md shadow-sm flex justify-between items-center sticky top-0 z-50 border-b border-gray-100">
+        <a href="index.html" class="flex items-center space-x-3">
+            <img src="logo-vally.png" alt="Vally Structural Intelligence Logo" class="h-10 w-auto">
+            <span class="text-xl md:text-2xl font-black text-emerald-900 tracking-tighter uppercase leading-none">VALLY DYNAMICS</span>
+        </a>
+        <div class="flex items-center space-x-4 md:space-x-6">
+            <div class="hidden md:flex items-center space-x-5 text-xs font-bold uppercase tracking-wider text-gray-500">
+                <a href="#platform" class="hover:text-emerald-700 transition">VALLY-Scan™</a>
+                <a href="#verticals" class="hover:text-emerald-700 transition">
+                    <span class="lang-en">Verticals</span><span class="lang-es lang-hidden">Verticales</span>
+                </a>
+                <a href="api.html" class="hover:text-emerald-700 transition">API</a>
+            </div>
+            <div class="flex items-center space-x-2 border-l border-gray-200 pl-4">
+                <button type="button" onclick="setLanguage('en')" id="btn-en" class="text-xs font-bold text-emerald-700 border-b-2 border-emerald-700 pb-0.5">EN</button>
+                <button type="button" onclick="setLanguage('es')" id="btn-es" class="text-xs font-bold text-gray-400 pb-0.5">ES</button>
+            </div>
+            <a href="#contact" class="bg-emerald-700 text-white px-4 md:px-5 py-2 rounded-full hover:bg-emerald-800 transition text-xs font-bold uppercase shadow-md">
+                <span class="lang-en">Request Scan</span>
+                <span class="lang-es lang-hidden">Solicitar Escaneo</span>
             </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative text-white py-32 md:py-48 px-6 text-center overflow-hidden">
+    <header class="relative text-white py-28 md:py-44 px-6 text-center overflow-hidden bg-emerald-950">
         <div class="absolute inset-0 z-0">
-            <img src="hero-bg.jpg" class="w-full h-full object-cover opacity-70">
-            <div class="absolute inset-0 bg-emerald-950/85"></div> 
+            <img src="hero-bg.jpg" alt="" class="w-full h-full object-cover opacity-50">
+            <div class="absolute inset-0 bg-emerald-950/85"></div>
         </div>
         <div class="relative z-10 max-w-5xl mx-auto">
-            <h2 class="text-4xl md:text-7xl font-black mb-8 uppercase tracking-tighter leading-tight">
+            <h1 class="text-4xl md:text-7xl font-black mb-8 uppercase tracking-tighter leading-tight">
                 <span class="lang-en">Accelerating the future of matter</span>
                 <span class="lang-es lang-hidden">Acelerando el futuro de la materia</span>
-            </h2>
+            </h1>
             <p class="text-lg md:text-2xl mb-12 opacity-90 leading-relaxed max-w-3xl mx-auto font-light">
-                <span class="lang-en">Redefining R&D through high-fidelity computational dynamics. We transform months of research into seconds of physical certainty.</span>
-                <span class="lang-es lang-hidden">Redefiniendo el R&D mediante dinámica computacional de alta fidelidad. Transformamos meses de investigación en segundos de certeza física.</span>
+                <span class="lang-en">Redefining R&amp;D through high-fidelity computational dynamics. We transform months of research into seconds of physical certainty.</span>
+                <span class="lang-es lang-hidden">Redefiniendo el R&amp;D mediante dinámica computacional de alta fidelidad. Transformamos meses de investigación en segundos de certeza física.</span>
             </p>
             <div class="flex flex-col items-center space-y-8">
                 <div class="bg-white/10 backdrop-blur-md px-6 py-3 rounded-xl border border-white/20 text-[10px] font-black uppercase tracking-widest">
                     <span class="lang-en">Official Validation: APS Global Physics Summit 2026</span>
                     <span class="lang-es lang-hidden">Validación Oficial: APS Global Physics Summit 2026</span>
                 </div>
-                <a href="#contact" class="bg-emerald-500 text-emerald-950 px-12 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-white transition shadow-2xl text-base md:text-lg">
-                    <span class="lang-en">Get Started / Request Demo</span>
-                    <span class="lang-es lang-hidden">Comenzar / Solicitar Demo</span>
+                <a href="#contact" class="bg-emerald-500 text-emerald-950 px-10 md:px-12 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-white transition shadow-2xl text-sm md:text-lg">
+                    <span class="lang-en">Request Confidential Scan</span>
+                    <span class="lang-es lang-hidden">Solicitar Escaneo Confidencial</span>
                 </a>
             </div>
         </div>
@@ -57,30 +71,30 @@
     <section class="py-24 bg-white px-6">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
             <div class="group">
-                <div class="text-5xl mb-6 transform group-hover:scale-110 transition">🚀</div>
-                <h4 class="font-black uppercase text-sm mb-3 text-emerald-900">
+                <div class="text-5xl mb-6 transform group-hover:scale-110 transition" aria-hidden="true">🚀</div>
+                <h2 class="font-black uppercase text-sm mb-3 text-emerald-900">
                     <span class="lang-en">Exponential Speed</span><span class="lang-es lang-hidden">Velocidad Exponencial</span>
-                </h4>
+                </h2>
                 <p class="text-gray-500 text-sm leading-relaxed">
                     <span class="lang-en">We eliminate the computational bottleneck, delivering results 1000x faster than traditional MD.</span>
                     <span class="lang-es lang-hidden">Eliminamos el cuello de botella, entregando resultados 1000 veces más rápido que la MD tradicional.</span>
                 </p>
             </div>
             <div class="group">
-                <div class="text-5xl mb-6 transform group-hover:scale-110 transition">🧬</div>
-                <h4 class="font-black uppercase text-sm mb-3 text-emerald-900">
+                <div class="text-5xl mb-6 transform group-hover:scale-110 transition" aria-hidden="true">🧬</div>
+                <h2 class="font-black uppercase text-sm mb-3 text-emerald-900">
                     <span class="lang-en">Agnostic Methodology</span><span class="lang-es lang-hidden">Metodología Agnóstica</span>
-                </h4>
+                </h2>
                 <p class="text-gray-500 text-sm leading-relaxed">
-                    <span class="lang-en">Our core engine scales from viral proteases to advanced semiconductor materials.</span>
-                    <span class="lang-es lang-hidden">Nuestro motor escala de proteasas virales a materiales semiconductores avanzados.</span>
+                    <span class="lang-en">Our core engine scales from viral proteases and tumor suppressors to advanced semiconductor lattices.</span>
+                    <span class="lang-es lang-hidden">Nuestro motor escala desde proteasas virales y supresores tumorales hasta redes semiconductoras avanzadas.</span>
                 </p>
             </div>
             <div class="group">
-                <div class="text-5xl mb-6 transform group-hover:scale-110 transition">💎</div>
-                <h4 class="font-black uppercase text-sm mb-3 text-emerald-900">
+                <div class="text-5xl mb-6 transform group-hover:scale-110 transition" aria-hidden="true">💎</div>
+                <h2 class="font-black uppercase text-sm mb-3 text-emerald-900">
                     <span class="lang-en">High-Fidelity ROI</span><span class="lang-es lang-hidden">Retorno de Inversión</span>
-                </h4>
+                </h2>
                 <p class="text-gray-500 text-sm leading-relaxed">
                     <span class="lang-en">Validated accuracy (r=0.67) on standard hardware. No supercomputing budget required.</span>
                     <span class="lang-es lang-hidden">Precisión validada (r=0,67) en hardware común. Sin presupuestos millonarios en supercómputo.</span>
@@ -90,14 +104,16 @@
     </section>
 
     <!-- PRODUCTO ESTRELLA: VALLY-Scan™ -->
-    <section class="py-24 bg-gray-50 px-6 border-y border-gray-200">
+    <section id="platform" class="py-24 bg-gray-50 px-6 border-y border-gray-200">
         <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
             <div>
-                <span class="text-emerald-600 font-black tracking-widest uppercase text-xs mb-2 block">Flagship Platform</span>
-                <h3 class="text-5xl font-black text-gray-900 mb-8 tracking-tighter">VALLY-Scan™</h3>
+                <span class="text-emerald-600 font-black tracking-widest uppercase text-xs mb-2 block">
+                    <span class="lang-en">Flagship Platform</span><span class="lang-es lang-hidden">Plataforma Insignia</span>
+                </span>
+                <h2 class="text-5xl font-black text-gray-900 mb-8 tracking-tighter">VALLY-Scan™</h2>
                 <p class="text-gray-600 text-xl mb-10 leading-relaxed font-light">
                     <span class="lang-en">Proprietary platform for rapid allosteric mapping. Identifying therapeutic targets in seconds through physics-informed heuristics.</span>
-                    <span class="lang-es lang-hidden">Plataforma patentada para mapeo alostérico rápido. Identificando objetivos terapéuticos en segundos mediante heurísticas físicas.</span>
+                    <span class="lang-es lang-hidden">Plataforma propietaria para mapeo alostérico rápido. Identificando objetivos terapéuticos en segundos mediante heurísticas físicas.</span>
                 </p>
                 <div class="bg-white p-6 rounded-2xl border-l-8 border-emerald-500 shadow-xl inline-block">
                     <p class="text-3xl font-black text-emerald-900">r = 0.67</p>
@@ -108,22 +124,25 @@
                 </div>
             </div>
             <div class="bg-white p-6 shadow-2xl rounded-[3rem] border border-gray-100">
-                <img src="https://raw.githubusercontent.com/Lionnava/vally-scan/main/Figure_2_Validation_6LU7.png" class="rounded-3xl w-full">
+                <img src="https://raw.githubusercontent.com/Lionnava/vally-scan/main/Figure_2_Validation_6LU7.png"
+                     alt="VALLY-Scan validation benchmark on SARS-CoV-2 Mpro (PDB: 6LU7)"
+                     loading="lazy"
+                     class="rounded-3xl w-full">
             </div>
         </div>
     </section>
 
     <!-- STARTUP VERTICALS -->
-    <section class="py-24 px-6 max-w-7xl mx-auto">
-        <h3 class="text-4xl font-black text-center text-gray-900 mb-20 uppercase tracking-tighter">
+    <section id="verticals" class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-black text-center text-gray-900 mb-20 uppercase tracking-tighter">
             <span class="lang-en">Startup Verticals</span><span class="lang-es lang-hidden">Verticales de la Startup</span>
-        </h3>
+        </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
             <a href="p53.html" class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-gray-100 hover:border-emerald-500 hover:shadow-2xl transition-all duration-500 group">
-                <div class="text-3xl mb-8">🏥</div>
-                <h4 class="text-2xl font-black mb-4 text-emerald-900">
+                <div class="text-3xl mb-8" aria-hidden="true">🏥</div>
+                <h3 class="text-2xl font-black mb-4 text-emerald-900">
                     <span class="lang-en">Structural Oncology</span><span class="lang-es lang-hidden">Oncología Estructural</span>
-                </h4>
+                </h3>
                 <p class="text-gray-500 text-sm mb-6">
                     <span class="lang-en">Deep mapping of p53 pathways to identify dynamic mutations driving cancer.</span>
                     <span class="lang-es lang-hidden">Mapeo profundo de p53 para identificar mutaciones dinámicas que impulsan el cáncer.</span>
@@ -133,10 +152,10 @@
                 </span>
             </a>
             <a href="materials.html" class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-gray-100 hover:border-emerald-500 hover:shadow-2xl transition-all duration-500 group">
-                <div class="text-3xl mb-8">⚛️</div>
-                <h4 class="text-2xl font-black mb-4 text-emerald-900">
+                <div class="text-3xl mb-8" aria-hidden="true">⚛️</div>
+                <h3 class="text-2xl font-black mb-4 text-emerald-900">
                     <span class="lang-en">Next-Gen Materials</span><span class="lang-es lang-hidden">Materiales de Nueva Gen</span>
-                </h4>
+                </h3>
                 <p class="text-gray-500 text-sm mb-6">
                     <span class="lang-en">Vibrational physics applied to Graphene, Nanotubes, and CO2-capturing MOFs.</span>
                     <span class="lang-es lang-hidden">Física vibracional aplicada al Grafeno, Nanotubos y captura de CO2.</span>
@@ -146,20 +165,20 @@
                 </span>
             </a>
             <a href="api.html" class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-gray-100 hover:border-emerald-500 hover:shadow-2xl transition-all duration-500 group">
-                <div class="text-3xl mb-8">🛰️</div>
-                <h4 class="text-2xl font-black mb-4 text-emerald-900">VALLY-API</h4>
+                <div class="text-3xl mb-8" aria-hidden="true">🛰️</div>
+                <h3 class="text-2xl font-black mb-4 text-emerald-900">VALLY-API</h3>
                 <p class="text-gray-500 text-sm mb-6">
-                    <span class="lang-en">Seamlessly integrate our core dynamics engine into your enterprise R&D cloud.</span>
-                    <span class="lang-es lang-hidden">Integra nuestro motor central dinámico directamente en tu nube de R&D.</span>
+                    <span class="lang-en">Private containerized integration of our core dynamics engine for enterprise R&amp;D clouds.</span>
+                    <span class="lang-es lang-hidden">Integración privada en contenedores de nuestro motor dinámico para nubes de R&amp;D corporativas.</span>
                 </p>
                 <span class="text-[10px] font-black text-emerald-600 uppercase tracking-widest border border-emerald-200 px-3 py-1 rounded-full group-hover:bg-emerald-600 group-hover:text-white transition">
-                    <span class="lang-en">Cloud Integration →</span><span class="lang-es lang-hidden">Integración en Nube →</span>
+                    <span class="lang-en">Enterprise Integration →</span><span class="lang-es lang-hidden">Integración Empresarial →</span>
                 </span>
             </a>
         </div>
     </section>
 
-    <!-- TRIBUTE SECTION CON ROADMAP RESTAURADO -->
+    <!-- TRIBUTE & ROADMAP -->
     <section class="bg-emerald-900 py-24 px-6 text-white text-center">
         <div class="max-w-4xl mx-auto">
             <img src="logo-vally.png" alt="Vally Logo" class="h-16 mx-auto mb-8 brightness-0 invert opacity-80">
@@ -167,78 +186,244 @@
                 <span class="lang-en">"Democratizing high-level science through innovative algorithms. A scientific tribute to the life of <strong>Vally Ramos</strong>."</span>
                 <span class="lang-es lang-hidden">"Democratizando la ciencia de alto nivel mediante algoritmos innovadores. Un tributo científico a la vida de <strong>Vally Ramos</strong>."</span>
             </p>
-            <!-- ROADMAP REINCORPORADO -->
-            <div class="grid grid-cols-2 gap-8 text-left border-t border-white/10 pt-10 max-w-md mx-auto uppercase tracking-widest text-[10px]">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-left border-t border-white/10 pt-10 max-w-xl mx-auto uppercase tracking-widest text-[10px]">
                 <div>
-                    <p class="text-emerald-400 font-black mb-2"><span class="lang-en">Q3 2025 Milestone</span><span class="lang-es lang-hidden">Hito Q3 2025</span></p>
-                    <p class="font-bold"><span class="lang-en">Cloud Dashboard Launch</span><span class="lang-es lang-hidden">Lanzamiento del Dashboard</span></p>
+                    <p class="text-emerald-400 font-black mb-2">
+                        <span class="lang-en">2025–2026 • Achieved</span>
+                        <span class="lang-es lang-hidden">2025–2026 • Logrado</span>
+                    </p>
+                    <p class="font-bold">
+                        <span class="lang-en">BitPINN 15D Engine &amp; APS 2026 Validation</span>
+                        <span class="lang-es lang-hidden">Motor BitPINN 15D y Validación APS 2026</span>
+                    </p>
                 </div>
                 <div>
-                    <p class="text-emerald-400 font-black mb-2"><span class="lang-en">Q4 2025 Goal</span><span class="lang-es lang-hidden">Meta Q4 2025</span></p>
-                    <p class="font-bold"><span class="lang-en">GNN Prediction Engine</span><span class="lang-es lang-hidden">Motor de Predicción GNN</span></p>
+                    <p class="text-emerald-400 font-black mb-2">
+                        <span class="lang-en">2026–2027 • Active Phase</span>
+                        <span class="lang-es lang-hidden">2026–2027 • Fase Activa</span>
+                    </p>
+                    <p class="font-bold">
+                        <span class="lang-en">IP Registration &amp; Sovereign Container API</span>
+                        <span class="lang-es lang-hidden">Registro de PI y API en Contenedor Soberano</span>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Lead Generation Form -->
+    <!-- Confidential Intake Portal -->
     <section id="contact" class="py-24 px-4 bg-white">
-        <div class="max-w-3xl mx-auto bg-emerald-950 text-white p-12 rounded-[3rem] shadow-2xl relative overflow-hidden text-center">
-            <h3 class="text-3xl md:text-4xl font-black mb-10 uppercase tracking-tighter">
-                <span class="lang-en">Scale your innovation</span><span class="lang-es lang-hidden">Escala tu innovación</span>
-            </h3>
-            <form action="https://formspree.io/f/xregznag" method="POST" class="text-left space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="max-w-4xl mx-auto bg-emerald-950 text-white p-8 md:p-14 rounded-[3rem] shadow-2xl relative overflow-hidden">
+            <div class="text-center mb-10">
+                <span class="inline-block bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-4">
+                    <span class="lang-en">NDA-Protected In-House Evaluation • 24–48h Turnaround</span>
+                    <span class="lang-es lang-hidden">Evaluación Confidencial In-House • Entrega en 24–48h</span>
+                </span>
+                <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tighter">
+                    <span class="lang-en">Request Confidential VALLY-Scan™</span>
+                    <span class="lang-es lang-hidden">Solicitar VALLY-Scan™ Confidencial</span>
+                </h2>
+                <p class="text-sm text-emerald-100/75 mt-3 max-w-2xl mx-auto font-light">
+                    <span class="lang-en">Executed offline on our sovereign engine. Receive by email: 3D B-factor PDB, Top-10 Allosteric Hotspots CSV, Validation Plot, and AutoDock Vina Grid Box PDF.</span>
+                    <span class="lang-es lang-hidden">Ejecutado offline en nuestro motor soberano. Recibirás por correo: PDB 3D con B-factors, CSV Top-10 Hotspots, Gráfica de Validación y PDF de Grid Box para AutoDock Vina.</span>
+                </p>
+            </div>
+
+            <form id="intake-form" action="https://formspree.io/f/xregznag" method="POST" class="text-left space-y-6">
+                <input type="hidden" name="_subject" value="Nueva Solicitud Confidencial VALLY-Scan™">
+
+                <!-- Datos del solicitante -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                     <div>
-                        <label class="block text-[10px] font-black uppercase tracking-widest mb-2 text-emerald-400"><span class="lang-en">Full Name</span><span class="lang-es lang-hidden">Nombre Completo</span></label>
-                        <input type="text" name="name" required class="w-full bg-white/10 border border-white/20 p-4 rounded-xl text-sm outline-none focus:bg-white/20 transition">
+                        <label for="req-name" class="block text-[10px] font-black uppercase tracking-widest mb-2 text-emerald-400">
+                            <span class="lang-en">Full Name *</span><span class="lang-es lang-hidden">Nombre Completo *</span>
+                        </label>
+                        <input id="req-name" type="text" name="name" required
+                            data-placeholder-en="Dr. Jane Doe" data-placeholder-es="Dra. María Pérez"
+                            placeholder="Dr. Jane Doe"
+                            class="w-full bg-white/10 border border-white/20 p-3.5 rounded-xl text-sm text-white placeholder-white/40 outline-none focus:border-emerald-400 focus:bg-white/15 transition">
                     </div>
                     <div>
-                        <label class="block text-[10px] font-black uppercase tracking-widest mb-2 text-emerald-400"><span class="lang-en">Corporate Email</span><span class="lang-es lang-hidden">Correo Corporativo</span></label>
-                        <input type="email" name="_replyto" required class="w-full bg-white/10 border border-white/20 p-4 rounded-xl text-sm outline-none focus:bg-white/20 transition">
+                        <label for="req-org" class="block text-[10px] font-black uppercase tracking-widest mb-2 text-emerald-400">
+                            <span class="lang-en">Organization / Lab *</span><span class="lang-es lang-hidden">Empresa / Laboratorio *</span>
+                        </label>
+                        <input id="req-org" type="text" name="organization" required
+                            data-placeholder-en="BioTech Labs / University" data-placeholder-es="Laboratorio / Universidad"
+                            placeholder="BioTech Labs / University"
+                            class="w-full bg-white/10 border border-white/20 p-3.5 rounded-xl text-sm text-white placeholder-white/40 outline-none focus:border-emerald-400 focus:bg-white/15 transition">
+                    </div>
+                    <div>
+                        <label for="req-email" class="block text-[10px] font-black uppercase tracking-widest mb-2 text-emerald-400">
+                            <span class="lang-en">Delivery Email *</span><span class="lang-es lang-hidden">Correo de Entrega *</span>
+                        </label>
+                        <input id="req-email" type="email" name="_replyto" required
+                            placeholder="researcher@institution.org"
+                            class="w-full bg-white/10 border border-white/20 p-3.5 rounded-xl text-sm text-white placeholder-white/40 outline-none focus:border-emerald-400 focus:bg-white/15 transition">
                     </div>
                 </div>
-                <textarea name="message" rows="3" required class="w-full bg-white/10 border border-white/20 p-4 rounded-xl text-sm outline-none focus:bg-white/20 transition"></textarea>
-                <button type="submit" class="w-full bg-emerald-500 text-emerald-950 font-black py-5 rounded-2xl hover:bg-white transition uppercase tracking-widest text-sm shadow-xl">
-                    <span class="lang-en">Request Startup Demo</span><span class="lang-es lang-hidden">Solicitar Demo de Startup</span>
+
+                <!-- Tipo de estructura y protocolo -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label for="structure-type" class="block text-[10px] font-black uppercase tracking-widest mb-2 text-emerald-400">
+                            <span class="lang-en">Structure Source *</span><span class="lang-es lang-hidden">Origen de la Estructura *</span>
+                        </label>
+                        <select id="structure-type" name="structure_type" onchange="toggleStructureFields()"
+                            class="w-full bg-emerald-900 border border-white/20 p-3.5 rounded-xl text-sm text-white outline-none focus:border-emerald-400 transition">
+                            <option value="public_pdb" data-en="Public PDB ID (RCSB)" data-es="PDB ID Público (RCSB)">Public PDB ID (RCSB)</option>
+                            <option value="proprietary_nda" data-en="Proprietary Structure (.pdb / .cif) — Request NDA First" data-es="Estructura Propietaria (.pdb / .cif) — Solicitar NDA Primero">Proprietary Structure (.pdb / .cif) — Request NDA First</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="scan-mode" class="block text-[10px] font-black uppercase tracking-widest mb-2 text-emerald-400">
+                            <span class="lang-en">Scan Protocol *</span><span class="lang-es lang-hidden">Protocolo de Escaneo *</span>
+                        </label>
+                        <select id="scan-mode" name="scan_mode" onchange="toggleMutationField()"
+                            class="w-full bg-emerald-900 border border-white/20 p-3.5 rounded-xl text-sm text-white outline-none focus:border-emerald-400 transition">
+                            <option value="allosteric_standard" data-en="Allosteric Hotspot Mapping + Vina Grid Box" data-es="Mapeo Alostérico + Grid Box (AutoDock Vina)">Allosteric Hotspot Mapping + Vina Grid Box</option>
+                            <option value="mutation_impact" data-en="Mutation Impact Scan (Wild-Type vs Mutant)" data-es="Escáner de Mutación (Wild-Type vs Mutante)">Mutation Impact Scan (Wild-Type vs Mutant)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Campos condicionales para PDB Público -->
+                <div id="public-pdb-fields" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label for="pdb-id" class="block text-[10px] font-black uppercase tracking-widest mb-2 text-emerald-400">
+                            <span class="lang-en">PDB ID (4 characters) *</span><span class="lang-es lang-hidden">Código PDB ID (4 caracteres) *</span>
+                        </label>
+                        <input id="pdb-id" type="text" name="pdb_id" maxlength="4" pattern="[A-Za-z0-9]{4}" required
+                            placeholder="1TUP / 6LU7 / 5FWQ"
+                            class="w-full bg-white/10 border border-white/20 p-3.5 rounded-xl text-sm text-white uppercase placeholder-white/40 outline-none focus:border-emerald-400 focus:bg-white/15 transition">
+                    </div>
+                    <div>
+                        <label for="chain-mode" class="block text-[10px] font-black uppercase tracking-widest mb-2 text-emerald-400">
+                            <span class="lang-en">Chain / Assembly</span><span class="lang-es lang-hidden">Cadena / Ensamblaje</span>
+                        </label>
+                        <select id="chain-mode" name="assembly_mode"
+                            class="w-full bg-emerald-900 border border-white/20 p-3.5 rounded-xl text-sm text-white outline-none focus:border-emerald-400 transition">
+                            <option value="chain_a" data-en="Single Chain (Chain A)" data-es="Cadena Única (Cadena A)">Single Chain (Chain A)</option>
+                            <option value="biomol" data-en="Biological Assembly (Multimer)" data-es="Ensamblaje Biológico (Multímero)">Biological Assembly (Multimer)</option>
+                            <option value="custom" data-en="Specify chain in notes below" data-es="Especificar cadena en las notas">Specify chain in notes below</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Aviso cuando elige Estructura Propietaria -->
+                <div id="nda-notice" class="hidden bg-emerald-900/60 border border-emerald-400/40 p-4 rounded-2xl text-xs text-emerald-100 leading-relaxed">
+                    <strong class="text-emerald-300 uppercase tracking-wider block mb-1">
+                        <span class="lang-en">Zero-Exposure Protocol:</span>
+                        <span class="lang-es lang-hidden">Protocolo de Cero Exposición:</span>
+                    </strong>
+                    <span class="lang-en">Do not paste unreleased coordinates here. Upon submitting this request, we will email you a signed Mutual NDA and a private encrypted upload link for your .pdb/.cif file.</span>
+                    <span class="lang-es lang-hidden">No pegues coordenadas inéditas aquí. Al enviar esta solicitud, te enviaremos por correo un Acuerdo de Confidencialidad Mutua (NDA) firmado y un enlace privado cifrado para recibir tu archivo .pdb/.cif.</span>
+                </div>
+
+                <!-- Campo condicional para Mutación + Idioma del reporte -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div id="mutation-field" class="hidden">
+                        <label for="mutation-target" class="block text-[10px] font-black uppercase tracking-widest mb-2 text-emerald-400">
+                            <span class="lang-en">Target Mutation *</span><span class="lang-es lang-hidden">Mutación Objetivo *</span>
+                        </label>
+                        <input id="mutation-target" type="text" name="mutation" disabled
+                            data-placeholder-en="e.g., Y220C (Chain A)" data-placeholder-es="ej., Y220C (Cadena A)"
+                            placeholder="e.g., Y220C (Chain A)"
+                            class="w-full bg-white/10 border border-white/20 p-3.5 rounded-xl text-sm text-white placeholder-white/40 outline-none focus:border-emerald-400 focus:bg-white/15 transition">
+                    </div>
+
+                    <div>
+                        <label for="report-lang" class="block text-[10px] font-black uppercase tracking-widest mb-2 text-emerald-400">
+                            <span class="lang-en">Dossier Language</span><span class="lang-es lang-hidden">Idioma del Reporte</span>
+                        </label>
+                        <select id="report-lang" name="report_language"
+                            class="w-full bg-emerald-900 border border-white/20 p-3.5 rounded-xl text-sm text-white outline-none focus:border-emerald-400 transition">
+                            <option value="EN" data-en="English (EN)" data-es="Inglés (EN)">English (EN)</option>
+                            <option value="ES" data-en="Spanish (ES)" data-es="Español (ES)">Spanish (ES)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Notas adicionales -->
+                <div>
+                    <label for="req-notes" class="block text-[10px] font-black uppercase tracking-widest mb-2 text-emerald-400">
+                        <span class="lang-en">Research Context / Notes</span><span class="lang-es lang-hidden">Contexto de Investigación / Notas</span>
+                    </label>
+                    <textarea id="req-notes" name="message" rows="3"
+                        data-placeholder-en="Optional: specific chain, known active site, or ligand focus..."
+                        data-placeholder-es="Opcional: cadena específica, sitio activo conocido o enfoque terapéutico..."
+                        placeholder="Optional: specific chain, known active site, or ligand focus..."
+                        class="w-full bg-white/10 border border-white/20 p-3.5 rounded-xl text-sm text-white placeholder-white/40 outline-none focus:border-emerald-400 focus:bg-white/15 transition"></textarea>
+                </div>
+
+                <!-- Compromiso de Confidencialidad -->
+                <div class="bg-black/25 border border-white/15 p-4 rounded-2xl">
+                    <label class="flex items-start space-x-3 cursor-pointer">
+                        <input type="checkbox" name="confidentiality_accepted" value="yes" required
+                            class="mt-1 h-4 w-4 rounded accent-emerald-400 shrink-0">
+                        <span class="text-[11px] text-emerald-100/85 leading-relaxed">
+                            <span class="lang-en">
+                                <strong class="text-emerald-300">Confidentiality Commitment:</strong> I acknowledge that submitted target metadata is used strictly to generate the requested VALLY-Scan™ report. Vally Structural Intelligence commits to never reuse, publish, or train models on client structures, and to purge local files within 30 days of delivery (or immediately upon request).
+                            </span>
+                            <span class="lang-es lang-hidden">
+                                <strong class="text-emerald-300">Compromiso de Confidencialidad:</strong> Entiendo que los datos enviados se utilizarán exclusivamente para generar el reporte VALLY-Scan™ solicitado. Vally Structural Intelligence se compromete a no reutilizar, publicar ni entrenar modelos con estructuras de clientes, y a eliminar los archivos locales en un máximo de 30 días tras la entrega (o de inmediato si se solicita).
+                            </span>
+                        </span>
+                    </label>
+                </div>
+
+                <button id="submit-btn" type="submit" class="w-full bg-emerald-500 text-emerald-950 font-black py-4 rounded-2xl hover:bg-white transition uppercase tracking-widest text-sm shadow-xl">
+                    <span class="lang-en">Submit Confidential Scan Request</span>
+                    <span class="lang-es lang-hidden">Enviar Solicitud Confidencial de Escaneo</span>
                 </button>
             </form>
         </div>
     </section>
 
-    <!-- Footer de 4 Columnas con CONTADOR -->
-    <footer class="relative py-24 px-6 overflow-hidden text-white">
+    <!-- Footer de 4 Columnas -->
+    <footer class="relative py-24 px-6 overflow-hidden text-white bg-slate-950">
         <div class="absolute inset-0 z-0">
-            <img src="footer-bg.jpg" alt="Legacy" class="w-full h-full object-cover opacity-50">
-            <div class="absolute inset-0 bg-slate-950/90"></div> 
+            <img src="footer-bg.jpg" alt="" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-slate-950/90"></div>
         </div>
         <div class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-4 gap-12 text-left">
             <div class="col-span-1">
-                <img src="logo-vally.png" alt="Footer Logo" class="h-12 mb-4 brightness-0 invert">
-                <p class="text-[10px] opacity-70 italic tracking-widest uppercase">Disrupting the physics of the future.</p>
-                <!-- CONTADOR DE VISITAS -->
-                <div class="mt-6 flex items-center space-x-2 opacity-40 hover:opacity-100 transition duration-500">
-                    <span class="text-[8px] font-black uppercase tracking-widest">Global Visitors:</span>
-                    <img src="https://hitwebcounter.com/counter/counter.php?page=VallyDynamics&style=0006&nbdigits=5&type=page&initCount=100" title="Free Counter" Alt="web counter" border="0" class="h-4">
-                </div>
+                <img src="logo-vally.png" alt="Vally Structural Intelligence" class="h-12 mb-4 brightness-0 invert">
+                <p class="text-[10px] opacity-70 italic tracking-widest uppercase">
+                    <span class="lang-en">Disrupting the physics of the future.</span>
+                    <span class="lang-es lang-hidden">Revolucionando la física del futuro.</span>
+                </p>
             </div>
             <div>
-                <h5 class="font-black mb-6 border-b border-emerald-500 pb-2 uppercase text-[10px] tracking-widest"><span class="lang-en">Platform</span><span class="lang-es lang-hidden">Plataforma</span></h5>
-                <ul class="text-[11px] space-y-2 opacity-80 uppercase font-bold"><li>● VALLY-Scan™</li><li>● VALLY-Materials</li><li>● VALLY-API</li></ul>
+                <h3 class="font-black mb-6 border-b border-emerald-500 pb-2 uppercase text-[10px] tracking-widest">
+                    <span class="lang-en">Platform</span><span class="lang-es lang-hidden">Plataforma</span>
+                </h3>
+                <ul class="text-[11px] space-y-2 opacity-80 uppercase font-bold">
+                    <li><a href="p53.html" class="hover:text-emerald-400 transition">● VALLY-Scan™ (p53)</a></li>
+                    <li><a href="materials.html" class="hover:text-emerald-400 transition">● VALLY-Materials</a></li>
+                    <li><a href="api.html" class="hover:text-emerald-400 transition">● VALLY-API</a></li>
+                </ul>
             </div>
             <div>
-                <h5 class="font-black mb-6 border-b border-emerald-500 pb-2 uppercase text-[10px] tracking-widest text-emerald-400"><span class="lang-en">Recognition</span><span class="lang-es lang-hidden">Reconocimientos</span></h5>
-                <ul class="text-[11px] space-y-2 opacity-80 uppercase font-bold"><li>● APS Denver 2026</li><li>● ChemRxiv Registered</li></ul>
+                <h3 class="font-black mb-6 border-b border-emerald-500 pb-2 uppercase text-[10px] tracking-widest text-emerald-400">
+                    <span class="lang-en">Recognition</span><span class="lang-es lang-hidden">Reconocimientos</span>
+                </h3>
+                <ul class="text-[11px] space-y-2 opacity-80 uppercase font-bold">
+                    <li>● APS Denver 2026</li>
+                    <li>● ChemRxiv Registered</li>
+                </ul>
             </div>
             <div>
-                <h5 class="font-black mb-6 border-b border-emerald-500 pb-2 uppercase text-[10px] tracking-widest"><span class="lang-en">Contact</span><span class="lang-es lang-hidden">Contacto</span></h5>
+                <h3 class="font-black mb-6 border-b border-emerald-500 pb-2 uppercase text-[10px] tracking-widest">
+                    <span class="lang-en">Contact</span><span class="lang-es lang-hidden">Contacto</span>
+                </h3>
                 <p class="text-[12px] font-black uppercase tracking-tight">Lionell Nava Ramos</p>
-                <p class="mt-4 text-[10px] text-emerald-400 underline font-bold">lionnava@gmail.com</p>
+                <a href="mailto:lionnava@gmail.com" class="inline-block mt-3 text-[11px] text-emerald-400 underline hover:text-white transition font-bold">lionnava@gmail.com</a>
             </div>
         </div>
-        <div class="relative z-10 max-w-6xl mx-auto mt-24 pt-8 border-t border-gray-700 text-center uppercase tracking-widest text-[10px] opacity-50">
-            © 2025 Vally Structural Intelligence, C.A. Rif J50883540-9. Maracaibo, Venezuela.
-            <p class="mt-10 opacity-5 text-[8px] hover:opacity-100 transition-opacity duration-1000 normal-case text-white">Images by Roksana Helscher and Gerd Altmann from Pixabay.</p>
+        <div class="relative z-10 max-w-6xl mx-auto mt-20 pt-8 border-t border-gray-800 text-center uppercase tracking-widest text-[10px] text-gray-400">
+            <p>© 2026 Vally Structural Intelligence, C.A. RIF J-50883540-9. Maracaibo, Venezuela.</p>
+            <p class="mt-4 text-[10px] opacity-60 normal-case">Images by Roksana Helscher and Gerd Altmann from Pixabay.</p>
         </div>
     </footer>
 

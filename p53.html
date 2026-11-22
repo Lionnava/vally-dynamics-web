@@ -3,80 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>p53 Rescue | Vally Dynamics</title>
+    <title data-en="p53 Rescue | Vally Dynamics" data-es="Rescate p53 | Vally Dynamics">p53 Rescue | Vally Dynamics</title>
+    <meta name="description" content="Structural oncology case study: rapid allosteric mapping of tumor suppressor p53 (PDB: 1TUP) using VALLY-Scan™.">
+    <link rel="icon" href="logo-vally.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>.lang-hidden { display: none !important; }</style>
 </head>
-<body class="bg-gray-50 font-sans text-gray-900">
-    <nav class="p-6 bg-white shadow-sm flex justify-between items-center sticky top-0 z-50">
+<body class="bg-gray-50 font-sans text-gray-900 [overflow-x:clip]">
+    <nav class="p-6 bg-white shadow-sm flex justify-between items-center sticky top-0 z-50 border-b border-gray-100">
         <a href="index.html" class="flex items-center space-x-3">
-            <img src="logo-vally.png" class="h-8 w-auto">
+            <img src="logo-vally.png" alt="Vally Structural Intelligence Logo" class="h-8 w-auto">
             <span class="font-black text-emerald-900 uppercase text-xs tracking-widest hover:text-emerald-500 transition">
-                <span class="lang-en">Back to Platform</span><span class="lang-es lang-hidden">Volver a la Plataforma</span>
+                <span class="lang-en">← Back to Platform</span><span class="lang-es lang-hidden">← Volver a la Plataforma</span>
             </span>
         </a>
         <div class="flex space-x-4">
-            <button onclick="setLanguage('en')" id="btn-en" class="text-xs font-bold text-emerald-700 border-b-2 border-emerald-700">EN</button>
-            <button onclick="setLanguage('es')" id="btn-es" class="text-xs font-bold text-gray-400">ES</button>
+            <button type="button" onclick="setLanguage('en')" id="btn-en" class="text-xs font-bold text-emerald-700 border-b-2 border-emerald-700 pb-0.5">EN</button>
+            <button type="button" onclick="setLanguage('es')" id="btn-es" class="text-xs font-bold text-gray-400 pb-0.5">ES</button>
         </div>
     </nav>
 
     <header class="bg-emerald-950 text-white py-20 px-6 text-center">
-        <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">
+        <h1 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">
             <span class="lang-en">The p53 Rescue Mission</span><span class="lang-es lang-hidden">Misión de Rescate p53</span>
-        </h2>
+        </h1>
+        <p class="text-emerald-300 text-xs uppercase tracking-widest font-bold">
+            <span class="lang-en">Structural Oncology Case Study</span><span class="lang-es lang-hidden">Caso de Estudio en Oncología Estructural</span>
+        </p>
     </header>
 
-    <section class="py-12 px-6 max-w-5xl mx-auto">
-        <div class="bg-white p-10 rounded-[3rem] shadow-xl border border-gray-100">
+    <main class="py-12 px-6 max-w-5xl mx-auto">
+        <div class="bg-white p-6 md:p-10 rounded-[3rem] shadow-xl border border-gray-100">
             <div class="mb-12 bg-zinc-950 p-2 rounded-[2rem] shadow-2xl">
-                <div id="viewport" class="w-full h-[450px] rounded-[1.5rem] bg-slate-900"></div>
-                <p class="text-center text-[9px] text-gray-500 py-4 uppercase font-bold tracking-widest">Target: Tumor Suppressor p53 (PDB: 1TUP)</p>
+                <div id="viewport" class="w-full h-[450px] rounded-[1.5rem] bg-slate-900 flex items-center justify-center text-gray-400 text-xs uppercase tracking-widest">
+                    <span class="lang-en">Loading 3D Molecular Structure...</span>
+                    <span class="lang-es lang-hidden">Cargando Estructura Molecular 3D...</span>
+                </div>
+                <p class="text-center text-[10px] text-gray-400 py-4 uppercase font-bold tracking-widest">
+                    <span class="lang-en">Target: Tumor Suppressor p53 (PDB: 1TUP • Y220C Pocket Highlighted)</span>
+                    <span class="lang-es lang-hidden">Blanco: Supresor Tumoral p53 (PDB: 1TUP • Bolsillo Y220C Resaltado)</span>
+                </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6 mb-16">
                 <div class="bg-emerald-50 p-6 rounded-3xl border-t-4 border-emerald-500">
-                    <h5 class="text-xl font-black mb-2 text-emerald-900">85% - 90%</h5>
-                    <p class="text-[10px] text-gray-600 font-bold uppercase"><span class="lang-en">Rescue Site ID</span><span class="lang-es lang-hidden">ID de Sitio</span></p>
+                    <h2 class="text-2xl font-black mb-1 text-emerald-900">85% – 90%</h2>
+                    <p class="text-[10px] text-emerald-800 font-black uppercase tracking-wider mb-2">
+                        <span class="lang-en">Rescue Site Identification</span><span class="lang-es lang-hidden">Identificación de Sitio</span>
+                    </p>
+                    <p class="text-xs text-gray-600">
+                        <span class="lang-en">Allosteric druggable pocket recall around Y220–225.</span>
+                        <span class="lang-es lang-hidden">Detección de cavidades alostéricas tratables alrededor de Y220–225.</span>
+                    </p>
                 </div>
                 <div class="bg-emerald-50 p-6 rounded-3xl border-t-4 border-emerald-500">
-                    <h5 class="text-xl font-black mb-2 text-emerald-900">65% - 70%</h5>
-                    <p class="text-[10px] text-gray-600 font-bold uppercase"><span class="lang-en">Rescue Sim</span><span class="lang-es lang-hidden">Simulación</span></p>
+                    <h2 class="text-2xl font-black mb-1 text-emerald-900">65% – 70%</h2>
+                    <p class="text-[10px] text-emerald-800 font-black uppercase tracking-wider mb-2">
+                        <span class="lang-en">Rescue Dynamics Sim</span><span class="lang-es lang-hidden">Simulación de Rescate</span>
+                    </p>
+                    <p class="text-xs text-gray-600">
+                        <span class="lang-en">Predicted conformational stabilization across mutant variants.</span>
+                        <span class="lang-es lang-hidden">Estabilización conformacional predicha en variantes mutantes.</span>
+                    </p>
                 </div>
                 <div class="bg-emerald-50 p-6 rounded-3xl border-t-4 border-emerald-500">
-                    <h5 class="text-xl font-black mb-2 text-emerald-900">10% - 15%</h5>
-                    <p class="text-[10px] text-gray-600 font-bold uppercase"><span class="lang-en">Clinical Fit</span><span class="lang-es lang-hidden">Ajuste Clínico</span></p>
+                    <h2 class="text-2xl font-black mb-1 text-emerald-900">10% – 15%</h2>
+                    <p class="text-[10px] text-emerald-800 font-black uppercase tracking-wider mb-2">
+                        <span class="lang-en">Clinical Candidate Hit Rate</span><span class="lang-es lang-hidden">Tasa de Candidatos Clínicos</span>
+                    </p>
+                    <p class="text-xs text-gray-600">
+                        <span class="lang-en">High-selectivity ligand filter vs. ~0.1% brute-force screening.</span>
+                        <span class="lang-es lang-hidden">Filtro de alta selectividad frente a ~0,1% en cribado tradicional.</span>
+                    </p>
                 </div>
             </div>
 
-            <div class="overflow-hidden rounded-2xl border border-gray-200">
-                <table class="w-full text-left text-sm">
+            <div class="overflow-x-auto rounded-2xl border border-gray-200">
+                <table class="w-full text-left text-sm min-w-[500px]">
                     <thead class="bg-emerald-900 text-white uppercase text-[10px] tracking-widest">
-                        <tr><th class="p-4"><span class="lang-en">Metric</span><span class="lang-es lang-hidden">Métrica</span></th><th class="p-4">Traditional MD</th><th class="p-4 bg-emerald-800">VALLY-Scan™</th></tr>
+                        <tr>
+                            <th class="p-4"><span class="lang-en">Metric</span><span class="lang-es lang-hidden">Métrica</span></th>
+                            <th class="p-4"><span class="lang-en">Traditional MD</span><span class="lang-es lang-hidden">MD Tradicional</span></th>
+                            <th class="p-4 bg-emerald-800">VALLY-Scan™</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <tr class="border-b"><td class="p-4 font-bold"><span class="lang-en">Cycle Time</span><span class="lang-es lang-hidden">Tiempo Ciclo</span></td><td class="p-4 text-gray-400 italic">6-12 Months</td><td class="p-4 font-black text-emerald-600 uppercase">Seconds</td></tr>
-                        <tr class="border-b"><td class="p-4 font-bold"><span class="lang-en">Investment</span><span class="lang-es lang-hidden">Inversión</span></td><td class="p-4 text-gray-400 italic">HPC Clusters</td><td class="p-4 font-black text-emerald-600 uppercase">Zero CapEx</td></tr>
-                        <tr><td class="p-4 font-bold"><span class="lang-en">Engine Accuracy *Validated</span><span class="lang-es lang-hidden">Precisión Motor*</span></td><td class="p-4 text-gray-400 italic">r ≈ 0.50</td><td class="p-4 font-black text-emerald-600 uppercase">r = 0.67</td></tr>
+                        <tr class="border-b">
+                            <td class="p-4 font-bold"><span class="lang-en">Cycle Time</span><span class="lang-es lang-hidden">Tiempo de Ciclo</span></td>
+                            <td class="p-4 text-gray-500 italic"><span class="lang-en">6–12 Months</span><span class="lang-es lang-hidden">6–12 Meses</span></td>
+                            <td class="p-4 font-black text-emerald-600 uppercase"><span class="lang-en">Seconds</span><span class="lang-es lang-hidden">Segundos</span></td>
+                        </tr>
+                        <tr class="border-b">
+                            <td class="p-4 font-bold"><span class="lang-en">Investment</span><span class="lang-es lang-hidden">Infraestructura</span></td>
+                            <td class="p-4 text-gray-500 italic"><span class="lang-en">HPC Clusters</span><span class="lang-es lang-hidden">Clústeres HPC</span></td>
+                            <td class="p-4 font-black text-emerald-600 uppercase"><span class="lang-en">Zero CapEx</span><span class="lang-es lang-hidden">Cero CapEx</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold"><span class="lang-en">Engine Accuracy*</span><span class="lang-es lang-hidden">Precisión del Motor*</span></td>
+                            <td class="p-4 text-gray-500 italic">r ≈ 0.50</td>
+                            <td class="p-4 font-black text-emerald-600 uppercase">r = 0.67</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
-            <p class="text-[16px] text-gray-400 italic mt-4"> *Validated on SARS-CoV-2 Mpro dataset.</p>
+            <p class="text-xs text-gray-500 italic mt-4">
+                <span class="lang-en">*Validated benchmark on SARS-CoV-2 Mpro dataset.</span>
+                <span class="lang-es lang-hidden">*Referencia validada sobre el conjunto de datos SARS-CoV-2 Mpro.</span>
+            </p>
+
+            <div class="mt-10 text-center">
+                <a href="index.html#contact" class="inline-block bg-emerald-700 text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-emerald-800 transition shadow-lg">
+                    <span class="lang-en">Request Confidential Scan for Your Target</span>
+                    <span class="lang-es lang-hidden">Solicitar Escaneo Confidencial para tu Blanco</span>
+                </a>
+            </div>
         </div>
-    </section>
+    </main>
+
+    <footer class="bg-slate-950 py-10 mt-16 text-center text-white text-[10px] uppercase tracking-widest">
+        <p class="opacity-60">© 2026 Vally Structural Intelligence, C.A. | <span class="lang-en">Structural Oncology Vertical</span><span class="lang-es lang-hidden">Vertical de Oncología Estructural</span></p>
+    </footer>
 
     <script src="https://unpkg.com/ngl@0.10.4-1/dist/ngl.js"></script>
     <script src="scripts.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            var stage = new NGL.Stage("viewport", { backgroundColor: "#0f172a" });
-            function render(o) {
-                o.addRepresentation("cartoon", { color: "#475569", opacity: 0.3 });
-                o.addRepresentation("spacefill", { sele: "220-225", color: "#10b981", scale: 2.5 });
-                o.autoView("220-225"); stage.setSpin(true);
+            const viewport = document.getElementById("viewport");
+            if (!viewport || typeof NGL === "undefined") {
+                if (viewport) viewport.innerHTML = '<p class="text-xs text-gray-400 px-6 text-center">3D viewer unavailable offline. Request full PDB output via our intake portal.</p>';
+                return;
             }
-            stage.loadFile("1TUP.pdb").then(render).catch(() => stage.loadFile("https://files.rcsb.org/download/1TUP.pdb").then(render));
-            window.addEventListener("resize", () => stage.handleResize(), false);
+            try {
+                viewport.innerHTML = "";
+                const stage = new NGL.Stage("viewport", { backgroundColor: "#0f172a" });
+                function render(o) {
+                    o.addRepresentation("cartoon", { color: "#475569", opacity: 0.35 });
+                    o.addRepresentation("spacefill", { sele: "220-225", color: "#10b981", scale: 2.5 });
+                    o.autoView("220-225");
+                    stage.setSpin(true);
+                }
+                stage.loadFile("1TUP.pdb")
+                    .then(render)
+                    .catch(() => stage.loadFile("https://files.rcsb.org/download/1TUP.pdb").then(render))
+                    .catch(() => {
+                        viewport.innerHTML = '<p class="text-xs text-gray-400 px-6 text-center">Unable to load PDB: 1TUP structure in browser.</p>';
+                    });
+                window.addEventListener("resize", () => stage.handleResize(), false);
+            } catch (err) {
+                viewport.innerHTML = '<p class="text-xs text-gray-400 px-6 text-center">WebGL not supported on this device.</p>';
+            }
         });
     </script>
 </body>

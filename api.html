@@ -3,70 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VALLY-API | Enterprise Integration</title>
+    <title data-en="VALLY-API | Enterprise Integration" data-es="VALLY-API | Integración Empresarial">VALLY-API | Enterprise Integration</title>
+    <meta name="description" content="Private containerized VALLY-API for automated high-throughput protein dynamics and allosteric screening.">
+    <link rel="icon" href="logo-vally.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>.lang-hidden { display: none !important; }</style>
 </head>
-<body class="bg-gray-50 font-sans text-gray-900">
+<body class="bg-gray-50 font-sans text-gray-900 [overflow-x:clip]">
     <!-- Navbar -->
-    <nav class="p-6 bg-white shadow-sm flex justify-between items-center sticky top-0 z-50">
+    <nav class="p-6 bg-white shadow-sm flex justify-between items-center sticky top-0 z-50 border-b border-gray-100">
         <a href="index.html" class="flex items-center space-x-3">
-            <img src="logo-vally.png" class="h-8 w-auto">
-            <span class="font-black text-emerald-900 uppercase text-xs tracking-widest">
-                <span class="lang-en">Back to Platform</span>
-                <span class="lang-es lang-hidden">Volver a la Plataforma</span>
+            <img src="logo-vally.png" alt="Vally Structural Intelligence Logo" class="h-8 w-auto">
+            <span class="font-black text-emerald-900 uppercase text-xs tracking-widest hover:text-emerald-500 transition">
+                <span class="lang-en">← Back to Platform</span>
+                <span class="lang-es lang-hidden">← Volver a la Plataforma</span>
             </span>
         </a>
         <div class="flex space-x-4">
-            <button onclick="setLanguage('en')" id="btn-en" class="text-xs font-bold text-emerald-700 border-b-2 border-emerald-700">EN</button>
-            <button onclick="setLanguage('es')" id="btn-es" class="text-xs font-bold text-gray-400">ES</button>
+            <button type="button" onclick="setLanguage('en')" id="btn-en" class="text-xs font-bold text-emerald-700 border-b-2 border-emerald-700 pb-0.5">EN</button>
+            <button type="button" onclick="setLanguage('es')" id="btn-es" class="text-xs font-bold text-gray-400 pb-0.5">ES</button>
         </div>
     </nav>
 
     <header class="bg-zinc-900 text-white py-20 px-6 text-center border-b-4 border-emerald-500">
-        <h2 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4 italic">VALLY-API</h2>
+        <h1 class="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4 italic">VALLY-API</h1>
         <p class="text-emerald-400 font-bold uppercase tracking-widest text-xs">
             <span class="lang-en">The Nervous System of Automated Discovery</span>
             <span class="lang-es lang-hidden">El Sistema Nervioso del Descubrimiento Automatizado</span>
         </p>
     </header>
 
-    <section class="py-16 px-6 max-w-5xl mx-auto">
+    <main class="py-16 px-6 max-w-5xl mx-auto">
         <div class="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-gray-100">
             <div class="text-center mb-12">
-                <span class="bg-emerald-100 text-emerald-700 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">In Development - Q4 2025</span>
+                <span class="bg-emerald-100 text-emerald-800 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">
+                    <span class="lang-en">Private Beta • NDA &amp; Container Deployment (2026)</span>
+                    <span class="lang-es lang-hidden">Beta Privada • Despliegue en Contenedor Bajo NDA (2026)</span>
+                </span>
                 <p class="text-lg text-gray-600 mt-6 leading-relaxed">
-                    <span class="lang-en">VALLY-API allows seamless integration of our core dynamics engine into your enterprise R&D cloud, enabling massive, automated screenings.</span>
-                    <span class="lang-es lang-hidden">VALLY-API permite la integración fluida de nuestro motor dinámico en la nube de R&D de su empresa, habilitando cribados masivos y automatizados.</span>
+                    <span class="lang-en">VALLY-API enables isolated Docker container integration of our sovereign dynamics engine into your enterprise R&amp;D cloud, supporting automated screenings without exposing proprietary pipelines.</span>
+                    <span class="lang-es lang-hidden">VALLY-API permite integrar nuestro motor dinámico soberano mediante contenedores Docker aislados en la nube de R&amp;D de su empresa, habilitando cribados automatizados con total confidencialidad.</span>
                 </p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-10 mb-16 text-left">
                 <div class="bg-zinc-50 p-8 rounded-3xl border border-zinc-200">
-                    <h4 class="font-black text-xl mb-4 text-emerald-900">
+                    <h2 class="font-black text-xl mb-4 text-emerald-900">
                         <span class="lang-en">High-Throughput Analysis</span>
                         <span class="lang-es lang-hidden">Análisis de Alto Rendimiento</span>
-                    </h4>
+                    </h2>
                     <p class="text-gray-500 text-sm">
-                        <span class="lang-en">Scan libraries of thousands of proteins or materials in real-time via RESTful calls. No manual setup required.</span>
-                        <span class="lang-es lang-hidden">Analice bibliotecas de miles de proteínas o materiales en tiempo real mediante llamadas RESTful. Sin configuración manual.</span>
+                        <span class="lang-en">Screen protein or structural libraries via RESTful endpoints or batch workers. Zero manual setup required.</span>
+                        <span class="lang-es lang-hidden">Analice bibliotecas de proteínas o estructuras mediante endpoints RESTful o procesos por lotes. Sin configuración manual.</span>
                     </p>
                 </div>
                 <div class="bg-zinc-50 p-8 rounded-3xl border border-zinc-200">
-                    <h4 class="font-black text-xl mb-4 text-emerald-900">
-                        <span class="lang-en">Enterprise Cloud Ready</span>
-                        <span class="lang-es lang-hidden">Listo para la Nube Corporativa</span>
-                    </h4>
+                    <h2 class="font-black text-xl mb-4 text-emerald-900">
+                        <span class="lang-en">Sovereign Container Ready</span>
+                        <span class="lang-es lang-hidden">Contenedor Soberano Listo</span>
+                    </h2>
                     <p class="text-gray-500 text-sm">
-                        <span class="lang-en">Secure, encrypted, and scalable. Compatible with AWS, Google Cloud, and existing bioinformatics pipelines.</span>
-                        <span class="lang-es lang-hidden">Seguro, encriptado y escalable. Compatible con AWS, Google Cloud y flujos de bioinformática existentes.</span>
+                        <span class="lang-en">Encrypted, air-gapped capable, and compatible with AWS, GCP, and existing on-premise bioinformatics pipelines.</span>
+                        <span class="lang-es lang-hidden">Encriptado, apto para entornos aislados y compatible con AWS, GCP y flujos bioinformáticos on-premise.</span>
                     </p>
                 </div>
             </div>
 
             <!-- Tabla de Eficiencia Operativa -->
-            <div class="overflow-hidden rounded-2xl border border-gray-200 shadow-xl">
-                <table class="w-full text-left bg-white text-sm">
+            <div class="overflow-x-auto rounded-2xl border border-gray-200 shadow-xl">
+                <table class="w-full text-left bg-white text-sm min-w-[500px]">
                     <thead class="bg-zinc-800 text-white">
                         <tr>
                             <th class="p-4 uppercase tracking-widest text-[10px]">
@@ -76,59 +81,43 @@
                                 <span class="lang-en">Manual Workflow</span><span class="lang-es lang-hidden">Flujo Manual</span>
                             </th>
                             <th class="p-4 bg-emerald-800 uppercase tracking-widest text-[10px]">
-                                <span class="lang-en">VALLY-API</span><span class="lang-es lang-hidden">VALLY-API</span>
+                                VALLY-API
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="border-b">
                             <td class="p-4 font-bold"><span class="lang-en">Throughput</span><span class="lang-es lang-hidden">Volumen</span></td>
-                            <td class="p-4 text-gray-500"><span class="lang-en">1-5 structures/day</span><span class="lang-es lang-hidden">1-5 estructuras/día</span></td>
-                            <td class="p-4 font-black text-emerald-600"><span class="lang-en">Unlimited (Parallel)</span><span class="lang-es lang-hidden">Ilimitado (Paralelo)</span></td>
+                            <td class="p-4 text-gray-500"><span class="lang-en">1–5 structures/day</span><span class="lang-es lang-hidden">1–5 estructuras/día</span></td>
+                            <td class="p-4 font-black text-emerald-600"><span class="lang-en">Scalable Parallel Batch</span><span class="lang-es lang-hidden">Lotes Paralelos Escalables</span></td>
                         </tr>
                         <tr class="border-b">
-                            <td class="p-4 font-bold"><span class="lang-en">Integration</span><span class="lang-es lang-hidden">Integración</span></td>
-                            <td class="p-4 text-gray-500"><span class="lang-en">Standalone App</span><span class="lang-es lang-hidden">App Independiente</span></td>
-                            <td class="p-4 font-black text-emerald-600"><span class="lang-en">Direct Code Injection</span><span class="lang-es lang-hidden">Inyección Directa de Código</span></td>
+                            <td class="p-4 font-bold"><span class="lang-en">Deployment</span><span class="lang-es lang-hidden">Despliegue</span></td>
+                            <td class="p-4 text-gray-500"><span class="lang-en">Standalone Scripts</span><span class="lang-es lang-hidden">Scripts Independientes</span></td>
+                            <td class="p-4 font-black text-emerald-600"><span class="lang-en">Isolated Docker / REST</span><span class="lang-es lang-hidden">Docker Aislado / REST</span></td>
                         </tr>
                         <tr>
-                            <td class="p-4 font-bold"><span class="lang-en">Latency</span><span class="lang-es lang-hidden">Latencia</span></td>
+                            <td class="p-4 font-bold"><span class="lang-en">Inference Speed</span><span class="lang-es lang-hidden">Velocidad de Inferencia</span></td>
                             <td class="p-4 text-gray-500"><span class="lang-en">Human-dependent</span><span class="lang-es lang-hidden">Dependiente de humano</span></td>
-                            <td class="p-4 font-black text-emerald-600"><span class="lang-en">Milisec Response</span><span class="lang-es lang-hidden">Respuesta en milisegundos</span></td>
+                            <td class="p-4 font-black text-emerald-600"><span class="lang-en">Sub-second BitPINN Scoring</span><span class="lang-es lang-hidden">Scoring BitPINN Sub-segundo</span></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-        </div>
-    </section>
 
-    <footer class="bg-zinc-950 py-12 text-center text-white opacity-40 text-[10px] uppercase tracking-widest">
-        Vally Dynamics | Infrastructure & API Vertical.
+            <div class="mt-10 text-center">
+                <a href="index.html#contact" class="inline-block bg-emerald-700 text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-emerald-800 transition shadow-lg">
+                    <span class="lang-en">Request Private Pilot / In-House Evaluation</span>
+                    <span class="lang-es lang-hidden">Solicitar Piloto Privado / Evaluación In-House</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-zinc-950 py-12 text-center text-white text-[10px] uppercase tracking-widest">
+        <p class="opacity-60">© 2026 Vally Structural Intelligence, C.A. | <span class="lang-en">Infrastructure &amp; API Vertical</span><span class="lang-es lang-hidden">Vertical de Infraestructura y API</span></p>
     </footer>
 
-    <script>
-        function setLanguage(lang) {
-            const enElements = document.querySelectorAll('.lang-en');
-            const esElements = document.querySelectorAll('.lang-es');
-            const btnEn = document.getElementById('btn-en');
-            const btnEs = document.getElementById('btn-es');
-
-            if (lang === 'es') {
-                enElements.forEach(el => el.classList.add('lang-hidden'));
-                esElements.forEach(el => el.classList.remove('lang-hidden'));
-                btnEs.classList.add('text-emerald-700', 'border-b-2', 'border-emerald-700');
-                btnEs.classList.remove('text-gray-400');
-                btnEn.classList.remove('text-emerald-700', 'border-b-2', 'border-emerald-700');
-                btnEn.classList.add('text-gray-400');
-            } else {
-                esElements.forEach(el => el.classList.add('lang-hidden'));
-                enElements.forEach(el => el.classList.remove('lang-hidden'));
-                btnEn.classList.add('text-emerald-700', 'border-b-2', 'border-emerald-700');
-                btnEn.classList.remove('text-gray-400');
-                btnEs.classList.remove('text-emerald-700', 'border-b-2', 'border-emerald-700');
-                btnEs.classList.add('text-gray-400');
-            }
-        }
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
